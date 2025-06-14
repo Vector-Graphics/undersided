@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="description" content="Webpage description goes here" />
+  <meta charset="utf-8">
+  <title>Undersided</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Serif">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <style crossorigin="anonymous">
+    :root {
+      --textcolor: rgb(255,255,255);
+              --textcolorb: rgb(255,255, 255);        
+              --bgcolor: rgba(0, 0, 19,0);
+              --btncolorpressed: rgb(0, 5, 48);
+              --btncolor: rgb(10, 0, 100);
+              --btncolorhover: rgb(40, 2, 255);
+              --scrollcolor: rgba(255,255,255,0.1);
+              --insetcolor:rgb(0, 12, 58);
+              --insetcolor2:rgb(0, 8, 41);
+              --insetcolor3:rgb(0, 5, 26);
+              --insetcolor4:rgb(0, 0, 0);
+              --typeg:rgb(255,255,255);
+              --typef:#c0e8ff;
+              --typek:#fff0c1;
+              --yellow: #ffd636;
+              --cyan: #51e9f4;
+              --lightgreen: #7fed56;
+              --typea: #89d4ff;
+              --innershadowcolor: #4477ff79;
+              --innershadowcolorb: #4477ff79;
+              --borderradiusdf: 50px;
+              --whiteiconfilter: none;
+              --font: Noto Serif, sans-serif;
+              --hfont: Noto Serif, sans-serif;
+              /**--textcolor: rgb(255,255,255);
+              --textcolorb: rgb(255,255,255);    
+              --bgcolor: rgb(16,16,16);
+              --btncolorpressed: rgb(48,48,48);
+              --btncolor: rgb(64,64,64);
+              --btncolorhover: rgb(96,96,96);
+              --scrollcolor: rgb(96,96,96);
+              --insetcolor:rgb(32,32,32);
+              --typeg:rgb(255,255,255);
+              --typef:#c0e8ff;
+              --typek:#fff0c1;
+              --yellow: #ffd636;
+              --cyan: #51e9f4;
+              --lightgreen: #7fed56;
+              --typea: #89d4ff;
+              --innershadowcolor: #0000004F;
+              --innershadowcolorb: #0000001F;
+              --borderradiusdf: 15px;
+              --whiteiconfilter: none;
+              --font: Metrophobic, sans-serif;
+              --hfont: Eras BQ, sans-serif;**/
+  
+          }
+          [data-theme="light"] {
+              --textcolor: rgb(0,0,0);
+              --textcolorb: rgb(0,0,0);    
+              --bgcolor: rgb(250,250,250);
+              --btncolorpressed: rgb(160,160,160);
+              --btncolor: rgb(192,192,192);
+              --btncolorhover: rgb(240,240,240);
+              --scrollcolor: rgb(158, 158, 158);
+              --insetcolor:rgb(240,240,240);
+              --typek:#beab71;
+              --typeg:rgb(140,140,140);
+              --typef:rgb(140,150,160);
+              --typea: #72aed1;
+              --yellow: #b89b29;
+              --cyan: #22bac5;
+              --lightgreen: #53d822;
+              --innershadowcolor: #0000004F;
+              --innershadowcolorb: #0000001F;
+              --borderradiusdf: 15px;
+              --whiteiconfilter: brightness(0);
+              --font: Metrophobic, sans-serif;
+              --hfont: Eras BQ, sans-serif;
+          }
+          [data-theme="green"] {
+              --textcolor: rgb(255, 255, 255);
+              --textcolorb: rgb(255,255,255);    
+              --bgcolor: rgb(0, 0, 0);
+              --btncolorpressed: rgb(0, 59, 3);
+              --btncolor: rgb(0, 83, 4);
+              --btncolorhover: rgb(0, 104, 5);
+              --scrollcolor: rgb(0, 128, 11);
+              --insetcolor:rgb(0, 26, 4);
+              --typeg:rgb(255,255,255);
+              --typef:#c0e8ff;
+              --typek:#fff0c1;
+              --yellow: #ffd636;
+              --cyan: #51e9f4;
+              --lightgreen: #7fed56;
+              --typea: #89d4ff;
+              --innershadowcolor: #FFFFFF00;
+              --innershadowcolorb: #FFFFFF00;
+              --borderradiusdf: 0px;
+              --whiteiconfilter: none;
+              --font: monospace;
+              --hfont: Orbitron, sans-serif;
+          }
+          [data-theme="red"] {
+              --textcolor: rgb(255,255,255);
+              --textcolorb: rgb(255,255,255);    
+              --bgcolor: rgb(15, 0, 0);
+              --btncolorpressed: rgb(53, 0, 0);
+              --btncolor: rgb(66, 0, 0);
+              --btncolorhover: rgb(95, 0, 0);
+              --scrollcolor: rgb(99, 0, 0);
+              --insetcolor:rgb(41, 0, 0);
+              --typeg:rgb(255,255,255);
+              --typef:#c0e8ff;
+              --typek:#fff0c1;
+              --yellow: #ffd636;
+              --cyan: #51e9f4;
+              --lightgreen: #7fed56;
+              --typea: #89d4ff;
+              --innershadowcolor: #0000004F;
+              --innershadowcolorb: #0000001F;
+              --borderradiusdf: 15px;
+              --whiteiconfilter: none;
+              --font: Metrophobic, sans-serif;
+              --hfont: Eras BQ, sans-serif;
+  
+          }
+          [data-theme="2048"] {
+              --textcolor: #faf8ef;
+              --textcolorb: #776e65;
+              --bgcolor: #faf8ef;
+              --btncolorpressed: #8f7a66;
+              --btncolor: #8f7a66;
+              --btncolorhover: #8f7a66;
+              --scrollcolor: rgb(158, 158, 158);
+              --insetcolor:#eee1c9;
+              --typek:#beab71;
+              --typeg:rgb(140,140,140);
+              --typef:rgb(140,150,160);
+              --typea: #72aed1;
+              --yellow: #b89b29;
+              --cyan: #22bac5;
+              --lightgreen: #53d822;
+              --innershadowcolor: #FFFFFF00;
+              --innershadowcolorb: #FFFFFF00;
+              --borderradiusdf: 5px;
+              --whiteiconfilter: brightness(0);
+              --font: sans-serif;
+              --hfont: sans-serif;
+          }
+          [data-theme="midnight"] {
+              --textcolor: #ffffff;
+              --textcolorb: #ffffff;
+              --bgcolor: #000000;
+              --btncolorpressed: #000000;
+              --btncolor: #000000;
+              --btncolorhover: #000000;
+              --scrollcolor: rgb(35, 0, 58);
+              --insetcolor:#000000;
+              --typek:#beab71;
+              --typeg:rgb(140,140,140);
+              --typef:rgb(140,150,160);
+              --typea: #72aed1;
+              --yellow: #b89b29;
+              --cyan: #22bac5;
+              --lightgreen: #53d822;
+              --innershadowcolor: #FFFFFF00;
+              --innershadowcolorb: #FFFFFF00;
+              --borderradiusdf: 5px;
+              --whiteiconfilter: none;
+              --font: Metrophobic, sans-serif;
+              --hfont: Eras BQ, sans-serif;
+          }
+          p {
+              font-family: var(--font);
+              font-size: larger;
+              color: var(--textcolorb);
+              
+          }
+          a, a:link, a:visited, a:hover, a:active { color: white }
+          li {
+              font-family: var(--font);
+              color: var(--textcolorb);
+              
+          }
+          .list {
+            text-align: center;
+            width: 50%;
+            margin: auto;
+          }
+          li p {
+            text-align: left;
+          }
+          .centerlist {
+            display: inline-block;
+            text-align: left;
+          }
+          #pagenumber {
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: larger;
+              color: var(--textcolor);
+              text-align: center;
+          }
+          .systemcontainer p {
+              color: var(--textcolorb);
+              vertical-align: middle;
+          }
+          #pagenumber {
+              color: var(--textcolorb);
+          }
+  
+          .patchnotes {
+              text-align: center;
+          }
+  
+          h3 {
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 2em;
+              color: var(--textcolorb);
+          }
+          .navbar p {
+            
+            margin: 0 auto;
+              width: 80%;
+              display:block;
+          }
+          p{
+            font-size: 1.5em;
+            text-align: center;
+          }
+          .systemcontainer h3 {
+              color: var(--textcolorb);
+              vertical-align: middle;
+          }
+  
+          h1 {
+              font-family: var(--hfont);
+              color: var(--textcolorb);
+              font-size: 3em;
+              text-align: center;
+          }
+          .infocontainer h1 {
+              font-family: var(--hfont);
+              color: var(--textcolorb);
+              font-size: 3em;
+              text-align: center;
+          }
+          html {
+              background-image: url("qet.png");
+              background-attachment:fixed;
+              background-size:cover;
+              transition: 0.15s;
+              
+              transform: transale3d(0,0,0);
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              
+          }
+          p {
+            filter:drop-shadow(0 0 5px #ffffff7f);
+          }
+          h1{
+            filter:drop-shadow(0 0 5px #ffffff7f);
+          }
+          h3{
+            filter:drop-shadow(0 0 5px #ffffff7f);
+          }
+          img{
+            filter:drop-shadow(0 0 5px #ffffff7f);
+            padding:0%;
+          }
+          body {
+              width: 80%;
+              margin-left: 20%;
+              overflow-y: scroll;
+              overflow-x: scroll;
+              overflow:overlay;
+              margin-right: 0px;
+              font-size: 13px;
+          }
+          .main {
+              width: 92%;
+              margin: auto;
+              
+              left:25%;
+              height:auto;
+          }
+          hr{
+              color:var(--textcolor);
+              border-color:var(--textcolor);
+  
+          }
+          .systemcontainer hr {
+              border-color: var(--textcolor);
+          }
+          .genbutton {
+              background: var(--btncolor);
+              padding:10px;
+              padding-right:15px;
+              padding-left:15px;
+              display: block;
+              margin: auto;
+              width:80%;
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 1.25em;
+              color: var(--textcolor);
+              border: 0px;
+              border-radius: var(--borderradiusdf);
+              cursor: pointer;
+              transition: 0.15s;
+              height: auto;
+              
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolorb);
+              text-wrap:nowrap
+          }
+          .genbutton3 {
+              background: var(--insetcolor);
+              padding:10px;
+              padding-right:15px;
+              padding-left:15px;
+              display: block;
+              margin: auto;
+              width:80%;
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 1.25em;
+              color: var(--textcolor);
+              border: 0px;
+              border-color:white;
+              border-radius: var(--borderradiusdf);
+              cursor: text;
+              transition: 0.15s;
+              height: auto;
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolorb);
+          }
+          .genbutton:hover {
+              background: var(--btncolorhover);
+              font-size: 1.3em;
+  
+          }
+          .genbutton:active {
+              background: var(--btncolorpressed);
+              font-size: 1.2em;
+          }
+          input::file-selector-button {
+              background: var(--btncolor);
+              padding:10px;
+              padding-right:15px;
+              padding-left:15px;
+              display: block;
+              margin: auto;
+              width:80%;
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 1.25em;
+              color: var(--textcolor);
+              border: 0px;
+              border-radius: var(--borderradiusdf);
+              cursor: pointer;
+              transition: 0.15s;
+              height: 80px;
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolorb);
+          }
+          input::file-selector-button:hover {
+              background: var(--btncolorhover);
+              font-size: 1.3em;
+  
+          }
+          input::file-selector-button:active {
+              background: var(--btncolorpressed);
+              font-size: 1.2em;
+          }
+          .genbutton2 {
+              background: var(--btncolor);
+              padding:30px;
+              padding-right:0px;
+              padding-left:0px;
+              display: block;
+              margin: auto;
+              width:80%;
+              height: 150px;
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 2em;
+              color: var(--textcolor);
+              border: 0px;
+              border-radius: var(--borderradiusdf);
+              cursor: pointer;
+              transition: 0.15s;
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolorb);
+              border-color:white;
+          }
+          .genbutton2:hover {
+              background: var(--btncolorhover);
+              
+              font-size: 2.1em;
+          }
+          .genbutton2:active {
+              background: var(--btncolorpressed);
+              font-size: 1.9em;
+          }
+          .pagebutton {
+              background: var(--btncolor);
+              padding:0px;
+              display: inline;
+              width:40px;
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 1.25em;
+              color: var(--textcolor);
+              border: 0px;
+              border-radius: var(--borderradiusdf);
+              cursor: pointer;
+              transition: 0.15s;
+              height: 40px;
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolorb);
+          }
+          .titleimg{
+              margin: 0 auto;
+              width: 80%;
+              display:block;
+          }
+          .infocontainer{
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              background: rgba(0,0,0,0);
+              padding: 15px;
+              width: 80%;
+              margin: auto;
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+          }
+          .system{
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              overflow-y:scroll; 
+              overflow-x:hidden;
+              height:80vh; 
+              background: var(--insetcolor);
+              padding: 1vw;
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+              position: relative;
+                  }
+          .system2{
+              
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              
+              overflow:hidden;
+              
+              background: var(--insetcolor2);
+              margin: 1vw;
+              padding: 1vw;
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+             position:relative;
+             resize:vertical;
+              
+          }
+          .systemsub {
+              position:absolute;
+              right:0px;
+              left:13vw;
+              top: 0px;
+              margin-left: auto;
+              scroll-behavior:auto;
+              overflow-y:scroll;
+              height:100%;
+              min-height:auto;
+          }
+          .systemsub .systemsub {
+              position:absolute;
+              right:0px;
+              left:15vw;
+              top: 0px;
+              margin-left: auto;
+              scroll-behavior:auto;
+              overflow-y:scroll;
+              height:100%;
+          }
+          .system2 .system2{
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              
+              overflow-x:hidden;
+              
+              background: var(--insetcolor3);
+              padding: 15px;
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+              min-height:38vh;
+          }
+          .nosat {
+              height: 100%;
+              resize:none;
+          }
+          .system2 .system2 .system2{
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              
+              overflow-x:hidden;
+              
+              background: var(--insetcolor4);
+              padding: 15px;
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+              min-height:36vh;
+          }
+          .systemsub .systemStarTall{
+              min-height:80vh;
+          }
+          #csvout p {
+              font-family: monospace;
+              font-size: medium;
+          }
+          a{
+              color:rgb(0, 127, 255);
+          }
+          .systemcontainer{
+              height: auto;
+              background-color:rgb(0,0,0);
+              border-radius: var(--borderradiusdf);
+              transition: 0.15s;
+          }
+  
+          .systemcontainerinterior{
+              height: auto;
+              background-color:rgb(0,0,0);
+              border-radius: var(--borderradiusdf);
+              transition: 0.15s;
+          }
+          ::-webkit-scrollbar {
+              width: 8px;
+              min-width: 8px;
+  
+          }
+          ::-webkit-scrollbar-track {
+              background-color:var(--bgcolor)
+          }
+          ::-webkit-scrollbar-thumb {
+              background-color:var(--scrollcolor);
+              border-radius:var(--borderradiusdf);
+          }
+          .red {
+              color: #ff4500
+          }
+          .orange {
+              color: #ffa800
+          }
+          .yellow {
+              color: var(--yellow);
+          }
+          .darkgreen {
+              color: #00a468
+          }
+          .lightgreen {
+              color: var(--lightgreen)
+          }
+          .darkblue {
+              color: #235083
+          }
+          .blue {
+              color: #368fe9
+          }
+          .lightblue {
+              color: var(--cyan)
+          }
+          .darkpurple {
+              color: #811e9f
+          }
+          .purple {
+              color: #b34ac0
+          }
+          .pink {
+              color: #ff98a9
+          }
+          .brown {
+              color: #9c6927
+          }
+          .black {
+              color: #000000
+          }
+          .darkgray {
+              color: #898d90
+          }
+          .lightgray {
+              color: #d3d7da
+          }
+          .white {
+              color: #ffffff
+          }
+          .typem {
+              color: #ffb34f
+          }
+          .typek {
+              color: var(--typek)
+          }
+          .typeg {
+              color: var(--typeg);
+          }
+          .typef {
+              color: var(--typef);
+          }
+          .typea {
+              color: var(--typea);
+          }
+          .typeb {
+              color: #4aa8ff
+          }
+          .typewd {
+              color: var(--lightgreen);
+          }
+          .water {
+              color: #727bff
+          }
+          .methanum {
+              color: #a0a0a0
+          }
+          .wsubglacial {
+              color: #92fbff
+          }
+          .ammonia {
+              color: #c9cf70
+          }
+          .nitrogen {
+              color: #7eff84
+          }
+          .rocky {
+              color: rgb(158, 131, 103)
+          }
+          .icy {
+              color: rgb(132, 171, 211)
+          }
+          .carbonaceous {
+              color: rgb(219, 109, 57)
+          }
+          .metallic {
+              color: rgb(159, 168, 168)
+          }
+          .icegiant {
+              color: rgb(87, 156, 224)
+          }
+          .gasgiant {
+              color: rgb(210,160,110)
+          }
+          .icon {
+              height: 1.5em;
+              padding: 0px;
+              vertical-align: middle;
+          }
+          .whiteicon {
+  
+              filter: var(--whiteiconfilter);
+          }
+          .icon2 {
+              height: 2em;
+              padding: 0px;
+              vertical-align: middle;
+          }
+          .navbar {
+            background-image: url("qet2.png");
+            background-attachment:fixed;
+            background-size:cover;
+            padding:0px;
+            box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+            filter: drop-shadow(0px 0px 16px black);
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 20%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+      .systemdisplay {
+          width: 100%;
+          border-radius: 16px;
+          background:black;
+          background-size: 2048px;
+          position:relative;
+          display:block;            
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+      }
+      .story {
+        width: 65%;
+        margin: auto;
+      }
+      .planetdisplay {
+          width: 256px;
+          height: 256px;
+          border-radius: 16px;
+          position:relative;
+          
+          background-position: center;
+          background-repeat: no-repeat;
+  
+      }
+      .planetbg {
+          background:black;
+      }
+      .planetoverlay {
+          width: 256px;
+          height: 256px;
+          border-radius: 16px;
+          
+          top:0%;
+          left:0%;
+          background-position: center;
+          background-repeat: no-repeat;
+          position: absolute;
+  
+      }
+      .planetscan {
+          font-family: 'Consolas', 'Courier New', Courier, monospace;
+          border-radius: var(--borderradiusdf);
+              box-shadow: inset 8px 8px 16px  var(--innershadowcolor);
+              background: var(--bgcolor);
+              padding: 30px;
+      }
+      .planetscan p {
+          font-family: 'Consolas', 'Courier New', Courier, monospace;
+          
+      }
+      .systemMain {
+          width: 13vw;
+      }
+      .system2 .systemMain {
+          width: 15vw;
+      }
+      .switch {
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  #jsonarea {
+      font-family: monospace;
+  }
+  
+  .planetdesc {
+      box-shadow: none !important;
+      min-height: auto !important;
+  }
+  
+  
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  } 
+  
+  @media (max-width: 1728px) {
+  
+  body {
+  
+    font-size:11px;
+  
+  }
+  
+  }
+  @media (max-width: 1280px) {
+  
+  body {
+  
+    font-size: 9px;
+  
+  }
+  
+  }
+  @media (max-width: 720px) {
+  
+  body {
+  
+    font-size: 7px;
+  
+  }
+  
+  }
+          
+      </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <img class="titleimg" src="logo.png">
+        <p class="patchnotes"><br><a href="#e0"> Preface</a></p>   
+<p class="patchnotes"><br><a href="#e1">Entry 1: From <em>Once Upon A Time</em></a></p>
+<p class="patchnotes"><br><a href="#e2">Entry 2: From <em>Emperors of Rahazun</em></a></p>
+<p class="patchnotes"><br><a href="#e3">Entry 3: From <em>History of Yarvant</em></a></p>
+<p class="patchnotes"><br><a href="#e4">Entry 4: From <em>Information regarding Yahir for the Latest Generation</em></a></p>
+<p class="patchnotes"><br><a href="#e5">Entry 5: From <em>A Specification on the Properties of Yahir, and on the Historical Concepts of Hope and Determination</em></a></p>
+<p class="patchnotes"><br><a href="#e6">Entry 6: From <em>The Worldbook</em></a></p>
+<p class="patchnotes"><br><a href="#e7">Entry 7: From <em>Common Knowledge Curriculum - Year 2</em></a></p>
+<p class="patchnotes"><br><a href="#e8">Entry 8: From <em>The Panavana - Chronicles of a People</em></a></p>
+<p class="patchnotes"><br><a href="#e9">Entry 9: From <em>The Pantheon of Ester</em></a></p>
+<p class="patchnotes"><br><a href="#e10">Entry 10: From <em>Arvent's Blessing</em></a></p>
+<p class="patchnotes"><br><a href="#e11">Entry 11: From <em>On the Rahazuna Educational System</em></a></p>
+<p class="patchnotes"><br><a href="#e12">Entry 12: From <em>U.M. Demographic Statistics, 913 Edition</em></a></p>
+<p class="patchnotes"><br><a href="#e13">Entry 13: From <em>On Servitude</em></a></p>
+<p class="patchnotes"><br><a href="#e14">Entry 14: From <em>An Exploration of the Mechanics of Yahiric Manifestation</em></a></p>
+<p class="patchnotes"><br><a href="#e15">Entry 15: From <em>Profile: Arfia-hin</em></a></p>
+<p class="patchnotes"><br><a href="#e16">Entry 16: From <em>Society Curriculum - Year 6</em></a></p><p></p>
+<p class="patchnotes"><br><a href="#e17">Entry 17: From <em>Common Knowledge Curriculum - Year 4</em></a></p>
+<p class="patchnotes"><br><a href="#e18">Entry 18: From <em>Yarzon-Watershed</em></a></p><p></p>
+<p class="patchnotes"><br><a href="#e19">Entry 19: From <em>Guide to Common Knowledge - Preface</em></a></p> 
+<hr>
+<h3 class="patchnotes" id="vg">Vector's Socials</h3>
+<p class="patchnotes"><br><a href="https://www.youtube.com/@VectorJW9260">Vector's Youtube Channel</a></p> 
+<p class="patchnotes"><br><a href="https://discord.gg/YAeTuenxqA">Vector's Discord Server</a></p> 
+
+<br> <br> <br> <br>
+    </div> 
+
+<div class="main">
+    <div class="story">
+    <h1 id="e0" class="patchnotes"> Welcome to Undersided!</h1>
+  <p class="patchnotes">"Undersided" is a project by <a href="#vg">Vector Graphics</a> detailing the world of ʏᴏɴᴀ. The project is an expansion of the setting of <em>Undertale</em> by Toby Fox, and from the perspective of that community it can be seen as an AU. The official media for Undersided largely consists of excerpts from in-universe documents detailing the phenomena, events, and people that are important to the history of a region known as "Liruzon", where Undertale's story takes place.</p>
+  <h3 class="patchnotes"> Conventions</h3>
+  <p class="patchnotes">The documents here are translated from the original language they are written in (often modern Rahazuna or Nideri) into English. To do this faithfully, several conventions have had to be chosen.</p>
+  <div class="list">
+  <ul class="centerlist">
+    <li><p>The term "monster" is not used for the magic-based race that inhabits the world alongside humans. Instead, the term "yaref" [plural: yarov] from the original language is loaned. This is done to avoid ambiguity with other senses of "monster". Similarly with "magic" being replaced with "yahir".</p></li>
+    <li><p>Other potentially ambiguous terminology, such as "DETERMINATION", "SOUL", "SAVE", and others, is spelled in ALL CAPS.</p></li>
+    <li><p>Units, except units of time, are presented in familiar terms to Earth readers, such as meters and kilograms. Units of time smaller than a day are in the familiar 24:60:60 format (as that is what is used in-universe), but these are slightly longer than their Earth counterparts. A year of 301 Yona days is split into eight months alternating 37 and 38 days, and an extra day at the end of the year called <em>Arvendanula</em>, which serves as the winter holiday. However, the lifespans of the in-universe humans turn out to be approximately 80 of these years, which is about 70 of our own.</p></li>
+    <li><p>Place names are not, in general, translated, though there may be exceptions.</p></li>
+    <li><p>Many names provided by Toby Fox only work in English (due to puns, Western naming conventions, or other such things), and are posited to be localized versions of in-universe names, which are used here. For example, instead of "Asgore", "Ruaeli" is used; instead of "Frisk", "Ana-hin" is used; instead of "Sans", "Arfia" is used. Character designs are posited to be similarly localized (in regards to clothing customs, connotations, pop culture, etc), though places where Undertale explicitly deviates from our world are kept.</p></li>
+</ul>
+</div>
+<h1 id="e1">From <em>Once Upon A Time</em> </h1>
+    <p dir="ltr">
+        <span>A long time ago, the world was ruled by two races: HUMANS and MONSTERS (who may alternatively and preferably be called "Yarov"). In Liruzon, they used to live in harmony with one another. However, soon, a war broke out between the two races. We don't remember the exact cause. Humans are bad at remembering tales like these. Combine that with the relative scarcity of information on Siegetev's regime. And, well, Yarzon... they've kept quiet about it for long enough. But what we do know is that eventually, the yarov of Liruzon, with nowhere else left to go (after the Grand Evacuation, which led to the formation of Yarzon, was stopped by Siegetev), were forced to retreat to the cursed mountain of Mt. Ebott. It was Rahazunic Archmage Altria and Prince Bennitri who proved crucial to saving the yarov from an even crueler fate they might have had; as they were the ones who proposed the creation of a barrier between the surface and underground worlds: Siegetev's original plan was, in fact, to purge all traces of Yarvant from Liruzon entirely, and then go after the Far North.</span>
+      </p>
+      
+      <p dir="ltr">
+        <span>The barrier ended up being created, sparing the mere thousands of yarov that remained in Liruzon from the fate that had befallen many of their kin, but trapping them in a completely different fate.</span>
+      </p>
+      
+      <p dir="ltr">
+        <span>It has been 251 years since these events. While Siegetev's regime was short-lived, in the time afterwards, Rahazun entered a period of decadence, and the later kings and queens never bothered to fix Siegetev's mistakes, only erasing much of his reign fron history. Many refused to send anyone to Ebott at all, as the legend of the mountain's curse stated that people who climbed the mountain would never return. One might have thought it'd be Emperor Sarnelkh who would finally rectify this, had it not been for a certain incident about fifty years ago...</span>
+      </p>
+      
+      <p dir="ltr">
+        <span>Late in 863 SR, a child, Khara, disappeared from the village of Ri-Ebott, close to the mountain. It was suspected that they climbed the mountain itself in an attempt to disappear. These suspicions were confirmed later, when an unsef emerged from the western entrance of the Ebott cave system and traveled to Ri-Ebott, carrying Khara's dead body. The conclusion was obvious: the yaref, Ondeli, had killed Khara, and taken their SOUL. The people of Ri-Ebott reacted with shock and rage, attacking Ondeli-Khara (Ondeli-Magzi). As with many unsov before and since, Ondeli-Khara was not in unison and refused to fight back, simply leaving the village, injured, and returning to the mountain. This started an anti-yaref sentiment that would persist in the Ri-Ebott jurisdiction, which included Ebott itself, to this day.</span>
+      </p>
+      
+      <p dir="ltr">
+        <span>This also started something else: two more children disappeared from the village the following year, and four more in the following five decades, not least sparked by curiosity regarding Khara's disappearance and the later appearance of Ondeli-Khara.</span>
+      </p>
+      <h1 id="e2">From <em>Emperors of Rahazun</em> </h1>
+    <p>
+        <span>Emperor Karol-Kalvi Foster VII was the first emperor of Rahazun after the overthrow of Siegetev Seransai following the war. Most of Karol-Kalvi's reign was spent cleaning up the mess that Siegetev left, but a lot of the history of Yarzon of the Great Watershed got swept up in this. It's not particularly like the following rulers were much better; Lekusa-Kalvi-hin basically did nothing as a ruler, and the issue of Yarzon was far in the past for the following rulers, who wanted to rid themselves of the issue. History recalls one particular instance where a statue of Tomi-Rugan located in Yarhe, originally made in 647 to commemorate Tomi-Rugan and symbolize unity between humans and yarov, was discarded in a pit at Mt. Ebott in 724 during the reign of Ana-Kalvi Foster. One of the people involved in the disposal of the statue, Maniri Lahok, ended up trapped in a chasm in Mt. Ebott due to the barrier; this was a sky-exposed passage largely separated from the main Underground cavern. Maniri died shortly after, and the SOUL was never recovered.</span>
+      </p>
+      <h1 id="e3">From <em>History of Yarvant</em> </h1>
+    <p>When we first were trapped in the Underground, we attempted to settle in the most apparently habitable places, among them Upper Waterfall near the surface, the Meadow, and the Snowdin Forest.</p>
+
+<p>In Upper Waterfall, we established Starlight City; in the depths of the Meadow where it transitioned from an open meadow proper to dense jungle, we established the Town of the Wild East, and in the Snowdin Forest, we established the Forest Outpost. For a time, we made the most of the Underground's environments and resources.</p>
+
+<p>That all changed in 61X. We had assumed Altria's deal had spared us from further human attacks, but in 61X, the most powerful of our kind sensed something disturbing. A human had entered the Underground, and we didn't know where. There was only one logical conclusion: the humans were planning incursions into the Underground to destroy what little we had left. Trapped behind the barrier and fearful of further human attacks, we retreated. Far, far into the earth we walked, until we reached the cavern's end. This was our new home, which we named.... "Home". (As great as our king is, he is pretty lousy at names.)<br />
+Home became the center of the yaref population, and although the other settlements remained, they were largely left to stand on their own.</p>
+
+<p>When we reached Home, we found another entrance to the cavern, though calling it an "entrance" is rather generous - it was a pit hundreds of meters deep (or, from our perspective, high), a drop that no human could, by any chance, survive; we hardly even acknowledged it was there.</p>
+
+<p>But as quick as this mysterious human appeared, it vanished, probably having died - yet when we searched the Underground for remains or a SOUL, no traces could be found. The only thing we found was a mysterious stone statue of Tomi-Rugan, probably from the old city outside the barrier - how it ended up here is a complete mystery - more recently, we have discovered that there is a hidden crack leading to the surface that was more than big enough for the statue to slide through, but that still leaves the question of "why" wide open. Perhaps humans were trying to erase all traces that we ever existed.</p>
+
+<p>It was not until several decades later in 116X that we, in fact, found the opening, and realized that that human's entry into the barrier was simply happenstance - however, both the body and the SOUL had long since decayed (even human SOULs slowly decay if not stored properly). This combined with further info on human culture led us to realize that following the war, humans in fact meant us no harm - in fact, there was a growing movement among the human population to actually free us from the Underground. As such, fearing the humans no longer, we moved out of our old city, Home. We braved  harsh cold, damp swampland, and searing heat - but it was actually a much slower process than what one might have thought - until we reached what we now call our capital. It was still the Starlight City to start off with, but over the next century, it and many other settlements would grow dramatically, and the Starlight City would eventually be renamed "New Home". (Again, our king is really bad at names...?) Additionally, the Steamworks was built near the Meadow to power such a massively expanded domain.</p>
+
+<h1 id="e4">From <em>Information regarding Yahir for the Latest Generation</em> </h1>
+    <p>A barrier (pg.146, Altria) is a field enclosing a region of space, which prevents beings with weak SOULs from exiting. Additional effects include:<br />
+        - While within the barrier, powerful beings can manipulate timelines in a manner similar to a video game save file (pg. 236, Alfizo)<br />
+        A barrier can only be destroyed by the equivalent power used to create it.<br />
+        According to Alfizo's studies, an average human would not be able to cross a barrier created by ~7 souls, but this is not supported by accounts by Kaizo, who claims to have crossed such a barrier alone while being weaker than the average human in terms of "DETERMINATION" and other metrics, though due to the "SAVE" phenomenon from before, this is unverifiable.</p>
+        
+        <p>Additionally, Kaizo claims that while within a barrier, the will to destroy, as characterized by Arfia and Alfizo's "LV" metric, has a much greater physical effect. Although this is also an unverified claim because of the "SAVE", it could explain the abnormal prominence of Khara's identity in Kaizo.</p>
+        
+        <p>----</p>
+        
+        <p>Citations: <br />
+        "On the Nature of the Barrier" by Senior Researcher Alfi Alfizo<br />
+        "Spells and Curses, Vol. 1" by Archmage Altria Timirazo</p>
+
+        <h1 id="e5">From <em>A Specification on the Properties of Yahir, and on the Historical Concepts of Hope and Determination</em> </h1>
+        <p>
+            <span>According to ancient Yarzona wisdom, humans and yarov possessed two complementary inherent qualities to their nature: "determination" in humans and  "hope" in yarov. While determination is roughly what you'd expect, 'hope' referred to a more general set of qualities including compassion, in an extreme extent. Both of these, when embodied in the same being to great extent, would unlock the potential for anything to be possible. Both qualities, according to the belief, were actually embodied in all beings, though in their opposite type to a comparatively very small extent. Notably, a term translating to "boss monster" was used to describe yarov who were seen as having a small amount of determination, but later shifted to refer to the set of yaref types which consistently exhibited this property. Due to their nature in this model, boss monsters were often chosen as leaders for the yaref realms.</span>
+          </p>
+          
+          <p>
+            <span>Like much conventional wisdom, it wasn't right, but not exactly wrong either. Based on the findings of Ketsukane in regards to SOUL manipulation, Alfizo et al. were able to trace the phenomenon of persistent SOULs, associated with humans and less strongly with boss monsters, to a measurable and alterable aspect of SOULs, which was labeled "determination".</span>
+          </p>
+          
+          <p>
+            <span>A long time before, hope was noted to be simply an exhibition of a more general phenomenon regarding yahir itself, and to not be a "real" metaphysical concept.</span>
+          </p>
+          
+          <p>
+            <span>A being with both determination and hope in large amounts was called an unsef. Despite the obsoletion of the 'hope' model (although the characteristic power of yarov is distinct, 'hope' as a quality is inaccurate), the term in more modern times (given the obsoletion of the 'hope' model) refers to a being with both yaref and human SOULs. Unsov are possible, but rare: either a yaref has to absorb a human SOUL, or a human has to absorb a rare kind of yaref SOUL. A third, more artificial method was discovered by Alfizo, involving the physical forcing of determination into a yaref's body, but this results in extremely unstable beings. (Note that a soulless being such as a yaref reincarnated using determination can absorb both kinds of souls.) While they are technically unsov by the traditional definition, their discovery and marked differences from conventional unsov has resulted in a more precise definition of an unsef as a being with both human and yaref SOULs.</span>
+          </p>
+          
+          <p>
+            <span>Both beings become conscious within the unsef, and this usually limits the unsef's power pretty heavily (as has happened with all unsov in history). A more  powerful unsef can suppress the motives of the other included beings, but that suppression can be easily foiled by a small amount of experience with something associated with the absorbed being's identity. This most famously happened with Ondeli, the prince of Ebott.</span>
+          </p>
+          
+          <p>
+            <span>However, an unsef with motives fully aligned would hold unfathomable power - reality and the world would bend to their will, and pretty much anything would be possible for the unsef. It is likely that the 'SAVE' phenomenon associated with the barrier is a low-level manifestation of this, as a human picks up the ambient yahir power associated with being within a barrier. While an unsef's main actor.is able to suppress other included beings, this often takes up to 6 or 7 human souls' worth of power, and if the other beings actively fight against the unsef, this suppression is broken. </span>
+          </p>
+          
+          <p>
+            <span>Unsov have existed prior to Ondeli-Magzi, and in fact their presence began ramping up rapidly from the early 600s, however they all were similarly mutually checked. It is the appearance of a moderately more powerful unsef, Tomi-Rugan, from 647 to 661 that ultimately led to the War of Seven Mages, where the unsef was taken as a threat, was defeated, and the remaining yarov were forced out of surface Liruzon. (It is, in fact, Tomi-Rugan, that was depicted in Waterfall.)</span>
+          </p>
+
+          <h1 id="e6">From <em>The Worldbook</em> </h1>
+          <p>
+              <strong>From "Khara":</strong>
+            </p>
+            
+            <p>
+              <span>It has been known since the beginning of Ana-hin's formal ambassadorship in 256X that the name Khara took while in the Underground was "Magzi"; this is because of the body-sharing of Ana-hin and Khara allowing the latter to interact in the world directly; the power by which this body-sharing was able to occur is unknown.</span>
+            </p>
+
+            <h1 id="e7">From <em>Common Knowledge Curriculum - Year 2</em> </h1>
+            <p>
+                <strong>From "Unit 3 - Months and Seasons":</strong>
+              </p>
+              
+              <p>There are 8 months in the year; here are their names and abbreviations:</p>
+              <div class="list">
+                <ul class="centerlist">
+                    <li><p style="text-align:left">Ilgimer (Ir) - midwinter</p></li>
+                    <li><p style="text-align:left">Minovi (Mo)</p></li>
+                    <li><p style="text-align:left">Minaha (Ma)</p></li>
+                    <li><p style="text-align:left">Mineki (Me)</p></li>
+                    <li><p style="text-align:left">Njuimer (Nr) - midsummer</p></li>
+                    <li><p style="text-align:left">Gazovi (Go)</p></li>
+                    <li><p style="text-align:left">Gazaha (Ga)</p></li>
+                    <li><p style="text-align:left">Gazeki (Ge)</p></li>
+                </ul>
+              </div>
+              
+              <p>The months alternate 37 and 38 days, and are close to (but not exactly) the lunar cycle of about 33 days. So, Ilgimer is 38 days long, then Minovi is 37 days, and so on. Not part of any month is Arvendanula, the day at the end of the year after Gazeki and before Ilgimer of the next year. In a leap year, this becomes 1 Arvendanula and 2 Arvendanula (the festivities are held on the 2nd day, with the first day being preparations similar to the role of 38 Gazeki in a normal year).</p>
+              
+              <p>The four seasons are caused by the tilt of Yona's axis relative to the orbital plane. As the planet orbits, which parts of the planet get more light changes. When a hemisphere is facing the Sun, it is summer in that hemisphere and winter in the other (which is facing away). In the northern hemisphere, the summer solstice occurs on 1 Njuimer, and the winter solstice occurs on Arvendanula (though the actual dates vary back and forth by about a day due to leap years and other factors). </p>
+              
+              <p>In between the solstices are the equinoxes, the spring equinox at 1 Minaha and the autumn equinox at 1 Gazaha, when neither hemisphere is pointed towards the Sun and so days and nights are of equal length.</p>
+
+              <h1 id="e8">From <em>The Panavana - Chronicles of a People</em> </h1>
+              <p>
+                  <span>The Panavana did not believe, as the Yekherabe or Ezov did, that creativity and inspiration came from within oneself. They treated the voices in their heads as higher beings, intimately connected with each one of them and calling out to them with inspiration. To the higher being, the human served as a way to transmit their ideas into the world - the presence of such a higher being (henceforth an "urbax") associated with a person is, to them, what defined consciousness. </span>
+                </p>
+                
+                <p>
+                  <span>Those with powerful imaginations, often to the point of delusion, were valued within their culture, as it implied the urbax's role was much more absolute in these people than in others. One particular individual of Halaj, Iradanet, was seen as having entirely been consumed by her urbax. Iradanet lived entirely in the mental space, only acting in the real world to (barely) maintain her body, and to speak to those who came to her. She rejected basically anything physical, except an amount of food and drink barely enough to keep her alive.</span>
+                </p>
+                
+                <p>
+                  <span>Over her life, she spent more and more time within her mind, and ultimately, she died at fifty, having gone back to sleep after someone's visit and simply... not waking up, but the people who went to her compiled her revelations into a work titled </span>
+                  <em>
+                    <span>The Revelations of Iradanet</span>
+                  </em>
+                  <span>. </span>
+                  <em>
+                    <span>Revelations</span>
+                  </em>
+                  <span> described a world brimming with a chaotic assortment of wildly different ideas, beings, and structures to anything familiar to a more grounded individual.</span>
+                </p>      
+                <p>
+                  <span>Now, it is important to note that to take as a conclusion that all Panavana wished to meet this ideal is to extraneously impose the notion of being "neurotypical" on the Panavic culture. Of course, people like Iradanet were spiritually significant, but more grounded individuals were necessary for keeping society running, and individuals of all different mindforms found their place in society - mindform was as much a suggestion of societal role as gender was, and a much more sensible one at that.</span>
+                </p>
+          
+                
+                <p>
+                  <span>The many Panavic realms founded in Old Liruzon by 790 BF (in a land they called "Hesan") included Halaj, Tatak, Herm, Heksi, and Rovana. Of these, the last would grow to be particularly dominant. Hesan was ultimately united under Rovana by 767 BF, and the people of Hesan began to invade the lands to the north, driving out the native Vanki. But from the Vanki, they took stories and legends, adapting them to fit what they believed. One of these was the story of Koratar, a child who became lost in the forest and was raised by animals. Eventually, when faced with a choice of whether to return to the human world, Koratar chose to stay in the wilderness as an adventurer.</span>
+                </p>
+                
+          
+                
+                <p>
+                  <span>Koratar's story came to serve as inspiration for those of the northern reaches of Hesan who were rejected by civilization - by 687 BF, they would form a new tribe, the Gordrivi (Koratar's people - the modern form of Koratar is </span>
+                  <em>
+                    <span>Goradar</span>
+                  </em>
+                  <span>), living in the forest away from the established Panavana domain. While the Gordrivi as a people were subsumed into later empires, some of their practices carried on, and a revitalization effort is currently underway.</span>
+                </p>
+                
+          
+                
+                <p>
+                  <span>Meanwhile, Hesan expanded throughout the South, conquering the cities of Natrin and Jovel, and settling Avenur by 630 BF. </span>
+                </p>
+                
+          
+                
+                <p>
+                  <span>Hesan was an elective monarchy, much like many of its Panavic successors. As an empire, Hesan had a central government that ruled over a number of semi-autonomous "counties", which is also a system that persists into the modern day in some form or another. Hesan referred to its own ruler as </span>
+                  <em>
+                    <span>nie </span>
+                  </em>
+                  <span>and the rulers of other countries (and of its counties) as </span>
+                  <em>
+                    <span>niki</span>
+                  </em>
+                  <span>. It is </span>
+                  <em>
+                    <span>niki </span>
+                  </em>
+                  <span>that is now the modern term for "king" or "queen", as few countries were recognized as true successors to the Hesanic empire.</span>
+                </p>
+                
+          
+                
+                <p>
+                  <span>In Hesan, and especially in the northern reaches, names were only given to legendary figures or otherwise posthumously; for the identification of individuals, simple descriptions of roles, relations, or characteristics were sufficient, which were often context-dependent and unable to formalize into a system of names consequently (except in the aforementioned case).  </span>
+                </p>
+              
+                <p>
+                  <span>By 479 BF, Hesan had entered its later years as an empire. This was the year a new king was chosen to rule the nation. He was thirty-five years old. At eighty-five (in 449), this king, now known as Kari, attempted to overrule the electoral council's decision so that his son would take the throne instead. This led to a great division in the country: the electorate and the appointed ruler fled to the north, while the south remained in the hands of a now hereditary regime under Kari's son. The rulers of the North were only identified as </span>
+                  <em>
+                    <span>niki</span>
+                  </em>
+                  <span> (a fact that has made tracking the dynastic history of the northern realm very challenging). We have determined that the founder and first ruler, "Niki-hin", ruled from 449 to ~400 BF.</span>
+                </p>
+          
+          
+                
+                <p>
+                  <span>The south began to formalize names at this point, especially for distinguished individuals (i.e. the king), so tracking the dynastic history is a little easier, though names at this point were essentially formalized descriptions. The name of the first king, Ardik, essentially meant either "mountain prince" (with "prince" being -ik, a contracted form of </span>
+                  <em>
+                    <span>niki</span>
+                  </em>
+                  <span>), or, according to recent reconstructions, was a northern insult meaning "little lazy one" (mainly because it is unclear how n- in niki would have been lost). We also know that this was the first of two leaders of the southern realm, with the second being called Sana. </span>
+                </p>
+                
+          
+                
+                <p>
+                  <span>The core Panavic region had also established an empire, Panavis, at this point, whose expansion began encroaching on Southern territory from 423 BF. The new queen Sana fought back, but this started a long war with Panavis which stretched on several decades. By 396 BF, most of the southern realm was overrun, and Sana had retreated to a small town to the west of the capital Vard. It is here where she was slain, and the war won by the forces of Panavis. Thus, the town in later times became known as Sana's Stand. Traditional knowledge holds that here she said [insert oddly poetic line], but records from the people accompanying her suggest that it was a simple expression of frustration or disappointment - essentially, "F*ck."</span>
+                  <span><br />
+                <br />
+                </span>
+                </p>
+                
+                <p>
+                  <span>It would not be long before the north, too, fell - strange hooded people from across the sea first arrived on the shores in 387 BF. They simply wished to engage in trade, but they did not seem to respect the inhabitants of the northern reaches as people, making no effort to understand the concepts we took for granted, and imposing their own customs upon us. But it came to a head in 247 BF when they attempted to directly impose their rule upon the northern reaches, which they had called </span>
+                  <em>
+                    <span>Myalvi</span>
+                  </em>
+                  <span> along with their primary settlement there, from which they drove out the original inhabitants. Their plans had been to establish their own "country" stretching from coast to coast, south to Rovana and north to Ester. With their superior technology, it took the forces of all of Liruzon combined to even attempt to drive them out, but ultimately the key factor in doing them in was their own instability, as growing discontent in the invading population led them to completely separate from whatever kingdom they originated from. Vilant's invasion had been halted, but at the cost of the northern realm of Hesan. While the southern territories would eventually gain independence, and, being under a Panavic rule, had been relatively unharmed, the north was forever scarred by the vilo, whose continuing presence on the continent, even if severely weakened, was terrifying to many. As a result, vilo have not been well-respected in Liruzon, though more recent attempts at resolving this have been fruitful.</span>
+                </p>
+
+                <h1 id="e9">From <em>The Pantheon of Ester</em> </h1>
+                <p>
+                    <span>Ramazir, or Ek-Ramazir, is the god of the night sky and the giver of wisdom in Estero-Korahai mythology. Ramazir's domain naturally extends to navigation for the maritime Monteraga people, as Monteraga sailors look to the stars for guidance when traveling the seas between Montera and Ezvelan. Like the gods of Ester in general, Ramazir is treated as an immaterial yet still anthropomorphic figure; his home is the heavens above the clouds.</span>
+                  </p>
+                  
+                  <p>
+                    <span>Ramazir is associated with the brightest star in the night sky, which is called the "Eye of Ramazir"; this star is actually the "quasar" black hole at the center of the galaxy.</span>
+                  </p>
+                  
+                  <p>
+                    <span>A supposed "individual" called "the Historian", the seemingly immortal founder of the University of Monselian, whose motive it is to preserve history and spread knowledge, works in service of Ramazir. Ramazir is the patron deity of Montera.</span>
+                  </p>
+                  
+                  
+                  <p>
+                    <span>The Ezov believe in life and death as a cycle (including reincarnation), governed by the twin gods Katharz and Jugdasi, who may also respectively be called Haidomanz and Kainosa. There is a realm which souls pass through on their way to re-enter the world; this realm is also associated with dreams, and in myths, Kainosa often appeared to people in dreams. Meanwhile, Haidomanz interacts in the waking world.</span>
+                  </p>
+                  
+                  
+                  <p>
+                    <span>Falaerin is the Mediator, carrying the concerns of the people to their gods, and likewise carrying the messages of the other gods to their followers. </span>
+                  </p>
+                  
+                  
+                  <p>
+                    <span>Arvent is a mythical figure embodying compassion and togetherness, and is the patron deity of Yarzon of Ezvelan. The festival Arvendanula, held on the winter solstice, is named after Arvent. Traditions include the exchange of gifts, family activities, singing songs, etc. Usually, it is the additional role of a chosen accomplished person in the community to distribute gifts to community members; this is done in Arvent's name. </span>
+                  </p>
+                  
+                  <p>
+                    <span>According to the legend, Arvent's home is a hidden "City of Lights" located at the North Pole. </span>
+                  </p>
+                  
+                  <p>
+                    <span>In some cultures, Arvendanula traditions have been augmented with cautionary tales, encouraging children to behave lest Arvent's fallen sibling Meren arrive and take them away.</span>
+                  </p>
+
+
+<h1 id="e10">From <em>Arvent's Blessing</em> </h1>
+<p>
+    <span>When those of Ramazir proposed the Great Evacuation, one would have been quick to perceive it as illogical and impractical. But we were desperate - searching for any way to save our people, and despite involving uprooting our entire kingdom and abandoning the Watershed, the Evacuation seemed to be our best option. (At this point, we did not yet know of Altria's deal.) Plus, we knew that the leaders of Montera were working behind the back of Ilant - in our favor - for the entire war up to this point, so it was only correct to go through with the plan.</span>
+</p>
+                    
+    <p>
+         <span>And what a plan it was. Montera suspended pretty much all normal government operation to support this. It was perhaps three hundred ships total, with thousands of monsters on board each, all sailing northwards across the great Sea of Montera to reach Ezvelan. The plan had been negotiated with Ester and with the original Yarzon there, and they were willing to accept us.</span>
+    </p>
+                    
+    <p>
+        <span>It took pretty much all the time we had left for us all to make it to the Far North, and by that point, those left of us in the Watershed had surrendered.</span>
+</p>
+
+
+<h1 id="e11">From <em>On the Rahazuna Educational System</em> </h1>
+<p>Schooling typically begins the first day (1 Ilgimer) of the calendar year after a child turns seven years old. The school year itself is split into four terms: winter*, spring*, summer*, and fall*. </p>
+
+<p>*Note that these do not comply with the common definitions of the seasons.</p>
+
+<p> </p>
+
+<p>Each term lasts for two months, less three weeks to allow for a 24-day break between terms (school days cancelled due to weather or other concerns may be compensated for here) (totalling 97 or 98 days throughout the year). This means that there are precisely 204 school days in a given year.</p>
+
+<p> </p>
+
+<p>A child graduates primary school after completing Year 8, usually at 14 or 15 years old, and then moves onto secondary education, which provides a more personalized approach to learning, allowing the child to receive certifications in a chosen field of study.</p>
+
+<p>Secondary education is technically optional, but the vast majority of people attend secondary school for either another 4 or 8 years following completing Year 8.</p>
+
+<p> </p>
+
+<p>At 24, an individual is considered an adult.</p>
+
+<p> </p>
+
+<p>In primary school, the school day lasts for five hours (12:30 to 5:30 PM), and there are thus five classes taken in any given term. </p>
+
+<p>In every two term period, a child should take:</p>
+<div class="list">
+<ul class="centerlist">
+<li><p>A physical activity class (P.E.)</p></li>
+
+<li><p>A "common knowledge" class (years 1-4) or a "society" class (years 5-8)</p></li>
+
+<li><p>A math class</p></li>
+
+<li><p>A reading/language class (years 1-4)</p></li>
+
+<li><p>Two "creative" classes (of some variety).</p></li>
+
+<li><p>A history class</p></li>
+
+<li><p>A class in a scientific field</p></li>
+
+<li><p>2-3 classes of the student's choice</p></li>
+</ul>
+</div>
+<h1 id="e12">From <em>U.M. Demographic Statistics, 913 Edition</em> </h1>
+<p>From "Adult Life Expectancy (Human) By Country":</p>
+
+<p>Ester: 47.6<br />
+Rahazun: 79.8<br />
+Tur-Myalvi: 82.3</p>
+<h1 id="e13">From <em>On Servitude</em> </h1>
+<p>
+    <span>In the society of Panavis, there have historically been two kinds of worker: compensated workers and servants. Compensated workers are hired into their positions and receive compensation for their work. Servants are several categories of workers (public servants and household servants) that are socially expected to work despite not being paid, and usually originate from various defined role categories considered best suited for their purpose. Public servants include farm workers, the military, and some other mass labor, as well as various categories of public utility positions (generally serving the state), while household servants work for a single person or a household. The kinds of servants are considered the lowest class in a vertical arrangement - this characterizes their lack of authority, but also position as the essential bedrock that ensures the stable functioning of society. Also, note that there is social mobility available, especially in more recent times.</span>
+  </p>
+  
+  <p>
+    <span>In recent times, there has been a massive push for equality. As of 913, servants still exist, but they often receive large amounts of state support, in order to provide the opportunity for them to live the life they want. This includes laws about treatment of servants,  state-backed financial support, and laws protecting workers in general. Public servants are still distinct from compensated workers (who work for a particular company or person, and are paid directly from there), but in most places in modern times, household servants have merged with compensated workers (in fact, the term "compensated worker" is now rather dated in most places) - Farnitan remains an exception. </span>
+  </p>
+<h1 id="e14">From <em>An Exploration of the Mechanics of Yahiric Manifestation</em> </h1>
+<p>
+    <span>...[Yarov] are manifestations of yahir (the part of the natural world relating to patterns and concepts) that are themselves not only sentient, but sapient. The yaref populations originate by the localized influence of human concepts, causing yarov to appear in the region (hence explaining their similarity to an idealized form of human sociality). This is a passive effect, as humans do not possess the capacity to directly induce yarov. But yarov themselves, being natively yahiric, </span>
+    <em>
+      <span>do</span>
+    </em>
+    <span> have this capability: in fact, this is the method by which yarov reproduce, often requiring more than one "parent" due to the joint effect of interacting yahiric expressions aiding massively in the generation of a new individual, which can essentially be described as the propagation of yahiric sapience. This also explains their general impressionability in some contexts to humans (in specific, when they are not opposed), and thus the large-scale borrowing of Rahazuna and Totijona cultural concepts throughout early history, and additionally, accounts seem to describe certain cases of friendly human social interaction as "an aura of peaceful DETERMINATION"...</span>
+  </p>
+<h1 id="e15">From <em>Profile: Arfia-hin</em> </h1>
+<p>Arfia-hin was the de-facto Royal Scientist between 234X and 246X, continuing Gaster's research into alternate timelines.<br />
+    Arfia-hin, a skeleton-like yaref, was born in 229X, ambiently manifesting in then-Royal-Scientist Maik-Mespir Gaster's lab. Gaster raised Arfia-hin after this point, and Arfia-hin quickly began to contribute to Gaster's research, befriending Alfi Alfizo who would later become the official Royal Scientist, and later on, another skeleton Kobzo-hin (who appeared shortly after Arfia-hin) and the human Okhelai would join the family group; Kobzo-hin was Arfia-hin's brother, or formally his BEST FRIEND.</p>
+    
+    <p>Given the unusual circumstances of Arfia-hin's manifestation, as well as his unusual "karma" ability and him and his brother's unusual physiology, he had generally assumed he was from some other reality himself, and had been unknowingly transported to the world he currently resided in without his original memories (he had chosen his name, "without", in reference to this).</p>
+    
+    <p>Late in Gaster's life, Gaster spent much of his time on studying alternate timelines and parallel worlds, which would ultimately lead to his disappearance along with Okhelai's death in 234X, at which point Arfia-hin and Dr. Alfizo continued Gaster's research. Their reports showed timelines jumping left and right, stopping and starting. Eventually, the models' predictions ended, revealing that an urbax at some point would have the ability to control timelines. Alfizo began to shift focus to SOUL power when she got unexpectedly appointed as Royal Scientist following the original abolition of the position.</p>
+    
+    <p>While he doubted his original theory about his origin by this point (partially due to the emergence of a large population of skeletons in the Underground in the intervening time) he had regardless incorporated it into his personal narrative as a revelation, and as such he attempted to continue work on a machine Gaster had designed but never finished, intended to contact other universes. However, the design was fundamentally flawed and never ended up working, so he eventually gave up.</p>
+    
+    <p>After this, Arfia-hin took two jobs: one as a sentry for the Royal Guard (along the same path as his BEST FRIEND/brother Kobzo-hin, who wished to become a Royal Guard member himself), and another as a performer at the MTT Resort.</p>
+    
+    <p>Arfia was one of the people who befriended the human Ana-hin and as a result played a key role in the breaking of the barrier in 251X. Currently as of 258X, Arfia works with human scientific organizations which share an interest in the nature of reality itself, and remains friends with Ana-hin.</p>
+    
+    <p>According to Khara, Arfia-hin is "extremely difficult". This is difficult to understand, though it is likely to do with a general period of hostile revelation to Ana-hin throughout and shortly after their time in the Underground.</p>
+<h1 id="e16">From <em>Society Curriculum - Year 6</em> </h1>
+<p>
+    <span>The gold piece (G) is the common currency of Liruzon, which as of 915 is currently roughly valued at 0.27 Ezvelan dollars or 0.11 Tur-Myalvi shillings, such that a gram of gold costs 4,000 G (until 913, the realm of Yarzon-Ebott used a different gold piece which was valued at about half that amount); for more common-place things, a loaf of bread is approximately 20 G, a cup of tea is approximately 30 G, and a night in a hotel room is approximately 100 G.</span>
+  </p>
+  
+
+  
+  <p>
+    <span>The history of the gold piece began with the standardization of currency by the empire of Niderazon in 31 SR. Prior to this, the predecessor to the gold piece was actual golden coins, which were, as ten grams of gold, roughly 40,000 modern G, and thus only used for large purchases; the use of gold in this manner predated metallurgy.</span>
+  </p>
+  
+
+  
+  <p>
+    <span>The metal gold was associated with the sun (as copper was associated with the moon; see this excerpt from Liudai's work </span>
+    <em>
+      <span>On The Sun, Moon, Planets, and Stars</span>
+    </em>
+    <span>:)</span>
+  </p><div class="infocontainer">
+  
+
+  
+  <p>
+      <span>First, by brightness, are the Moon and the Sun, the Copper and the Golden. Then, the four planets, the Wanderers of the night sky: Haida (the morning and evening star) which may also be called Zia, and also Falari, Yaseo, and Andrae (note Andrae's blue color). Then there is the eye of Ramazir, visible in summer nights (it is located in the Silver Path area), and then the lesser stars (the brightest of which being Lohuda, Lohamari, and the stars of the Antadel-Karan visible in the fall).</span>
+    </p>
+  
+</div>
+  
+  <p>
+    <span> The first gold coins minted by Niderazon retained the value of the earlier gold coins, but were much larger for convenience and were thus made of cheaper metals plated with gold. In the later Niderazon era as of the 3rd century, this was changed to brass as the tie to gold was changed from the direct composition of the coin to a formal valuing of the currency, allowing for the smaller coins to be valued at consistent fractions of the gold piece, most notably the penny at 1/120 G.</span>
+  </p>
+  
+
+  
+  <p>
+    <span>During Niderazon's decline in the 6th century, the "true gold" (</span>
+    <em>
+      <span>sonfodrund</span>
+    </em>
+    <span>) money was changed to "king's gold" (</span>
+    <em>
+      <span>niegadrund</span>
+    </em>
+    <span>), now being given value by the state as opposed to deriving its value from some amount of precious metal; as a result, its value declined rapidly over the following decades, before stabilizing in many economies at roughly 25 modern gold pieces (after Niderazon's fall, and thus as the </span>
+    <em>
+      <span>nikigadrund </span>
+    </em>
+    <span>or "prince's gold") and slowly declining from there. </span>
+  </p>
+  
+  <p><br />
+  <span>In recent times, the penny was retired, and the gold piece was standardized by the major economic center Farnitan (resulting in the "common gold" or </span>
+    <em>
+      <span>ginzonindrund</span>
+    </em>
+    <span>). The War of Seven Mages also caused a separation between Yarzon-Ebott's economy and the general economy of the wider world, causing the value of its gold piece to drop further. However, after 913, Yarzon-Ebott adopted the standard gold piece. In Yarzon-Ezvelan, after 662 SR and the Great Evacuation, the gold piece was adopted as legal tender despite the proximity to and interaction with Ezvanta economies which use the dollar.</span>
+  </p>
+<h1 id="e17">From <em>Common Knowledge Curriculum - Year 4</em> </h1>
+<p>Many things in the world follow hard and fast rules, mostly in the realm of the very small and very large. The moon always goes around the earth, which always goes around the sun. Gravity pulls a person down to the ground, and white light can be split into a rainbow of colors.</p>
+
+
+
+<p>But there are many things in the world that don't follow hard rules, but are more... general. These are the things we notice in our day to day lives. Animals respond to eclipses by preparing for nighttime. Leaves turn red in the autumn (or perhaps leaves turning red defines autumn), and snow falls in the winter (or perhaps snowfall defines winter). One might break their legs when landing from a bad fall, and a rainbow might be seen as beautiful. A cat or dog might be excited for its owner to come home, and a child might not eat their vegetables. Societies engage in alliance and warfare. People come up with ideas, and express them.</p>
+
+
+
+<p>These things do not follow rules, but rather patterns and associations. And that is the essence of <em> yahir </em> . Note that many of these are the result of thought and communication (in fact, human interaction is one of the largest contributors by far to the ambient yahiric flux). Yahir is the manifestation of things based on what patterns they follow. What they're associated with. And thus it only makes sense for some of these manifestations to themselves be like humans in some regards, or like the beings humans come up with (hence a common association with " <em> monsters </em>") - thinking, talking, believing, creating, caring for one another. (Note that these are not direct manifestations of human concepts, as that is an idea unique to the Ilgiric context which is unsuitable to explain yarov. Instead, think of it like waves in a pond, making interference patterns that are completely different to their original sources.)</p>
+
+
+
+<p>A manifestation of that kind is a <em> yaref, </em>and its essence can be thought of as projecting from a "SOUL" contained within it, a reflection of sapience and social morality in both humans and yarov. Yarov appear as many different kinds of things, ranging from objects, to animals, to appearances that are rather similar to humans, and in general, yarov may be sorted into several dozen "types" per population. Yarov are generally much weaker physically than humans, and are often rather impressionable to humans and other things around them, taking after social environments they interact with. On the other side, if attacked with the intent to kill, they are severely injured and often die on the spot. When a yaref dies, the SOUL and its projection is lost and the remaining ambient physical matter in the form disperses into the world (although the physical matter within a yaref contains a "signature" of the yaref's identity, much as that comprising a human does). Meanwhile, human SOULs are disjoint from their physicality, and enter an inactive state upon death before gradually decaying over time, unless "absorbed" by a yaref, an uncommon but notable practice in societies where humans and yarov regularly interact.</p>
+
+
+
+<p>This re-ignites the human's consciousness within the same body as the yaref, and the two together compose an unsef, an extremely powerful being that, at its strongest, could bend the world to its will (though in practice, all unsov are significantly limited in their power by the presence of two minds within them). An unsef is conventionally referred to by the hyphenated names of the monster and human(s).</p>
+
+
+
+<p>This distinction - this <em> DETERMINATION </em>- that separates a human's SOUL from its body, when forced into monsters, causes them to, upon "death", shed the physical matter giving their forms coherence, reverting to vague, shifting, and illusory states formed by pure yahir. </p>
+
+
+
+<p>Yahir is also used to influence other aspects of the way people live - yarov sustain their energy by eating yahiric food, which can also sustain humans, though to an extent unsuitable for being a sole source of sustenance (though note the exceptional case of the Yahiraban), and yahir can be used to harm and heal. </p>
+
+
+<p>Because of the way yarov originate, and them being very naturally proficient in manipulating yahir directly, yarov can actually create new yaref individuals, and thus they can propagate their populations and act as a form of "life".</p>
+<h1 id="e18">From <em>Yarzon-Watershed</em> </h1>
+<p>
+    <span>Many of the ways humans relate to "nature" relate to the nature and behavior of yarov. Especially in Panavic culture, the first full-scale cases where humans interacted with yarov as people (as opposed to phenomena, and excluding small-scale ambient manifestations) come from the lingering populations brought about by the practices of the Vanki.</span>
+  </p>
+  
+  <p><br />
+  <span>These manifested at first the nation of </span>
+    <em>
+      <span>A-Yahiraveli-Fadhmar </span>
+    </em>
+    <span>(in modern times </span>
+    <em>
+      <span>A-Fadami</span>
+    </em>
+    <span>), which eventually spread out to the numerous realms of Yarvant, as far north as </span>
+    <em>
+      <span>A-Yahiraveli-Devarak</span>
+    </em>
+    <span> (which we now simply call Yarzon or Yarzon-Ezvelan) and as far west as </span>
+    <em>
+      <span>A-Yahiraveli-Lundroz</span>
+    </em>
+    <span> (which is often rendered in modern Liruzona as "Yarzon of the Watershed"). Lundroz was the main group to interact with the Panavana. The legendary rulers Aratikent of Lundroz and Etevni of Hesan promised that they together (and thus humans and yarov together) would rule over the world, and for a time after Etevni's death, Unsef Etevni-Aratikent would rule over both kingdoms until Aratikent's death and the succession of Etevni by Nienon (and Aratikent by Porakate). Their alliance, while it only formally lasted as long as the Empire of Hesan, would continue to recur in cultural interactions up until it was shattered by the War of Seven Mages.</span>
+  </p>
+<h1 id="e19">From <em>Guide to Common Knowledge - Preface</em> </h1>
+<p>
+    <span>The Guide to Common Knowledge was compiled in 721 by Jezen Dekirzo, one of the major contributors to the idea of what we now call primary education in Liruzon, after he noticed that his child, Ravi Jezenzo, was consistently having to have basic aspects of the world and the surrounding societal workings explained to them. While this was expected for the given mindform (a literalist perceptually proficient branch), Jezen wanted a better solution to handle that case more effectively, and so he spent many years studying the kinds of things people end up having to teach their children, observing the world from the perspective of a child who is unfamiliar with its workings, and making use of comparisons to the radically different nearby culture of Myalvi, in order to compile the first edition of the Guide to Common Knowledge, which was the basis for the very first primary curriculum. It has been revised over the years as both our understanding of the world and our culture evolved, and the modern "Common Knowledge" course found in every primary school is ultimately based on the original Guide. </span>
+  </p>
+</div>
+</div>
+
+<script>
+</script>
+
+</body>
+</html>
