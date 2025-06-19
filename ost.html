@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="description" content="Webpage description goes here" />
+  <meta charset="utf-8">
+  <title>Undersided</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Metrophobic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <style crossorigin="anonymous">
+    :root {
+      --textcolor: rgb(255,255,255);
+              --textcolorb: rgb(255,255, 255);        
+              --bgcolor: rgba(0, 0, 19,0);
+              --btncolorpressed: rgb(0, 5, 48);
+              --btncolor: rgb(10, 0, 100);
+              --btncolorhover: rgb(40, 2, 255);
+              --scrollcolor: rgba(255,255,255,0.1);
+              --insetcolor:rgb(0, 12, 58);
+              --insetcolor2:rgb(0, 8, 41);
+              --insetcolor3:rgb(0, 5, 26);
+              --insetcolor4:rgb(0, 0, 0);
+              --typeg:rgb(255,255,255);
+              --typef:#c0e8ff;
+              --typek:#fff0c1;
+              --yellow: #ffd636;
+              --cyan: #51e9f4;
+              --lightgreen: #7fed56;
+              --typea: #89d4ff;
+              --innershadowcolor: #4477ff79;
+              --innershadowcolorb: #4477ff79;
+              --borderradiusdf: 50px;
+              --whiteiconfilter: none;
+              --font: Metrophobic, sans-serif;
+              --hfont: Metrophobic, sans-serif;
+              /**--textcolor: rgb(255,255,255);
+              --textcolorb: rgb(255,255,255);    
+              --bgcolor: rgb(16,16,16);
+              --btncolorpressed: rgb(48,48,48);
+              --btncolor: rgb(64,64,64);
+              --btncolorhover: rgb(96,96,96);
+              --scrollcolor: rgb(96,96,96);
+              --insetcolor:rgb(32,32,32);
+              --typeg:rgb(255,255,255);
+              --typef:#c0e8ff;
+              --typek:#fff0c1;
+              --yellow: #ffd636;
+              --cyan: #51e9f4;
+              --lightgreen: #7fed56;
+              --typea: #89d4ff;
+              --innershadowcolor: #0000004F;
+              --innershadowcolorb: #0000001F;
+              --borderradiusdf: 15px;
+              --whiteiconfilter: none;
+              --font: Metrophobic, sans-serif;
+              --hfont: Eras BQ, sans-serif;**/
+  
+          }
+          [data-theme="light"] {
+              --textcolor: rgb(0,0,0);
+              --textcolorb: rgb(0,0,0);    
+              --bgcolor: rgb(250,250,250);
+              --btncolorpressed: rgb(160,160,160);
+              --btncolor: rgb(192,192,192);
+              --btncolorhover: rgb(240,240,240);
+              --scrollcolor: rgb(158, 158, 158);
+              --insetcolor:rgb(240,240,240);
+              --typek:#beab71;
+              --typeg:rgb(140,140,140);
+              --typef:rgb(140,150,160);
+              --typea: #72aed1;
+              --yellow: #b89b29;
+              --cyan: #22bac5;
+              --lightgreen: #53d822;
+              --innershadowcolor: #0000004F;
+              --innershadowcolorb: #0000001F;
+              --borderradiusdf: 15px;
+              --whiteiconfilter: brightness(0);
+              --font: Metrophobic, sans-serif;
+              --hfont: Eras BQ, sans-serif;
+          }
+          [data-theme="green"] {
+              --textcolor: rgb(255, 255, 255);
+              --textcolorb: rgb(255,255,255);    
+              --bgcolor: rgb(0, 0, 0);
+              --btncolorpressed: rgb(0, 59, 3);
+              --btncolor: rgb(0, 83, 4);
+              --btncolorhover: rgb(0, 104, 5);
+              --scrollcolor: rgb(0, 128, 11);
+              --insetcolor:rgb(0, 26, 4);
+              --typeg:rgb(255,255,255);
+              --typef:#c0e8ff;
+              --typek:#fff0c1;
+              --yellow: #ffd636;
+              --cyan: #51e9f4;
+              --lightgreen: #7fed56;
+              --typea: #89d4ff;
+              --innershadowcolor: #FFFFFF00;
+              --innershadowcolorb: #FFFFFF00;
+              --borderradiusdf: 0px;
+              --whiteiconfilter: none;
+              --font: monospace;
+              --hfont: Orbitron, sans-serif;
+          }
+          [data-theme="red"] {
+              --textcolor: rgb(255,255,255);
+              --textcolorb: rgb(255,255,255);    
+              --bgcolor: rgb(15, 0, 0);
+              --btncolorpressed: rgb(53, 0, 0);
+              --btncolor: rgb(66, 0, 0);
+              --btncolorhover: rgb(95, 0, 0);
+              --scrollcolor: rgb(99, 0, 0);
+              --insetcolor:rgb(41, 0, 0);
+              --typeg:rgb(255,255,255);
+              --typef:#c0e8ff;
+              --typek:#fff0c1;
+              --yellow: #ffd636;
+              --cyan: #51e9f4;
+              --lightgreen: #7fed56;
+              --typea: #89d4ff;
+              --innershadowcolor: #0000004F;
+              --innershadowcolorb: #0000001F;
+              --borderradiusdf: 15px;
+              --whiteiconfilter: none;
+              --font: Metrophobic, sans-serif;
+              --hfont: Eras BQ, sans-serif;
+  
+          }
+          [data-theme="2048"] {
+              --textcolor: #faf8ef;
+              --textcolorb: #776e65;
+              --bgcolor: #faf8ef;
+              --btncolorpressed: #8f7a66;
+              --btncolor: #8f7a66;
+              --btncolorhover: #8f7a66;
+              --scrollcolor: rgb(158, 158, 158);
+              --insetcolor:#eee1c9;
+              --typek:#beab71;
+              --typeg:rgb(140,140,140);
+              --typef:rgb(140,150,160);
+              --typea: #72aed1;
+              --yellow: #b89b29;
+              --cyan: #22bac5;
+              --lightgreen: #53d822;
+              --innershadowcolor: #FFFFFF00;
+              --innershadowcolorb: #FFFFFF00;
+              --borderradiusdf: 5px;
+              --whiteiconfilter: brightness(0);
+              --font: sans-serif;
+              --hfont: sans-serif;
+          }
+          [data-theme="midnight"] {
+              --textcolor: #ffffff;
+              --textcolorb: #ffffff;
+              --bgcolor: #000000;
+              --btncolorpressed: #000000;
+              --btncolor: #000000;
+              --btncolorhover: #000000;
+              --scrollcolor: rgb(35, 0, 58);
+              --insetcolor:#000000;
+              --typek:#beab71;
+              --typeg:rgb(140,140,140);
+              --typef:rgb(140,150,160);
+              --typea: #72aed1;
+              --yellow: #b89b29;
+              --cyan: #22bac5;
+              --lightgreen: #53d822;
+              --innershadowcolor: #FFFFFF00;
+              --innershadowcolorb: #FFFFFF00;
+              --borderradiusdf: 5px;
+              --whiteiconfilter: none;
+              --font: Metrophobic, sans-serif;
+              --hfont: Eras BQ, sans-serif;
+          }
+          p {
+              font-family: var(--font);
+              font-size: larger;
+              color: var(--textcolorb);
+              
+          }
+          a, a:link, a:visited, a:hover, a:active { color: white }
+          li {
+              font-family: var(--font);
+              color: var(--textcolorb);
+              
+          }
+          .list {
+            text-align: center;
+            width: 50%;
+            margin: auto;
+          }
+          .centerlist {
+            display: inline-block;
+            text-align: left;
+          }
+          #pagenumber {
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: larger;
+              color: var(--textcolor);
+              text-align: center;
+          }
+          .systemcontainer p {
+              color: var(--textcolorb);
+              vertical-align: middle;
+          }
+          #pagenumber {
+              color: var(--textcolorb);
+          }
+  
+          .patchnotes {
+              text-align: center;
+          }
+  
+          h3 {
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 2em;
+              color: var(--textcolorb);
+          }
+          .navbar p {
+            
+            margin: 0 auto;
+              width: 80%;
+              display:block;
+          }
+          p{
+            font-size: 1.5em;
+            text-align: center;
+          }
+          .systemcontainer h3 {
+              color: var(--textcolorb);
+              vertical-align: middle;
+          }
+  
+          h1 {
+              font-family: var(--hfont);
+              color: var(--textcolorb);
+              font-size: 3em;
+              text-align: center;
+          }
+          .infocontainer h1 {
+              font-family: var(--hfont);
+              color: var(--textcolorb);
+              font-size: 3em;
+              text-align: center;
+          }
+          html {
+              background-image: url("qet.png");
+              background-attachment:fixed;
+              background-size:cover;
+              transition: 0.15s;
+              
+              transform: transale3d(0,0,0);
+              
+          }
+          p {
+            filter:drop-shadow(0 0 5px #ffffff7f);
+          }
+          h1{
+            filter:drop-shadow(0 0 5px #ffffff7f);
+          }
+          h3{
+            filter:drop-shadow(0 0 5px #ffffff7f);
+          }
+          img{
+            filter:drop-shadow(0 0 5px #ffffff7f);
+            padding:0%;
+          }
+          body {
+              width: 80%;
+              margin-left: 20%;
+              overflow-y: scroll;
+              overflow-x: scroll;
+              overflow:overlay;
+              margin-right: 0px;
+              font-size: 13px;
+          }
+          .main {
+              width: 92%;
+              margin: auto;
+              
+              left:25%;
+              height:auto;
+          }
+          hr{
+              color:var(--textcolor);
+              border-color:var(--textcolor);
+  
+          }
+          .systemcontainer hr {
+              border-color: var(--textcolor);
+          }
+          .genbutton {
+              background: var(--btncolor);
+              padding:10px;
+              padding-right:15px;
+              padding-left:15px;
+              display: block;
+              margin: auto;
+              width:80%;
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 1.25em;
+              color: var(--textcolor);
+              border: 0px;
+              border-radius: var(--borderradiusdf);
+              cursor: pointer;
+              transition: 0.15s;
+              height: auto;
+              
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolorb);
+              text-wrap:nowrap
+          }
+          .genbutton3 {
+              background: var(--insetcolor);
+              padding:10px;
+              padding-right:15px;
+              padding-left:15px;
+              display: block;
+              margin: auto;
+              width:80%;
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 1.25em;
+              color: var(--textcolor);
+              border: 0px;
+              border-color:white;
+              border-radius: var(--borderradiusdf);
+              cursor: text;
+              transition: 0.15s;
+              height: auto;
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolorb);
+          }
+          .genbutton:hover {
+              background: var(--btncolorhover);
+              font-size: 1.3em;
+  
+          }
+          .genbutton:active {
+              background: var(--btncolorpressed);
+              font-size: 1.2em;
+          }
+          input::file-selector-button {
+              background: var(--btncolor);
+              padding:10px;
+              padding-right:15px;
+              padding-left:15px;
+              display: block;
+              margin: auto;
+              width:80%;
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 1.25em;
+              color: var(--textcolor);
+              border: 0px;
+              border-radius: var(--borderradiusdf);
+              cursor: pointer;
+              transition: 0.15s;
+              height: 80px;
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolorb);
+          }
+          input::file-selector-button:hover {
+              background: var(--btncolorhover);
+              font-size: 1.3em;
+  
+          }
+          input::file-selector-button:active {
+              background: var(--btncolorpressed);
+              font-size: 1.2em;
+          }
+          .genbutton2 {
+              background: var(--btncolor);
+              padding:30px;
+              padding-right:0px;
+              padding-left:0px;
+              display: block;
+              margin: auto;
+              width:80%;
+              height: 150px;
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 2em;
+              color: var(--textcolor);
+              border: 0px;
+              border-radius: var(--borderradiusdf);
+              cursor: pointer;
+              transition: 0.15s;
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolorb);
+              border-color:white;
+          }
+          .genbutton2:hover {
+              background: var(--btncolorhover);
+              
+              font-size: 2.1em;
+          }
+          .genbutton2:active {
+              background: var(--btncolorpressed);
+              font-size: 1.9em;
+          }
+          .pagebutton {
+              background: var(--btncolor);
+              padding:0px;
+              display: inline;
+              width:40px;
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 1.25em;
+              color: var(--textcolor);
+              border: 0px;
+              border-radius: var(--borderradiusdf);
+              cursor: pointer;
+              transition: 0.15s;
+              height: 40px;
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolorb);
+          }
+          .titleimg{
+              margin: 0 auto;
+              width: 80%;
+              display:block;
+          }
+          .infocontainer{
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              background: rgba(0,0,0,0);
+              padding: 15px;
+              width: 80%;
+              margin: auto;
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+          }
+          .system{
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              overflow-y:scroll; 
+              overflow-x:hidden;
+              height:80vh; 
+              background: var(--insetcolor);
+              padding: 1vw;
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+              position: relative;
+                  }
+          .system2{
+              
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              
+              overflow:hidden;
+              
+              background: var(--insetcolor2);
+              margin: 1vw;
+              padding: 1vw;
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+             position:relative;
+             resize:vertical;
+              
+          }
+          .systemsub {
+              position:absolute;
+              right:0px;
+              left:13vw;
+              top: 0px;
+              margin-left: auto;
+              scroll-behavior:auto;
+              overflow-y:scroll;
+              height:100%;
+              min-height:auto;
+          }
+          .systemsub .systemsub {
+              position:absolute;
+              right:0px;
+              left:15vw;
+              top: 0px;
+              margin-left: auto;
+              scroll-behavior:auto;
+              overflow-y:scroll;
+              height:100%;
+          }
+          .system2 .system2{
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              
+              overflow-x:hidden;
+              
+              background: var(--insetcolor3);
+              padding: 15px;
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+              min-height:38vh;
+          }
+          .nosat {
+              height: 100%;
+              resize:none;
+          }
+          .system2 .system2 .system2{
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              
+              overflow-x:hidden;
+              
+              background: var(--insetcolor4);
+              padding: 15px;
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+              min-height:36vh;
+          }
+          .systemsub .systemStarTall{
+              min-height:80vh;
+          }
+          #csvout p {
+              font-family: monospace;
+              font-size: medium;
+          }
+          a{
+              color:rgb(0, 127, 255);
+          }
+          .systemcontainer{
+              height: auto;
+              background-color:rgb(0,0,0);
+              border-radius: var(--borderradiusdf);
+              transition: 0.15s;
+          }
+  
+          .systemcontainerinterior{
+              height: auto;
+              background-color:rgb(0,0,0);
+              border-radius: var(--borderradiusdf);
+              transition: 0.15s;
+          }
+          ::-webkit-scrollbar {
+              width: 8px;
+              min-width: 8px;
+  
+          }
+          ::-webkit-scrollbar-track {
+              background-color:var(--bgcolor)
+          }
+          ::-webkit-scrollbar-thumb {
+              background-color:var(--scrollcolor);
+              border-radius:var(--borderradiusdf);
+          }
+          .red {
+              color: #ff4500
+          }
+          .orange {
+              color: #ffa800
+          }
+          .yellow {
+              color: var(--yellow);
+          }
+          .darkgreen {
+              color: #00a468
+          }
+          .lightgreen {
+              color: var(--lightgreen)
+          }
+          .darkblue {
+              color: #235083
+          }
+          .blue {
+              color: #368fe9
+          }
+          .lightblue {
+              color: var(--cyan)
+          }
+          .darkpurple {
+              color: #811e9f
+          }
+          .purple {
+              color: #b34ac0
+          }
+          .pink {
+              color: #ff98a9
+          }
+          .brown {
+              color: #9c6927
+          }
+          .black {
+              color: #000000
+          }
+          .darkgray {
+              color: #898d90
+          }
+          .lightgray {
+              color: #d3d7da
+          }
+          .white {
+              color: #ffffff
+          }
+          .typem {
+              color: #ffb34f
+          }
+          .typek {
+              color: var(--typek)
+          }
+          .typeg {
+              color: var(--typeg);
+          }
+          .typef {
+              color: var(--typef);
+          }
+          .typea {
+              color: var(--typea);
+          }
+          .typeb {
+              color: #4aa8ff
+          }
+          .typewd {
+              color: var(--lightgreen);
+          }
+          .water {
+              color: #727bff
+          }
+          .methanum {
+              color: #a0a0a0
+          }
+          .wsubglacial {
+              color: #92fbff
+          }
+          .ammonia {
+              color: #c9cf70
+          }
+          .nitrogen {
+              color: #7eff84
+          }
+          .rocky {
+              color: rgb(158, 131, 103)
+          }
+          .icy {
+              color: rgb(132, 171, 211)
+          }
+          .carbonaceous {
+              color: rgb(219, 109, 57)
+          }
+          .metallic {
+              color: rgb(159, 168, 168)
+          }
+          .icegiant {
+              color: rgb(87, 156, 224)
+          }
+          .gasgiant {
+              color: rgb(210,160,110)
+          }
+          .icon {
+              height: 1.5em;
+              padding: 0px;
+              vertical-align: middle;
+          }
+          .whiteicon {
+  
+              filter: var(--whiteiconfilter);
+          }
+          .icon2 {
+              height: 2em;
+              padding: 0px;
+              vertical-align: middle;
+          }
+          .navbar {
+            background-image: url("qet2.png");
+            background-attachment:fixed;
+            background-size:cover;
+            padding:0px;
+            box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+            filter: drop-shadow(0px 0px 16px black);
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 20%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+      .systemdisplay {
+          width: 100%;
+          border-radius: 16px;
+          background:black;
+          background-size: 2048px;
+          position:relative;
+          display:block;            
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+      }
+      .planetdisplay {
+          width: 256px;
+          height: 256px;
+          border-radius: 16px;
+          position:relative;
+          
+          background-position: center;
+          background-repeat: no-repeat;
+  
+      }
+      .planetbg {
+          background:black;
+      }
+      .planetoverlay {
+          width: 256px;
+          height: 256px;
+          border-radius: 16px;
+          
+          top:0%;
+          left:0%;
+          background-position: center;
+          background-repeat: no-repeat;
+          position: absolute;
+  
+      }
+      .planetscan {
+          font-family: 'Consolas', 'Courier New', Courier, monospace;
+          border-radius: var(--borderradiusdf);
+              box-shadow: inset 8px 8px 16px  var(--innershadowcolor);
+              background: var(--bgcolor);
+              padding: 30px;
+      }
+      .planetscan p {
+          font-family: 'Consolas', 'Courier New', Courier, monospace;
+          
+      }
+      .systemMain {
+          width: 13vw;
+      }
+      .system2 .systemMain {
+          width: 15vw;
+      }
+      .switch {
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  #jsonarea {
+      font-family: monospace;
+  }
+  
+  .planetdesc {
+      box-shadow: none !important;
+      min-height: auto !important;
+  }
+  
+  
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  } 
+  
+  @media (max-width: 1728px) {
+  
+  body {
+  
+    font-size:11px;
+  
+  }
+  
+  }
+  @media (max-width: 1280px) {
+  
+  body {
+  
+    font-size: 9px;
+  
+  }
+  
+  }
+  @media (max-width: 720px) {
+  
+  body {
+  
+    font-size: 7px;
+  
+  }
+  
+  }
+  h3 {
+    text-align: center;
+  }
+          
+      </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <img class="titleimg" src="logo.png">
+        <p class="patchnotes"><a href="index.html"><b>Return to homepage</b></a></p>
+        <hr>
+    </div> 
+
+<div class="main">
+<h1>Songs</h1>
+<p>This page contains several songs for Undersided, with descriptions including leitmotifs, etc. DISCLAIMER: This is not an in-universe source; these songs are not diegetic unless explicitly specified otherwise.</p>
+
+<div class="infocontainer">
+    <h1>Undersided Main Theme</h1>
+    <p><audio controls src="432 4.mp3"></audio></p>
+    <p>The basic theme of Undersided.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Rahazun</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>We'll See The Sky</h1>
+    <p><audio controls src="Ivavune-Igral.mp3"></audio></p>
+    <p>The only song on this list to be diegetic. An arrangement of "We'll See The Sky", the anthem of Yarzon-Ebott.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Ruins</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Lundroz-Hesan</h1>
+    <p><audio controls src="A-Yahiraveli-Lundroz 2.mp3"></audio></p>
+    <p>A BGM for Lundroz-Hesan, the joint kingdom of humans and yarov ruled by Etevni-Aratikent. <em>Long ago, two races ruled over Earth: HUMANS and MONSTERS. This is that long ago.</em></p>
+    <h3>Leitmotifs:</h3>
+    <p>Hesan</p>
+    <p>Ruins</p>
+    <p>Once Upon A Time</p>
+    <p>Vana</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Overcome</h1>
+    <p><audio controls src="Overcome.mp3"></audio></p>
+    <p>A "fight BGM" for the Trials of Arvent, part of the Ylir subsetting.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Ylir</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Ylir</h1>
+    <p><audio controls src="YLIR.mp3"></audio></p>
+    <p>A BGM for "Ylir", a secret North Polar city of hyper-advanced "slachi", and the origin of the legend of Arvent.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Ylir</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Myalvi</h1>
+    <p><audio controls src="Myalvi.mp3"></audio></p>
+    <p>A BGM for Tur Myalvi.</p>
+    <h3>Leitmotifs:</h3>
+    <p>-</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Siegetev</h1>
+    <p><audio controls src="Siegetev.mp3"></audio></p>
+    <p>A boss theme for Siegetev, the corrupt king of Rahazun who started the War of Humans and Monsters.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Rahazun</p>
+    <p>Once Upon a Time</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Vana (Nikkal)</h1>
+    <p><audio controls src="Vana Nikkal.mp3"></audio></p>
+    <p>A BGM for the Vana (a forest in the middle of Iltezon that yarov call home), mashed up with one of the oldest known songs in real-world history.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Vana</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Bad Wolf Woods</h1>
+    <p><audio controls src="Bad Wolf Woods 2.mp3"></audio></p>
+    <p>The Bad Wolf Woods, or Ulrike, are the western, more civilized portion of the Vana. Originally and eventually again home to the realm of Yarzon-Watershed, but in the intervening time, the forest was left eerily silent - at night, the only sound that can be heard is the distant howling of wolves.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Vana</p>
+    <p>Ruins</p>
+    <p>Don't Forget</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Ana-hin [Battle Remix]</h1>
+    <p><audio controls src="FRISK FIGHT THEME.mp3"></audio></p>
+    <p>A theme for Ana-hin, the Ambassador of Yarzon-Ebott, styled as a battle theme.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Ana-hin</p>
+    <p>Once Upon a Time</p>
+    <p>Khara</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Ana-hin</h1>
+    <p><audio controls src="Ana-hin.mp3"></audio></p>
+    <p>A theme for Ana-hin, the Ambassador of Yarzon-Ebott.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Ana-hin</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Vana</h1>
+    <p><audio controls src="Vana.mp3"></audio></p>
+    <p>The theme for the eastern, more wild and untamed Vana, the original home of yarov (which were traditionally seen as a part of the natural environment rather than as a civilization).</p>
+    <h3>Leitmotifs:</h3>
+    <p>Vana</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>School</h1>
+    <p><audio controls src="school.mp3"></audio></p>
+    <p>A theme I made for Rahazun at some point. Contains AI-generated portions after the 1-minute mark.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Rahazun</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Golden City</h1>
+    <p><audio controls src="Golden City.mp3"></audio></p>
+    <p>The theme for the Golden City of Rahazun itself.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Rahazun</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Darker Ruins</h1>
+    <p><audio controls src="Darker Ruins.mp3"></audio></p>
+    <p>A theme for the Dark Ruins, a lower section of the Ruins (the remnants of the old underground Yarzon-Ebott capital of HOME). This takes place on the floor below even the normal Dark Ruins.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Ruins</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Yet Darker Ruins</h1>
+    <p><audio controls src="Yet Darker Ruins.mp3"></audio></p>
+    <p>A theme for the Dark Ruins, a lower section of the Ruins (the remnants of the old underground Yarzon-Ebott capital of HOME). This takes place in the darkest, deepest sections of the ancient city.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Ruins</p>
+    <p>???</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Ball Game</h1>
+    <p><audio controls src="Ball Game.mp3"></audio></p>
+    <p>For the Undertale theorists reading this, the "soul traits" commonly theorized simply do not exist in Undersided; the intended purpose of the Ball Game is to memorialize the personality qualities of the six humans who were slain by yarov as part of Ruaeli's plan to escape the Underground. This song was made to emphasize that point, sharing a melody with the direct appearance of the SOULs.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Finale</p>
+    <p>Your Best Nightmare</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>A Friend or an Enemy</h1>
+    <p><audio controls src="toob-toob-toob-remastered.mp3"></audio></p>
+    <p>Khara's theme, arranged as if it were a battle theme.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Finale</p>
+    <p>Megalovania</p>
+    <p>Megalo Strike Back</p>
+    <p>Once Upon a Time</p>
+    <p>Khara</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Falairos</h1>
+    <p><audio controls src="Lairie.mp3"></audio></p>
+    <p>A theme for Professor Falairos, a celebrity from Farnitan who presents themself as a "supervillain", in a rather goofy style, and is actually good friends with their "nemesis", Landani.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Professor Falairos</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>And My Reality</h1>
+    <p><audio controls src="And My Reality.mp3"></audio></p>
+    <p>A theme for Dr. Maik-Mespir Gaster, a Royal Scientist of Yarzon-Ebott who designed the CORE, a system that would provide power for the entire underground realm of Yarzon-Ebott.</p>
+    <h3>Leitmotifs:</h3>
+    <p>???</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>New Home</h1>
+    <p><audio controls src="New Home.mp3"></audio></p>
+    <p>A theme for New Home, the second and final capital of Yarzon-Ebott.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Another Medium</p>
+    <p>Ruins</p>
+    <p>Determination</p>
+    <p>Snowdin Town</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Mulberry</h1>
+    <p><audio controls src="MULBERRY - REMASTERED.mp3"></audio></p>
+    <p>A theme for an outdated, beta iteration of Undersided.</p>
+    <h3>Leitmotifs:</h3>
+    <p> - </p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Ester</h1>
+    <p><audio controls src="ESTERIA.mp3"></audio></p>
+    <p>A BGM for Ester.</p>
+    <h3>Leitmotifs:</h3>
+    <p> - </p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Farnitan</h1>
+    <p><audio controls src="Farnitia.mp3"></audio></p>
+    <p>A BGM for the city of Farnitan.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Professor Falairos</p>
+    <p>Hesan</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Hesan</h1>
+    <p><audio controls src="HESANv2.mp3"></audio></p>
+    <p>A BGM for Hesan.</p>
+    <h3>Leitmotifs:</h3>
+    <p>Hesan</p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>Rahazun Farms</h1>
+    <p><audio controls src="Saraheim Farms.mp3"></audio></p>
+    <p>A BGM for the rural regions of Rahazun County.</p>
+    <h3>Leitmotifs:</h3>
+    <p> - </p>
+
+</div>
+
+<div class="infocontainer">
+    <h1>snd_morningbells_fullsong</h1>
+    <p><audio controls src="snd_morningbells_fullsong.mp3"></audio></p>
+    <p>The very first song I made for what would eventually become Undersided.</p>
+    <h3>Leitmotifs:</h3>
+    <p> - </p>
+
+</div>
+
+</div>
+
+<script>
+</script>
+
+</body>
+</html>
