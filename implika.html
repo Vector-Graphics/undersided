@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="description" content="Webpage description goes here" />
+  <meta charset="utf-8">
+  <title>Undersided</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Metrophobic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <style crossorigin="anonymous">
+    :root {
+      --textcolor: rgb(255,255,255);
+              --textcolorb: rgb(255,255, 255);        
+              --bgcolor: rgba(0, 0, 19,0);
+              --btncolorpressed: rgb(0, 5, 48);
+              --btncolor: rgb(10, 0, 100);
+              --btncolorhover: rgb(40, 2, 255);
+              --scrollcolor: rgba(255,255,255,0.1);
+              --insetcolor:rgb(0, 12, 58);
+              --insetcolor2:rgb(0, 8, 41);
+              --insetcolor3:rgb(0, 5, 26);
+              --insetcolor4:rgb(0, 0, 0);
+              --typeg:rgb(255,255,255);
+              --typef:#c0e8ff;
+              --typek:#fff0c1;
+              --yellow: #ffd636;
+              --cyan: #51e9f4;
+              --lightgreen: #7fed56;
+              --typea: #89d4ff;
+              --innershadowcolor: #4477ff79;
+              --innershadowcolorb: #4477ff79;
+              --borderradiusdf: 50px;
+              --whiteiconfilter: none;
+              --font: Metrophobic, sans-serif;
+              --hfont: Metrophobic, sans-serif;
+              /**--textcolor: rgb(255,255,255);
+              --textcolorb: rgb(255,255,255);    
+              --bgcolor: rgb(16,16,16);
+              --btncolorpressed: rgb(48,48,48);
+              --btncolor: rgb(64,64,64);
+              --btncolorhover: rgb(96,96,96);
+              --scrollcolor: rgb(96,96,96);
+              --insetcolor:rgb(32,32,32);
+              --typeg:rgb(255,255,255);
+              --typef:#c0e8ff;
+              --typek:#fff0c1;
+              --yellow: #ffd636;
+              --cyan: #51e9f4;
+              --lightgreen: #7fed56;
+              --typea: #89d4ff;
+              --innershadowcolor: #0000004F;
+              --innershadowcolorb: #0000001F;
+              --borderradiusdf: 15px;
+              --whiteiconfilter: none;
+              --font: Metrophobic, sans-serif;
+              --hfont: Eras BQ, sans-serif;**/
+  
+          }
+          [data-theme="light"] {
+              --textcolor: rgb(0,0,0);
+              --textcolorb: rgb(0,0,0);    
+              --bgcolor: rgb(250,250,250);
+              --btncolorpressed: rgb(160,160,160);
+              --btncolor: rgb(192,192,192);
+              --btncolorhover: rgb(240,240,240);
+              --scrollcolor: rgb(158, 158, 158);
+              --insetcolor:rgb(240,240,240);
+              --typek:#beab71;
+              --typeg:rgb(140,140,140);
+              --typef:rgb(140,150,160);
+              --typea: #72aed1;
+              --yellow: #b89b29;
+              --cyan: #22bac5;
+              --lightgreen: #53d822;
+              --innershadowcolor: #0000004F;
+              --innershadowcolorb: #0000001F;
+              --borderradiusdf: 15px;
+              --whiteiconfilter: brightness(0);
+              --font: Metrophobic, sans-serif;
+              --hfont: Eras BQ, sans-serif;
+          }
+          [data-theme="green"] {
+              --textcolor: rgb(255, 255, 255);
+              --textcolorb: rgb(255,255,255);    
+              --bgcolor: rgb(0, 0, 0);
+              --btncolorpressed: rgb(0, 59, 3);
+              --btncolor: rgb(0, 83, 4);
+              --btncolorhover: rgb(0, 104, 5);
+              --scrollcolor: rgb(0, 128, 11);
+              --insetcolor:rgb(0, 26, 4);
+              --typeg:rgb(255,255,255);
+              --typef:#c0e8ff;
+              --typek:#fff0c1;
+              --yellow: #ffd636;
+              --cyan: #51e9f4;
+              --lightgreen: #7fed56;
+              --typea: #89d4ff;
+              --innershadowcolor: #FFFFFF00;
+              --innershadowcolorb: #FFFFFF00;
+              --borderradiusdf: 0px;
+              --whiteiconfilter: none;
+              --font: monospace;
+              --hfont: Orbitron, sans-serif;
+          }
+          [data-theme="red"] {
+              --textcolor: rgb(255,255,255);
+              --textcolorb: rgb(255,255,255);    
+              --bgcolor: rgb(15, 0, 0);
+              --btncolorpressed: rgb(53, 0, 0);
+              --btncolor: rgb(66, 0, 0);
+              --btncolorhover: rgb(95, 0, 0);
+              --scrollcolor: rgb(99, 0, 0);
+              --insetcolor:rgb(41, 0, 0);
+              --typeg:rgb(255,255,255);
+              --typef:#c0e8ff;
+              --typek:#fff0c1;
+              --yellow: #ffd636;
+              --cyan: #51e9f4;
+              --lightgreen: #7fed56;
+              --typea: #89d4ff;
+              --innershadowcolor: #0000004F;
+              --innershadowcolorb: #0000001F;
+              --borderradiusdf: 15px;
+              --whiteiconfilter: none;
+              --font: Metrophobic, sans-serif;
+              --hfont: Eras BQ, sans-serif;
+  
+          }
+          [data-theme="2048"] {
+              --textcolor: #faf8ef;
+              --textcolorb: #776e65;
+              --bgcolor: #faf8ef;
+              --btncolorpressed: #8f7a66;
+              --btncolor: #8f7a66;
+              --btncolorhover: #8f7a66;
+              --scrollcolor: rgb(158, 158, 158);
+              --insetcolor:#eee1c9;
+              --typek:#beab71;
+              --typeg:rgb(140,140,140);
+              --typef:rgb(140,150,160);
+              --typea: #72aed1;
+              --yellow: #b89b29;
+              --cyan: #22bac5;
+              --lightgreen: #53d822;
+              --innershadowcolor: #FFFFFF00;
+              --innershadowcolorb: #FFFFFF00;
+              --borderradiusdf: 5px;
+              --whiteiconfilter: brightness(0);
+              --font: sans-serif;
+              --hfont: sans-serif;
+          }
+          [data-theme="midnight"] {
+              --textcolor: #ffffff;
+              --textcolorb: #ffffff;
+              --bgcolor: #000000;
+              --btncolorpressed: #000000;
+              --btncolor: #000000;
+              --btncolorhover: #000000;
+              --scrollcolor: rgb(35, 0, 58);
+              --insetcolor:#000000;
+              --typek:#beab71;
+              --typeg:rgb(140,140,140);
+              --typef:rgb(140,150,160);
+              --typea: #72aed1;
+              --yellow: #b89b29;
+              --cyan: #22bac5;
+              --lightgreen: #53d822;
+              --innershadowcolor: #FFFFFF00;
+              --innershadowcolorb: #FFFFFF00;
+              --borderradiusdf: 5px;
+              --whiteiconfilter: none;
+              --font: Metrophobic, sans-serif;
+              --hfont: Eras BQ, sans-serif;
+          }
+          p {
+              font-family: var(--font);
+              font-size: larger;
+              color: var(--textcolorb);
+              
+          }
+          a, a:link, a:visited, a:hover, a:active { color: white }
+          li {
+              font-family: var(--font);
+              color: var(--textcolorb);
+              
+          }
+          .list {
+            text-align: center;
+            width: 50%;
+            margin: auto;
+          }
+          .centerlist {
+            display: inline-block;
+            text-align: left;
+          }
+          #pagenumber {
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: larger;
+              color: var(--textcolor);
+              text-align: center;
+          }
+          .systemcontainer p {
+              color: var(--textcolorb);
+              vertical-align: middle;
+          }
+          #pagenumber {
+              color: var(--textcolorb);
+          }
+  
+          .patchnotes {
+              text-align: center;
+          }
+  
+          h3 {
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 2em;
+              color: var(--textcolorb);
+          }
+          .navbar p {
+            
+            margin: 0 auto;
+              width: 80%;
+              display:block;
+          }
+          p{
+            font-size: 1.5em;
+            text-align: center;
+          }
+          .systemcontainer h3 {
+              color: var(--textcolorb);
+              vertical-align: middle;
+          }
+  
+          h1 {
+              font-family: var(--hfont);
+              color: var(--textcolorb);
+              font-size: 3em;
+              text-align: center;
+          }
+          .infocontainer h1 {
+              font-family: var(--hfont);
+              color: var(--textcolorb);
+              font-size: 3em;
+              text-align: center;
+          }
+          html {
+              background-image: url("qet.png");
+              background-attachment:fixed;
+              background-size:cover;
+              transition: 0.15s;
+              
+              transform: transale3d(0,0,0);
+              
+          }
+          p {
+            filter:drop-shadow(0 0 5px #ffffff7f);
+          }
+          h1{
+            filter:drop-shadow(0 0 5px #ffffff7f);
+          }
+          h3{
+            filter:drop-shadow(0 0 5px #ffffff7f);
+          }
+          img{
+            filter:drop-shadow(0 0 5px #ffffff7f);
+            padding:0%;
+          }
+          body {
+              width: 80%;
+              margin-left: 20%;
+              overflow-y: scroll;
+              overflow-x: scroll;
+              overflow:overlay;
+              margin-right: 0px;
+              font-size: 13px;
+          }
+          .main {
+              width: 92%;
+              margin: auto;
+              
+              left:25%;
+              height:auto;
+          }
+          hr{
+              color:var(--textcolor);
+              border-color:var(--textcolor);
+  
+          }
+          .systemcontainer hr {
+              border-color: var(--textcolor);
+          }
+          .genbutton {
+              background: var(--btncolor);
+              padding:10px;
+              padding-right:15px;
+              padding-left:15px;
+              display: block;
+              margin: auto;
+              width:80%;
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 1.25em;
+              color: var(--textcolor);
+              border: 0px;
+              border-radius: var(--borderradiusdf);
+              cursor: pointer;
+              transition: 0.15s;
+              height: auto;
+              
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolorb);
+              text-wrap:nowrap
+          }
+          .genbutton3 {
+              background: var(--insetcolor);
+              padding:10px;
+              padding-right:15px;
+              padding-left:15px;
+              display: block;
+              margin: auto;
+              width:80%;
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 1.25em;
+              color: var(--textcolor);
+              border: 0px;
+              border-color:white;
+              border-radius: var(--borderradiusdf);
+              cursor: text;
+              transition: 0.15s;
+              height: auto;
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolorb);
+          }
+          .genbutton:hover {
+              background: var(--btncolorhover);
+              font-size: 1.3em;
+  
+          }
+          .genbutton:active {
+              background: var(--btncolorpressed);
+              font-size: 1.2em;
+          }
+          input::file-selector-button {
+              background: var(--btncolor);
+              padding:10px;
+              padding-right:15px;
+              padding-left:15px;
+              display: block;
+              margin: auto;
+              width:80%;
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 1.25em;
+              color: var(--textcolor);
+              border: 0px;
+              border-radius: var(--borderradiusdf);
+              cursor: pointer;
+              transition: 0.15s;
+              height: 80px;
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolorb);
+          }
+          input::file-selector-button:hover {
+              background: var(--btncolorhover);
+              font-size: 1.3em;
+  
+          }
+          input::file-selector-button:active {
+              background: var(--btncolorpressed);
+              font-size: 1.2em;
+          }
+          .genbutton2 {
+              background: var(--btncolor);
+              padding:30px;
+              padding-right:0px;
+              padding-left:0px;
+              display: block;
+              margin: auto;
+              width:80%;
+              height: 150px;
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 2em;
+              color: var(--textcolor);
+              border: 0px;
+              border-radius: var(--borderradiusdf);
+              cursor: pointer;
+              transition: 0.15s;
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolorb);
+              border-color:white;
+          }
+          .genbutton2:hover {
+              background: var(--btncolorhover);
+              
+              font-size: 2.1em;
+          }
+          .genbutton2:active {
+              background: var(--btncolorpressed);
+              font-size: 1.9em;
+          }
+          .pagebutton {
+              background: var(--btncolor);
+              padding:0px;
+              display: inline;
+              width:40px;
+              font-family: var(--font);
+              font-weight:bold;
+              font-size: 1.25em;
+              color: var(--textcolor);
+              border: 0px;
+              border-radius: var(--borderradiusdf);
+              cursor: pointer;
+              transition: 0.15s;
+              height: 40px;
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolorb);
+          }
+          .titleimg{
+              margin: 0 auto;
+              width: 80%;
+              display:block;
+          }
+          .infocontainer{
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              overflow-y:scroll; 
+              overflow-x:hidden;
+              height:1000px; 
+              background: var(--insetcolor);
+              padding: 15px;
+              width: 80%;
+              margin: auto;
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+          }
+          .system{
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              overflow-y:scroll; 
+              overflow-x:hidden;
+              height:80vh; 
+              background: var(--insetcolor);
+              padding: 1vw;
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+              position: relative;
+                  }
+          .system2{
+              
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              
+              overflow:hidden;
+              
+              background: var(--insetcolor2);
+              margin: 1vw;
+              padding: 1vw;
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+             position:relative;
+             resize:vertical;
+              
+          }
+          .systemsub {
+              position:absolute;
+              right:0px;
+              left:13vw;
+              top: 0px;
+              margin-left: auto;
+              scroll-behavior:auto;
+              overflow-y:scroll;
+              height:100%;
+              min-height:auto;
+          }
+          .systemsub .systemsub {
+              position:absolute;
+              right:0px;
+              left:15vw;
+              top: 0px;
+              margin-left: auto;
+              scroll-behavior:auto;
+              overflow-y:scroll;
+              height:100%;
+          }
+          .system2 .system2{
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              
+              overflow-x:hidden;
+              
+              background: var(--insetcolor3);
+              padding: 15px;
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+              min-height:38vh;
+          }
+          .nosat {
+              height: 100%;
+              resize:none;
+          }
+          .system2 .system2 .system2{
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              
+              overflow-x:hidden;
+              
+              background: var(--insetcolor4);
+              padding: 15px;
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+              min-height:36vh;
+          }
+          .systemsub .systemStarTall{
+              min-height:80vh;
+          }
+          #csvout p {
+              font-family: monospace;
+              font-size: medium;
+          }
+          a{
+              color:rgb(0, 127, 255);
+          }
+          .systemcontainer{
+              height: auto;
+              background-color:rgb(0,0,0);
+              border-radius: var(--borderradiusdf);
+              transition: 0.15s;
+          }
+  
+          .systemcontainerinterior{
+              height: auto;
+              background-color:rgb(0,0,0);
+              border-radius: var(--borderradiusdf);
+              transition: 0.15s;
+          }
+          ::-webkit-scrollbar {
+              width: 8px;
+              min-width: 8px;
+  
+          }
+          ::-webkit-scrollbar-track {
+              background-color:var(--bgcolor)
+          }
+          ::-webkit-scrollbar-thumb {
+              background-color:var(--scrollcolor);
+              border-radius:var(--borderradiusdf);
+          }
+          .red {
+              color: #ff4500
+          }
+          .orange {
+              color: #ffa800
+          }
+          .yellow {
+              color: var(--yellow);
+          }
+          .darkgreen {
+              color: #00a468
+          }
+          .lightgreen {
+              color: var(--lightgreen)
+          }
+          .darkblue {
+              color: #235083
+          }
+          .blue {
+              color: #368fe9
+          }
+          .lightblue {
+              color: var(--cyan)
+          }
+          .darkpurple {
+              color: #811e9f
+          }
+          .purple {
+              color: #b34ac0
+          }
+          .pink {
+              color: #ff98a9
+          }
+          .brown {
+              color: #9c6927
+          }
+          .black {
+              color: #000000
+          }
+          .darkgray {
+              color: #898d90
+          }
+          .lightgray {
+              color: #d3d7da
+          }
+          .white {
+              color: #ffffff
+          }
+          .typem {
+              color: #ffb34f
+          }
+          .typek {
+              color: var(--typek)
+          }
+          .typeg {
+              color: var(--typeg);
+          }
+          .typef {
+              color: var(--typef);
+          }
+          .typea {
+              color: var(--typea);
+          }
+          .typeb {
+              color: #4aa8ff
+          }
+          .typewd {
+              color: var(--lightgreen);
+          }
+          .water {
+              color: #727bff
+          }
+          .methanum {
+              color: #a0a0a0
+          }
+          .wsubglacial {
+              color: #92fbff
+          }
+          .ammonia {
+              color: #c9cf70
+          }
+          .nitrogen {
+              color: #7eff84
+          }
+          .rocky {
+              color: rgb(158, 131, 103)
+          }
+          .icy {
+              color: rgb(132, 171, 211)
+          }
+          .carbonaceous {
+              color: rgb(219, 109, 57)
+          }
+          .metallic {
+              color: rgb(159, 168, 168)
+          }
+          .icegiant {
+              color: rgb(87, 156, 224)
+          }
+          .gasgiant {
+              color: rgb(210,160,110)
+          }
+          .icon {
+              height: 1.5em;
+              padding: 0px;
+              vertical-align: middle;
+          }
+          .whiteicon {
+  
+              filter: var(--whiteiconfilter);
+          }
+          .icon2 {
+              height: 2em;
+              padding: 0px;
+              vertical-align: middle;
+          }
+          .navbar {
+            background-image: url("qet2.png");
+            background-attachment:fixed;
+            background-size:cover;
+            padding:0px;
+            box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+            filter: drop-shadow(0px 0px 16px black);
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 20%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+      .systemdisplay {
+          width: 100%;
+          border-radius: 16px;
+          background:black;
+          background-size: 2048px;
+          position:relative;
+          display:block;            
+              border-radius: var(--borderradiusdf);
+              box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
+              transition: 0.15s;
+      }
+      .planetdisplay {
+          width: 256px;
+          height: 256px;
+          border-radius: 16px;
+          position:relative;
+          
+          background-position: center;
+          background-repeat: no-repeat;
+  
+      }
+      .planetbg {
+          background:black;
+      }
+      .planetoverlay {
+          width: 256px;
+          height: 256px;
+          border-radius: 16px;
+          
+          top:0%;
+          left:0%;
+          background-position: center;
+          background-repeat: no-repeat;
+          position: absolute;
+  
+      }
+      .planetscan {
+          font-family: 'Consolas', 'Courier New', Courier, monospace;
+          border-radius: var(--borderradiusdf);
+              box-shadow: inset 8px 8px 16px  var(--innershadowcolor);
+              background: var(--bgcolor);
+              padding: 30px;
+      }
+      .planetscan p {
+          font-family: 'Consolas', 'Courier New', Courier, monospace;
+          
+      }
+      .systemMain {
+          width: 13vw;
+      }
+      .system2 .systemMain {
+          width: 15vw;
+      }
+      .switch {
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  #jsonarea {
+      font-family: monospace;
+  }
+  
+  .planetdesc {
+      box-shadow: none !important;
+      min-height: auto !important;
+  }
+  
+  
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  } 
+  
+  @media (max-width: 1728px) {
+  
+  body {
+  
+    font-size:11px;
+  
+  }
+  
+  }
+  @media (max-width: 1280px) {
+  
+  body {
+  
+    font-size: 9px;
+  
+  }
+  
+  }
+  @media (max-width: 720px) {
+  
+  body {
+  
+    font-size: 7px;
+  
+  }
+  
+  }
+          
+      </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <img class="titleimg" src="logo.png">
+        <p class="patchnotes"><a href="index.html"><b>Return to homepage</b></a></p>
+        <hr>
+    </div> 
+
+<div class="main">
+<h3 class="patchnotes">Disclaimer</h3>
+<hr> <p class="patchnotes">This project utilizes AI-generated media for visuals, and I have been asked to justify this by many individuals I have brought it up to. As such, a justification has been provided: I do this because I do not care about "artistic value" in the conventional sense; the current backgrounds are simply meant to be visually appealing, and any future media is simply meant to depict an aspect of the setting. Neither are, strictly speaking, "art" (in the pedantic sense that many people on the Internet use); this is true of all visual media I publish. The core creative content of the Undersided website is found entirely within the setting it depicts - Yona - and not within any depiction thereof (including the Undersided documentation itself, which was written by Vector); complaints about the usage of AI refuse to recognize this fact, and will be ignored. The contents of this site, along with Yona itself (rightfully excluding the intellectual property of anyone else (such as Toby Fox) whose work I may utilize in the construction of Yona or Undersided) are dedicated to the public domain. Additionally, AI generation is used for some audio, but only when I have originally provided a ~60 second sample of source audio that I composed myself.</p>
+
+</div>
+
+<script>
+</script>
+
+</body>
+</html>
