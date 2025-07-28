@@ -269,7 +269,7 @@
               
               transform: transale3d(0,0,0);
               scrollbar-width:thin;
-              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              scrollbar-color:rgba(0, 0, 19,0),rgba(255, 255, 255,0.1);
               
           }
           p {
@@ -441,8 +441,7 @@
               display:block;
           }
           .infocontainer{
-              scrollbar-width:thin;
-              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+
               background: rgba(0,0,0,0);
               padding: 15px;
               width: 80%;
@@ -452,8 +451,7 @@
               transition: 0.15s;
           }
           .system{
-              scrollbar-width:thin;
-              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+
               overflow-y:scroll; 
               overflow-x:hidden;
               height:80vh; 
@@ -466,8 +464,7 @@
                   }
           .system2{
               
-              scrollbar-width:thin;
-              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+
               
               overflow:hidden;
               
@@ -503,8 +500,7 @@
               height:100%;
           }
           .system2 .system2{
-              scrollbar-width:thin;
-              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+
               
               overflow-x:hidden;
               
@@ -520,8 +516,7 @@
               resize:none;
           }
           .system2 .system2 .system2{
-              scrollbar-width:thin;
-              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+
               
               overflow-x:hidden;
               
@@ -830,6 +825,7 @@
     border-radius: 50%;
   } 
   
+
   @media (max-width: 1728px) {
   
   body {
@@ -857,6 +853,12 @@
   }
   
   }
+.story > .tab-content:target ~ .tab-content:last-child, .story > .tab-content {
+    display: none;
+}
+.story > :last-child, .story > .tab-content:target {
+    display: block;
+}
           
       </style>
 </head>
@@ -864,47 +866,60 @@
 <body>
     <div class="navbar">
         <img class="titleimg" src="logo.png">
-        <hr><h3 class="patchnotes"><a href="visualmedia.html"><em>Visual media</em></a> &bull; <a href="ost.html"><em>Soundtrack</em></a></h3>
+        <hr><h3 class="patchnotes"><a href="visualmedia.html" target="_blank" rel="noopener noreferrer"><em>Visual media</em></a> &bull; <a href="ost.html" target="_blank" rel="noopener noreferrer"> <em>Soundtrack</em></a></h3>
         <hr>
-        <p class="patchnotes"><br><a href="#e0"> Preface</a></p>   
-<p class="patchnotes"><br><a href="#e1">Entry 1: From <em>Once Upon A Time</em></a></p>
-<p class="patchnotes"><br><a href="#e2">Entry 2: From <em>Emperors of Rahazun</em></a></p>
-<p class="patchnotes"><br><a href="#e3">Entry 3: From <em>History of Yarvant</em></a></p>
-<p class="patchnotes"><br><a href="#e4">Entry 4: From <em>Information regarding Yahir for the Latest Generation</em></a></p>
-<p class="patchnotes"><br><a href="#e5">Entry 5: From <em>A Specification on the Properties of Yahir, and on the Historical Concepts of Hope and Determination</em></a></p>
-<p class="patchnotes"><br><a href="#e6">Entry 6: From <em>The Worldbook</em></a></p>
-<p class="patchnotes"><br><a href="#e7">Entry 7: From <em>Common Knowledge Curriculum - Year 2</em></a></p>
-<p class="patchnotes"><br><a href="#e8">Entry 8: From <em>The Panavana - Chronicles of a People</em></a></p>
-<p class="patchnotes"><br><a href="#e9">Entry 9: From <em>The Pantheon of Ester</em></a></p>
-<p class="patchnotes"><br><a href="#e10">Entry 10: From <em>Arvent's Blessing</em></a></p>
-<p class="patchnotes"><br><a href="#e11">Entry 11: From <em>On the Rahazuna Educational System</em></a></p>
-<p class="patchnotes"><br><a href="#e12">Entry 12: From <em>U.M. Demographic Statistics, 913 Edition</em></a></p>
-<p class="patchnotes"><br><a href="#e13">Entry 13: From <em>On Servitude</em></a></p>
-<p class="patchnotes"><br><a href="#e14">Entry 14: From <em>An Exploration of the Mechanics of Yahiric Manifestation</em></a></p>
-<p class="patchnotes"><br><a href="#e15">Entry 15: From <em>Profile: Arfia-hin</em></a></p>
-<p class="patchnotes"><br><a href="#e16">Entry 16: From <em>Society Curriculum - Year 6</em></a></p><p></p>
-<p class="patchnotes"><br><a href="#e17">Entry 17: From <em>Common Knowledge Curriculum - Year 4</em></a></p>
-<p class="patchnotes"><br><a href="#e18">Entry 18: From <em>Yarzon-Watershed</em></a></p><p></p>
-<p class="patchnotes"><br><a href="#e19">Entry 19: From <em>Guide to Common Knowledge - Preface</em></a></p> 
-<p class="patchnotes"><br><a href="#e20">Entry 20: From <em>The Fort Karzen Files</em></a></p> 
-<p class="patchnotes"><br><a href="#e21">Entry 21: From <em>The Rahazuna Political System</em></a></p> 
-<p class="patchnotes"><br><a href="#e22">Entry 22: From <em>University of Monselian</em></a></p> 
-<p class="patchnotes"><br><a href="#e23">Entry 23: From <em>The Book of Kings</em></a></p> 
-<p class="patchnotes"><br><a href="#e24">Entry 24: From <em>The Kinds of Human</em></a></p> 
-<p class="patchnotes"><br><a href="#e25">Entry 25: From a meeting between Altria and Bennitri</a></p>
-<p class="patchnotes"><br><a href="#e26">Entry 26: From <em>Profile: Bennitri</em></a></p>  
-<p class="patchnotes"><br><a href="#e27">Entry 27: From <em>The Colonies of Myalvi</em></a></p>  
-<p class="patchnotes"><br><a href="#e28">Entry 28: From an informal commentary on <em>The Colonies of Myalvi</em></a></p>  
-<p class="patchnotes"><br><a href="#e29">Entry 29: From an anonymous review of <em>Mew Mew Kissy Cutie 2</em></a></p>  
-<p class="patchnotes"><br><a href="#e30">Entry 30: From a commentary on Myalvi culture by an unknown author</a></p>  
-<p class="patchnotes"><br><a href="#e31">Entry 31: From a compilation of the entries of Dr. Gaster</a></p> 
-<p class="patchnotes"><br><a href="#e32">Entry 32: From a flyer for the Gaster Followers</a></p>  
-<p class="patchnotes"><br><a href="#e33">Entry 33: From a statement by Karol-Kalvi</a></p>  
-<p class="patchnotes"><br><a href="#e34">Entry 34: From <em>On the nature of the recovered humans</em></a></p> 
-<p class="patchnotes"><br><a href="#e35">Entry 35: From Arfia-hin and Dr. Alfizo's speech on the "Level of Violence" system</a></p>  
-<p class="patchnotes"><br><a href="#e36">Entry 36: From a speech given by the Storytellers of New Home</a></p>  
-<p class="patchnotes"><br><a href="#e37">Entry 37: From <em>The Century</em>, annotated</a></p>  
- <p class="patchnotes"><br><a href="#e38">Entry 38: From <em>Welcome Back, Yarvant!</em></a></p>  
+
+                   <p class="patchnotes"><br><a href="#e0"> Preface</a></p>   
+                                      <p class="patchnotes"><br><a href="#announcements">News (e.g. new entries)</a></p>   
+        <h3>Recommended context</h3>
+<p class="patchnotes"><a href="#e1">1. From <em>Once Upon A Time</em></a></p>
+<p class="patchnotes"><br><a href="#e3">3. From <em>History of Yarvant</em></a></p>
+<p class="patchnotes"><br><a href="#e31">31. From a compilation of the entries of Dr. Gaster</a></p> 
+<p class="patchnotes"><br><a href="#e35">35. From Arfia-hin and Dr. Alfizo's speech on the "Level of Violence" system</a></p>  
+<p class="patchnotes"><br><a href="#e36">36. From a speech given by the Storytellers of New Home</a></p>  
+<p class="patchnotes"><br><a href="#e37">37. From <em>The Century</em>, annotated</a></p>  
+<p class="patchnotes"><br><a href="#e38">38. From <em>Welcome Back, Yarvant!</em></a></p>  
+        <h3>Undertale</h3>
+<p class="patchnotes"><a href="#e15">15. From <em>Profile: Arfia-hin</em></a></p>
+<p class="patchnotes"><br><a href="#e29">29. From an anonymous review of <em>Mew Mew Kissy Cutie 2</em></a></p>
+        <h3>Cultural systems</h3>
+<p class="patchnotes"><a href="#e7">7. From <em>Common Knowledge Curriculum - Year 2</em></a></p>
+<p class="patchnotes"><br><a href="#e9">9. From <em>The Pantheon of Ester</em></a></p>
+<p class="patchnotes"><br><a href="#e11">11. From <em>On the Rahazuna Educational System</em></a></p>
+<p class="patchnotes"><br><a href="#e13">13. From <em>On Servitude</em></a></p>
+<p class="patchnotes"><br><a href="#e16">16. From <em>Society Curriculum - Year 6</em></a></p>
+<p class="patchnotes"><br><a href="#e21">21. From <em>The Rahazuna Political System</em></a></p> 
+        <h3>History</h3>
+<p class="patchnotes"><a href="#e8">8. From <em>The Panavana - Chronicles of a People</em></a></p>
+<p class="patchnotes"><br><a href="#e18">18. From <em>Yarzon-Watershed</em></a></p>
+<p class="patchnotes"><br><a href="#e23">23. From <em>The Book of Kings</em></a></p> 
+<p class="patchnotes"><br><a href="#e12">12. From <em>U.M. Demographic Statistics, 913 Edition</em></a></p>
+<p class="patchnotes"><br><a href="#e39">39. From a short essay on Montera</a></p> 
+        <h3>Metaphysics</h3>
+<p class="patchnotes"><a href="#e4">4. From <em>Information regarding Yahir for the Latest Generation</em></a></p>
+<p class="patchnotes"><br><a href="#e5">5. From <em>A Specification on the Properties of Yahir, and on the Historical Concepts of Hope and Determination</em></a></p>
+<p class="patchnotes"><br><a href="#e14">14. From <em>An Exploration of the Mechanics of Yahiric Manifestation</em></a></p>
+<p class="patchnotes"><br><a href="#e17">17. From <em>Common Knowledge Curriculum - Year 4</em></a></p>
+<p class="patchnotes"><br><a href="#e34">34. From <em>On the nature of the recovered humans</em></a></p> 
+        <h3>The war</h3>
+<p class="patchnotes"><a href="#e2">2. From <em>Emperors of Rahazun</em></a></p>
+<p class="patchnotes"><br><a href="#e10">10. From <em>Arvent's Blessing</em></a></p>
+<p class="patchnotes"><br><a href="#e25">25. From a meeting between Altria and Bennitri</a></p>
+<p class="patchnotes"><br><a href="#e26">26. From <em>Profile: Bennitri</em></a></p>  
+<p class="patchnotes"><br><a href="#e33">33. From a statement by Karol-Kalvi</a></p>    
+        <h3>From Myalvi</h3>
+<p class="patchnotes"><a href="#e20">20. From <em>The Fort Karzen Files</em></a></p> 
+<p class="patchnotes"><br><a href="#e27">27. From <em>The Colonies of Myalvi</em></a></p>  
+<p class="patchnotes"><br><a href="#e28">28. From an informal commentary on <em>The Colonies of Myalvi</em></a></p>  
+<p class="patchnotes"><br><a href="#e30">30. From a commentary on Myalvi culture by an unknown author</a></p>  
+        <h3>Miscellaneous</h3>
+<p class="patchnotes"><a href="#e6">6. From <em>The Worldbook</em></a></p>
+<p class="patchnotes"><br><a href="#e19">19. From <em>Guide to Common Knowledge - Preface</em></a></p> 
+<p class="patchnotes"><br><a href="#e22">22. From <em>University of Monselian</em></a></p> 
+<p class="patchnotes"><br><a href="#e24">24. From <em>The Kinds of Human</em></a></p> 
+<p class="patchnotes"><br><a href="#e32">32. From a flyer for the Gaster Followers</a></p>  
+
+
 <hr>
 
 <h3 class="patchnotes" id="vg">Vector's Socials</h3>
@@ -917,20 +932,48 @@
 
 <div class="main">
     <div class="story">
-    <h1 id="e0" class="patchnotes"> Welcome to Undersided!</h1>
-  <p class="patchnotes">"Undersided" is a project by <a href="#vg">Vector Graphics</a> detailing the world of ʏᴏɴᴀ. The project is an expansion of the setting of <em>Undertale</em> by Toby Fox, and from the perspective of that community it can be seen as an AU. The official media for Undersided largely consists of excerpts from in-universe documents detailing the phenomena, events, and people that are important to the history of a region known as "Liruzon", where Undertale's story takes place.</p>
-  <h3 class="patchnotes"> Conventions</h3>
-  <p class="patchnotes">The documents here are translated from the original language they are written in (often modern Rahazuna or Nideri) into English. To do this faithfully, several conventions have had to be chosen.</p>
-  <div class="list">
+ <div id="announcements" class="tab-content">
+
+  <!--
+  
+  ###    ###  ########## ###   #   ###  ########
+  ####   ###  ########## ###   #   ### #########
+  #####  ###  ###         ### ### ###  ###
+  ###### ###  #########   ### ### ###  ########
+  ### ######  #########    #########    ########
+  ###  #####  ###          #########         ###
+  ###   ####  ##########    ### ###    #########
+  ###    ###  ##########    ### ###    ########
+  
+  -->
+<h3 class="patchnotes">News</h3>
+<p> Because of my restructuring of the site, it is now harder to tell from just looking when a new entry gets added. So, I'll be announcing these changes here instead.</p>
+
+<div class="list">
   <ul class="centerlist">
-    <li><p>The term "monster" is not used for the magic-based race that inhabits the world alongside humans. Instead, the term "yaref" [plural: yarov] from the original language is loaned. This is done to avoid ambiguity with other senses of "monster". Similarly with "magic" being replaced with "yahir".</p></li>
-    <li><p>Other potentially ambiguous terminology, such as "DETERMINATION", "SOUL", "SAVE", and others, is spelled in ALL CAPS.</p></li>
-    <li><p>Units, except units of time, are presented in familiar terms to Earth readers, such as meters and kilograms. Units of time smaller than a day are in the familiar 24:60:60 format (as that is what is used in-universe), but these are slightly longer than their Earth counterparts. A year of 301 Yona days is split into eight months alternating 37 and 38 days, and an extra day at the end of the year called <em>Arvendanula</em>, which serves as the winter holiday. However, the lifespans of the in-universe humans turn out to be approximately 80 of these years, which is about 70 of our own.</p></li>
-    <li><p>Place names are not, in general, translated, though there may be exceptions.</p></li>
-    <li><p>Many names provided by Toby Fox only work in English (due to puns, Western naming conventions, or other such things), and are posited to be localized versions of in-universe names, which are used here. For example, instead of "Asgore", "Ruaeli" is used; instead of "Frisk", "Ana-hin" is used; instead of "Sans", "Arfia" is used. Character designs are posited to be similarly localized (in regards to clothing customs, connotations, pop culture, etc), though places where Undertale explicitly deviates from our world are kept.</p></li>
-</ul>
+    <li><p>2025-07-28: Added entry <a href="#e39" target="_blank" rel="noopener noreferrer">39</a> to the "History" section, about Montera as a nation </p></li>
+    <li><p>2025-07-27: Added entries <a href="#e35" target="_blank" rel="noopener noreferrer">35</a>,  <a href="#e36" target="_blank" rel="noopener noreferrer">36</a>, <a href="#e37" target="_blank" rel="noopener noreferrer">37</a>, 
+      and <a href="#e38" target="_blank" rel="noopener noreferrer">38</a> to the "Recommended context" section, to provide a lead-in for people to see how Undersided fits in with Undertale, and for people unfamiliar with Undertale to know some of its basic ideas that are relevant in Undersided</p></li>
+    <li><p>2025-07-19: Added entry <a href="#e33" target="_blank" rel="noopener noreferrer">33</a> to the "The war" section, about Karol-Kalvi, and entry <a href="#e34" target="_blank" rel="noopener noreferrer">34</a> to the "Metaphysics" section, about a method of resurrection.</p></li>
+        <li><p>2025-07-14: Added entries <a href="#e29" target="_blank" rel="noopener noreferrer">29</a>, <a href="#e30" target="_blank" rel="noopener noreferrer">30</a>, <a href="#e31" target="_blank" rel="noopener noreferrer">31</a>, <a href="#e32" target="_blank" rel="noopener noreferrer">32</a></p></li>
+        <li><p>2025-07-09: Added entries <a href="#e27" target="_blank" rel="noopener noreferrer">27</a>, <a href="#e28" target="_blank" rel="noopener noreferrer">28</a></p></li>
+              <li><p>2025-07-03: Added entries <a href="#e25" target="_blank" rel="noopener noreferrer">25</a>, <a href="#e26" target="_blank" rel="noopener noreferrer">26</a></p></li>
+      </ul>
 </div>
-<h1 id="e1">From <em>Once Upon A Time</em> </h1>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+ <div id="e1"class="tab-content">
+<h1>From <em>Once Upon A Time</em> </h1>
 <h3 class="patchnotes"><em>913, Rahazun</em> </h1>
 <h4>Humans and yarov</h4>
     <p dir="ltr">
@@ -952,14 +995,19 @@
       <p dir="ltr">
         <span>This also started something else: two more children disappeared from the village the following year, and four more in the following five decades, not least sparked by curiosity regarding Khara's disappearance and the later appearance of Ondeli-Khara.</span>
       </p>
-      <h1 id="e2">From <em>Emperors of Rahazun</em> </h1>
+
+</div>
+ <div id="e2"class="tab-content">
+      <h1>From <em>Emperors of Rahazun</em> </h1>
       <h3 class="patchnotes"><em>947, Rahazun</em> </h1>
     <p>
         <!--<span>Emperor Karol-Kalvi Foster was the first emperor of Rahazun after the overthrow of Siegetev Seransai following the war. Most of Karol-Kalvi's reign was spent cleaning up the mess that Siegetev left, but a lot of the history of Yarzon of the Great Watershed got swept up in this. It's not particularly like the following rulers were much better; Lekusa-Kalvi-hin basically did nothing as a ruler, and the issue of Yarzon was far in the past for the following rulers, who wanted to rid themselves of the issue. History recalls one particular instance where a statue of Tomi-Rugan located in Yarhe, originally made in 647 to commemorate Tomi-Rugan and symbolize unity between humans and yarov, was discarded in a pit at Mt. Ebott in 724 during the reign of Ana-Kalvi Foster. One of the people involved in the disposal of the statue, Maniri Lahok, ended up trapped in a chasm in Mt. Ebott due to the barrier; this was a sky-exposed passage largely separated from the main Underground cavern. Maniri died shortly after, and the SOUL was never recovered.</span>
     -->
   History recalls one particular instance where a statue of Tomi-Rugan located in Yarhe, originally made in 647 to commemorate Tomi-Rugan and symbolize unity between humans and yarov, was discarded in a pit at Mt. Ebott in 724 during the reign of Ana-Kalvi Foster and during a major period of development and change in the city it was in. One of the people involved in the disposal of the statue, Maniri Lahok, ended up trapped in a chasm in Mt. Ebott due to the barrier; this was a sky-exposed passage largely separated from the main Underground cavern. Maniri died shortly after, and the SOUL was never recovered.
   </p>
-      <h1 id="e3">From <em>History of Yarvant</em> </h1>
+  </div>
+ <div id="e3"class="tab-content">
+      <h1>From <em>History of Yarvant</em> </h1>
       <h3 class="patchnotes"><em>915, Yarzon-Ebott</em> </h1>
         <h4>From "Conventions"</h4>
         <p>The "X" dating system relates to the standard SR dating system by 663 SR = 1 X (the year following the banishment of the yarov of Liruzon), so that, for example, 201 X is the same year as 863 SR.</p>
@@ -978,8 +1026,9 @@ Home became the center of the yaref population, and although the other settlemen
 <p>But as quick as this mysterious human appeared, it vanished, probably having died - yet when we searched the Underground for remains or a SOUL, no traces could be found. The only thing we found was a mysterious stone statue of Tomi-Rugan, probably from the old city outside the barrier - how it ended up here is a complete mystery - more recently, we have discovered that there is a hidden crack leading to the surface that was more than big enough for the statue to slide through, but that still leaves the question of "why" wide open. Perhaps humans were trying to erase all traces that we ever existed.</p>
 <h4>The mystery, solved</h4>
 <p>It was not until several decades later in 116X that we, in fact, found the opening, and realized that that human's entry into the barrier was simply happenstance - however, both the body and the SOUL had long since decayed (even human SOULs slowly decay if not stored properly). This combined with further info on human culture led us to realize that following the war, humans in fact meant us no harm - in fact, there was a growing movement among the human population to actually free us from the Underground. As such, fearing the humans no longer, we moved out of our old city, Home. We braved  harsh cold, damp swampland, and searing heat - but it was actually a much slower process than what one might have thought - until we reached what we now call our capital. It was still the Starlight City to start off with, but over the next century, it and many other settlements would grow dramatically, and the Starlight City would eventually be renamed "New Home". (Again, our king is really bad at names...?) Additionally, the Steamworks was built near the Meadow to power such a massively expanded domain.</p>
-
-<h1 id="e4">From <em>Information regarding Yahir for the Latest Generation</em> </h1>
+</div>
+ <div id="e4"class="tab-content">
+<h1 >From <em>Information regarding Yahir for the Latest Generation</em> </h1>
 <h3 class="patchnotes"><em>917, Ri-Ebott</em> </h1>
     <p>A barrier (pg.146, Altria) is a field enclosing a region of space, which prevents beings with weak SOULs from exiting. Additional effects include:<br />
         - While within the barrier, powerful beings can manipulate timelines in a manner similar to a video game save file (pg. 236, Alfizo)<br />
@@ -992,8 +1041,9 @@ Home became the center of the yaref population, and although the other settlemen
         
         <p>Citations: <br />
         "On the Nature of the Barrier" by Senior Researcher Alfi Alfizo<br /></p>
-
-        <h1 id="e5">From <em>A Specification on the Properties of Yahir, and on the Historical Concepts of Hope and Determination</em> </h1>
+</div>
+ <div id="e5"class="tab-content">
+        <h1 >From <em>A Specification on the Properties of Yahir, and on the Historical Concepts of Hope and Determination</em> </h1>
         <h3 class="patchnotes"><em>918, Yarzon-Ebott</em> </h1>
           <h4>Conventional wisdom</h4> 
         <p>
@@ -1023,8 +1073,9 @@ Home became the center of the yaref population, and although the other settlemen
           <p>
             <span>Unsov have existed prior to Ondeli-Magzi, and in fact their presence began ramping up rapidly from the early 600s, however they all were similarly mutually checked. It is the appearance of a moderately more powerful unsef, Tomi-Rugan, from 647 to 661 that ultimately led to the Invasion of Yarzon-Watershed, where the unsef was taken as a threat, was defeated, and the remaining yarov were forced out of surface Liruzon. (It is, in fact, Tomi-Rugan, that was depicted in Waterfall.)</span>
           </p>
-
-          <h1 id="e6">From <em>The Worldbook</em> </h1>
+</div>
+ <div id="e6"class="tab-content">
+          <h1 >From <em>The Worldbook</em> </h1>
           <h3 class="patchnotes"><em>923, General</em> </h1>
           <p>
               <strong>From "Khara":</strong>
@@ -1036,8 +1087,9 @@ Home became the center of the yaref population, and although the other settlemen
 
             <p><strong>From "Myalvi":</strong></p>
             <p><span>Tur-Myalvi is a nation of Wilant located south of Rahazun and north of Hesan proper. Tur-Myalvi was founded when the wilo came across the sea from Endadvi, establishing their rule over what was once the northern realm of Hesan (ruled by Niki). They failed to understand the Panavana as a people, failing to recognize the natural place of different kinds of people in Hesanic society, while the Panavic people were... [...] ...and as a result, after the original colonial program failed, in a crude attempt to integrate with existing cultures, the nation of Tur-Myalvi adopted the Esteri deity <em>Errai</em> as a national symbol (while still of course continuing to worship Hierrau, their own god), not realizing that Errai in Esteri mythology was a demon of boredom and confusion, associated with Myalvi by the ezov to mock Wilant.</span></p>
-
-            <h1 id="e7">From <em>Common Knowledge Curriculum - Year 2</em> </h1>
+</div>
+ <div id="e7"class="tab-content">
+            <h1 >From <em>Common Knowledge Curriculum - Year 2</em> </h1>
             <h3 class="patchnotes"><em>914, Rahazun</em> </h1>
             <p>
                 <strong>From "Unit 3 - Months and Seasons":</strong>
@@ -1062,8 +1114,9 @@ Home became the center of the yaref population, and although the other settlemen
               <p>The four seasons are caused by the tilt of Yona's axis relative to the orbital plane. As the planet orbits, which parts of the planet get more light changes. When a hemisphere is facing the Sun, it is summer in that hemisphere and winter in the other (which is facing away). In the northern hemisphere, the summer solstice occurs on 1 Njuimer, and the winter solstice occurs on Arvendanula (though the actual dates vary back and forth by about a day due to leap years and other factors). </p>
               
               <p>In between the solstices are the equinoxes, the spring equinox at 1 Minaha and the autumn equinox at 1 Gazaha, when neither hemisphere is pointed towards the Sun and so days and nights are of equal length.</p>
-
-              <h1 id="e8">From <em>The Panavana - Chronicles of a People</em> </h1>
+</div>
+ <div id="e8"class="tab-content">
+              <h1>From <em>The Panavana - Chronicles of a People</em> </h1>
               <h3 class="patchnotes"><em>745, Rahazun</em> </h1>
                 <h4>Panavic culture</h4>
               <p>
@@ -1167,8 +1220,9 @@ Home became the center of the yaref population, and although the other settlemen
                   </em>
                   <span> along with their primary settlement there, from which they drove out the original inhabitants. Their plans had been to establish their own "country" stretching from coast to coast, south to Rovana and north to Ester. With their superior technology, it took the forces of all of Liruzon combined to even attempt to drive them out, but ultimately the key factor in doing them in was their own instability, as growing discontent in the invading population led them to completely separate from whatever kingdom they originated from. Vilant's invasion had been halted, but at the cost of the northern realm of Hesan. While the southern territories would eventually gain independence, and, being under a Panavic rule, had been relatively unharmed, the north was forever scarred by the vilo, whose continuing presence on the continent, even if severely weakened, was terrifying to many. As a result, vilo have not been well-respected in Liruzon, though more recent attempts at resolving this have been fruitful.</span>
                 </p>
-
-                <h1 id="e9">From <em>The Pantheon of Ester</em> </h1>
+</div>
+ <div id="e9"class="tab-content">
+                <h1>From <em>The Pantheon of Ester</em> </h1>
                 <h3 class="patchnotes"><em>917, Niki Myalvi</em> </h1>
                    <h4>Ramazir</h4>
                 <p>
@@ -1205,9 +1259,10 @@ Home became the center of the yaref population, and although the other settlemen
                   <p>
                     <span>In some cultures, Arvendanula traditions have been augmented with cautionary tales, encouraging children to behave lest Arvent's fallen sibling Meren arrive and take them away.</span>
                   </p>
+</div>
+ <div id="e10"class="tab-content">
 
-
-<h1 id="e10">From <em>Arvent's Blessing</em> </h1>
+<h1>From <em>Arvent's Blessing</em> </h1>
 <h3 class="patchnotes"><em>838, Yarzon-Ezvelan</em> </h1>
 <p>
     <span>When those of Ramazir proposed the Great Evacuation, one would have been quick to perceive it as illogical and impractical. But we were desperate - searching for any way to save our people, and despite involving uprooting our entire kingdom and abandoning the Watershed, the Evacuation seemed to be our best option. (At this point, we did not yet know of Altria's deal.) Plus, we knew that the leaders of Montera were working behind the back of Ilant - in our favor - for the entire war up to this point, so it was only correct to go through with the plan.</span>
@@ -1220,9 +1275,10 @@ Home became the center of the yaref population, and although the other settlemen
     <p>
         <span>It took pretty much all the time we had left for us all to make it to the Far North, and by that point, those left of us in the Watershed had surrendered.</span>
 </p>
+</div>
+ <div id="e11"class="tab-content">
 
-
-<h1 id="e11">From <em>On the Rahazuna Educational System</em> </h1>
+<h1>From <em>On the Rahazuna Educational System</em> </h1>
 <h3 class="patchnotes"><em>901, Monselian</em> </h1>
 <p>Schooling typically begins the first day (1 Ilgimer) of the calendar year after a child turns seven years old. The school year itself is split into four terms: winter*, spring*, summer*, and fall*. </p>
 
@@ -1266,14 +1322,18 @@ Home became the center of the yaref population, and although the other settlemen
 <li><p>2-3 classes of the student's choice</p></li>
 </ul>
 </div>
-<h1 id="e12">From <em>U.M. Demographic Statistics, 913 Edition</em> </h1>
+</div>
+ <div id="e12"class="tab-content">
+<h1>From <em>U.M. Demographic Statistics, 913 Edition</em> </h1>
 <h3 class="patchnotes"><em>913, Monselian</em> </h1>
 <p>From "Adult Life Expectancy (Human) By Country":</p>
 
 <p>Ester: 47.6<br />
 Rahazun: 79.8<br />
 Tur-Myalvi: 82.3</p>
-<h1 id="e13">From <em>On Servitude</em> </h1>
+</div>
+ <div id="e13"class="tab-content">
+<h1>From <em>On Servitude</em> </h1>
 <h3 class="patchnotes"><em>913, Monselian</em> </h1>
 <p>
     <span>In the society of Panavis, there have historically been two kinds of worker: compensated workers and servants. Compensated workers are hired into their positions and receive compensation for their work. Servants are several categories of workers (public servants and household servants) that are socially expected to work despite not being paid, and usually originate from various defined role categories considered best suited for their purpose. Public servants include farm workers, the military, and some other mass labor, as well as various categories of public utility positions (generally serving the state), while household servants work for a single person or a household. The kinds of servants are considered the lowest class in a vertical arrangement - this characterizes their lack of authority, but also position as the essential bedrock that ensures the stable functioning of society. Also, note that there is social mobility available, especially in more recent times.</span>
@@ -1282,7 +1342,10 @@ Tur-Myalvi: 82.3</p>
   <p>
     <span>In recent times, there has been a massive push for equality. As of 913, servants still exist, but they often receive large amounts of state support, in order to provide the opportunity for them to live the life they want. This includes laws about treatment of servants,  state-backed financial support, and laws protecting workers in general. Public servants are still distinct from compensated workers (who work for a particular company or person, and are paid directly from there), but in most places in modern times, household servants have merged with compensated workers (in fact, the term "compensated worker" is now rather dated in most places) - Farnitan remains an exception. </span>
   </p>
-<h1 id="e14">From <em>An Exploration of the Mechanics of Yahiric Manifestation</em> </h1>
+
+  </div>
+ <div id="e14"class="tab-content">
+<h1 >From <em>An Exploration of the Mechanics of Yahiric Manifestation</em> </h1>
 <h3 class="patchnotes"><em>661, Yarzon-Watershed</em> </h1>
 <p>
     <span>...[Yarov] are manifestations of yahir (the part of the natural world relating to patterns and concepts) that are themselves not only sentient, but sapient. The yaref populations originate by the localized influence of human concepts, causing yarov to appear in the region (hence explaining their similarity to an idealized form of human sociality). This is a passive effect, as humans do not possess the capacity to directly induce yarov. But yarov themselves, being natively yahiric, </span>
@@ -1291,7 +1354,10 @@ Tur-Myalvi: 82.3</p>
     </em>
     <span> have this capability: in fact, this is the method by which yarov reproduce, often requiring more than one "parent" due to the joint effect of interacting yahiric expressions aiding massively in the generation of a new individual, which can essentially be described as the propagation of yahiric sapience. This also explains their general impressionability in some contexts to humans (in specific, when they are not opposed), and thus the large-scale borrowing of Rahazuna and Totijona cultural concepts throughout early history, and additionally, accounts seem to describe certain cases of friendly human social interaction as "an aura of peaceful DETERMINATION"...</span>
   </p>
-<h1 id="e15">From <em>Profile: Arfia-hin</em> </h1>
+
+  </div>
+ <div id="e15"class="tab-content">
+<h1 >From <em>Profile: Arfia-hin</em> </h1>
 <h3 class="patchnotes"><em>920, Yarzon-Ebott</em> </h1>
 <p>Arfia-hin was the de-facto Royal Scientist between 234X and 246X, continuing Gaster's research into alternate timelines.<br />
 </p>
@@ -1318,7 +1384,9 @@ Tur-Myalvi: 82.3</p>
 <h4>Difficulty</h4>
 
     <p>According to Khara, Arfia-hin is "extremely difficult". This is difficult to understand, though it is likely to do with a general period of hostile revelation to Ana-hin throughout and shortly after their time in the Underground.</p>
-<h1 id="e16">From <em>Society Curriculum - Year 6</em> </h1>
+    </div>
+ <div id="e16"class="tab-content">
+<h1>From <em>Society Curriculum - Year 6</em> </h1>
 <h3 class="patchnotes"><em>915, Niki Myalvi</em> </h1>
 <p>
     <span>The gold piece (G) is the common currency of Liruzon, which as of 915 is currently roughly valued at 0.27 Ezvelan dollars or 0.11 Tur-Myalvi shillings, such that a gram of gold costs 4,000 G (until 913, the realm of Yarzon-Ebott used a different gold piece which was valued at about half that amount); for more common-place things, a loaf of bread is approximately 20 G, a cup of tea is approximately 30 G, and a night in a hotel room is approximately 100 G.</span>
@@ -1379,7 +1447,9 @@ Tur-Myalvi: 82.3</p>
     </em>
     <span>). The Invasion of Yarzon-Watershed also caused a separation between Yarzon-Ebott's economy and the general economy of the wider world, causing the value of its gold piece to drop further. However, after 913, Yarzon-Ebott adopted the standard gold piece. In Yarzon-Ezvelan, after 662 SR and the Great Evacuation, the gold piece was adopted as legal tender despite the proximity to and interaction with Ezvanta economies which use the dollar.</span>
   </p>
-<h1 id="e17">From <em>Common Knowledge Curriculum - Year 4</em> </h1>
+  </div>
+ <div id="e17"class="tab-content">
+<h1>From <em>Common Knowledge Curriculum - Year 4</em> </h1>
 <h3 class="patchnotes"><em>923, Rahazun</em> </h1>
 <h4>Introduction</h4>
   <p>Many things in the world follow hard and fast rules, mostly in the realm of the very small and very large. The moon always goes around the earth, which always goes around the sun. Gravity pulls a person down to the ground, and white light can be split into a rainbow of colors.</p>
@@ -1410,7 +1480,9 @@ Tur-Myalvi: 82.3</p>
 
 
 <p>Because of the way yarov originate, and them being very naturally proficient in manipulating yahir directly, yarov can actually create new yaref individuals, and thus they can propagate their populations and act as a form of "life".</p>
-<h1 id="e18">From <em>Yarzon-Watershed</em> </h1>
+</div>
+ <div id="e18"class="tab-content">
+<h1>From <em>Yarzon-Watershed</em> </h1>
 <h3 class="patchnotes"><em>921, Rahazun</em> </h1>
 <p>
     <span>Many of the ways humans relate to "nature" relate to the nature and behavior of yarov. Especially in Panavic culture, the first full-scale cases where humans interacted with yarov as people (as opposed to phenomena, and excluding small-scale ambient manifestations) come from the lingering populations brought about by the practices of the Vanki.</span>
@@ -1435,7 +1507,9 @@ Tur-Myalvi: 82.3</p>
     </em>
     <span> (which is often rendered in modern Liruzona as "Yarzon of the Watershed"). Lundroz was the main group to interact with the Panavana. The legendary rulers Aratikent of Lundroz and Etevni of Hesan promised that they together (and thus humans and yarov together) would rule over the world, and for a time after Etevni's death, Unsef Etevni-Aratikent would rule over both kingdoms until Aratikent's death and the succession of Etevni by Nienon (and Aratikent by Porakate). Their alliance, while it only formally lasted as long as the Empire of Hesan, would continue to recur in cultural interactions up until it was shattered by the Invasion of Yarzon-Watershed.</span>
   </p>
-<h1 id="e19">From <em>Guide to Common Knowledge - Preface</em> </h1>
+  </div>
+ <div id="e19"class="tab-content">
+<h1>From <em>Guide to Common Knowledge - Preface</em> </h1>
 <h3 class="patchnotes"><em>915, Hesan</em> </h1>
 <p>
     <span>The concept of the Guide to Common Knowledge originated in 721 in a revelation to Jezen Dekirzo, one of the major contributors to the idea of what we now call primary education in Liruzon.
@@ -1448,13 +1522,14 @@ Tur-Myalvi: 82.3</p>
   </p>
 
 
-  <h1 id="e20">From <em>The Fort Karzen Files</em> </h1>
+  <h1 id="e20"class="tab-content">From <em>The Fort Karzen Files</em> </h1>
   <h3 class="patchnotes"><em>267 BF, Tur Myalvi</em> </h1>
   <p>
     <span>Those already living in the lands of Myalvi do not have a firm grasp on reality as it is, often deriving knowledge from their fictions rather than from the truth. This is because their form of "consciousness" is fundamentally flawed; they think of themselves as, if they don't actually be, inherently non-conscious, receiving inspiration only from higher sources. This is reflected in how they often (seemingly irrationally) place people with debilitating mental disorders in prestigious positions. They additionally regularly violate the sanctity of sexual relations; their marriage customs are not fully understood and seem to deviate from romantic love in many situations; this implies a broken form of morality, one which does not respect any traditional form of formality whatsoever. They additionally lack any sort of reasonable structure to their leadership, answering to local lords who then answer to their greater leaders. The natives of Myalvi are a harsh, warlike people, who refuse to follow the faith of Hierrau; we have encountered resistance from native armies on all fronts during colonization, though we have managed to hold onto our fortifications near the Sevevda River (namely, Fort Sevevda itself along with Fort Karzen and Fort Ruerden). </span>
   </p>
-
-<h1 id="e21">From <em>The Rahazuna Political System</em> </h1>
+</div>
+ <div id="e21"class="tab-content">
+<h1>From <em>The Rahazuna Political System</em> </h1>
 <h3 class="patchnotes"><em>904, Rahazun</em> </h1>
 
   <p>
@@ -1484,7 +1559,9 @@ Tur-Myalvi: 82.3</p>
 <p>
   <span>The Emperor is elected by a council, which also has the right to declare an Emperor unfit for rule since 663.</span>
 </p>
-<h1 id="e22">From <em>University of Monselian</em> </h1>
+</div>
+ <div id="e22"class="tab-content">
+<h1>From <em>University of Monselian</em> </h1>
 <h3 class="patchnotes"><em>913, Rahazun</em> </h1>
 <p>
   <span>The U.M. is believed by some to be the reason Rahazun grew from the small village of Rafi's settlers to the bustling metropolis it is today. In 435 SR during Rahazun's allegiance to Niderazon, a mysterious figure known as the Historian arrived in Rahazun County from the northern lands of El-Sarvin, and established the University of Monselian, which would become the most important center of knowledge for Liruzon as a whole. Many people came to the University to study, and thus Monselian, and hence Rahazun. </span>
@@ -1497,9 +1574,10 @@ Tur-Myalvi: 82.3</p>
 <p>
   <span>The Historian themself is generally taken to be an immortal servant of Ramazir, as the Historian as an identity is still existent today. Physical appearances of the Historian have been extremely rare. However, many books have been published by the University in the Historian's name. In the baseline interpretation, the Historian is a persona maintained by the University, similar to the various appearances of Arvent during the winter holidays for their respective communities.</span>
 </p>
+</div>
+ <div id="e23"class="tab-content">
 
-
-<h1 id="e23">From <em>The Book Of Kings</em> </h1>
+<h1>From <em>The Book Of Kings</em> </h1>
 <h3 class="patchnotes"><em>915, Montera</em> </h1>
 
 <p>...Only surnames which represent notable families will be shown, except for Ezva or Wilka realms that follow a strictly hereditary system.</p><h3>Table of Contents</h3><h3>Volume I: Yarzon (High King)</h3>
@@ -1602,7 +1680,9 @@ Zorvan (824-848 SR)<br />
 Himir (848-876 SR)<br />
 Rodan (876-904 SR)<br />
 Sarnelkh Seransai (904 SR-present)</p>
-<h1 id="e24">From <em>The Kinds of Human</em> </h1>
+</div>
+ <div id="e24"class="tab-content">
+<h1>From <em>The Kinds of Human</em> </h1>
 <h3 class="patchnotes"><em>892, Yarzon-il-Dividar</em> </h1>
 <p>Unlike yarov which may have dozens of kinds within the same settlement, and hundreds more elsewhere, humans only have a handful of different regional varieties, often with distinct cultures. Cultural differences between these ethnicities' respective cultures will be covered separately; for now, we will focus on the physical distinctions between them. Consult the introduction to this book for a primer on human physiology.</p>
 
@@ -1619,8 +1699,9 @@ Sarnelkh Seransai (904 SR-present)</p>
 <p>Pavriz are an example of a kind of human living in the far east of Iltezon, in the lands of Havon and also to the south in Inveri. They are very tall (8-9 feet) with a generally skinny body type, and with skin ranging from light red to light purple and dark eyes. They live up to 100 years, but are only fully grown by about age 35.</p>
 
 <p>Malakiz live across Iltezon as a diaspora, in various small settlements within other cities, in traveling bands, etc. Physically, they resemble wila children (in fact, puberty/adolescence doesn't affect their external appearance at all), with reddish skin tones, and they live for about 90 years on average.</p>
-
-<h1 id="e25">From a meeting between Altria and Bennitri</h1>
+</div>
+ <div id="e25"class="tab-content">
+<h1>From a meeting between Altria and Bennitri</h1>
 <h3 class="patchnotes"><em>663, Rahazun</em> </h1>
 
 <p>
@@ -1671,8 +1752,9 @@ Sarnelkh Seransai (904 SR-present)</p>
 <p>
   <span>Benni: "..."</span>
 </p>
-
-<h1 id="e26">From <em>Profile: Bennitri</em></h1>
+</div>
+ <div id="e26" class="tab-content">
+<h1>From <em>Profile: Bennitri</em></h1>
 <h3 class="patchnotes"><em>920, Yarzon-Ebott</em> </h1>
 
 <p>
@@ -1682,8 +1764,9 @@ Sarnelkh Seransai (904 SR-present)</p>
 <p>
   <span>Bennitri was born in 636 in Ebtaraz, a village of razil located underneath Mt. Ebott which would become a ghost town over the next 25 years due to lack of contact with the rest of Raz (the last inhabitant dying in 661). Bennitri left in 646, finding Tomi and thus the Brujgals a year later, similar to Khara later on. Bennitri's time associated with the family overlapped with Tomi-Rugan's time as de-facto King of Yarzon-Watershed, making Bennitri a prince. Bennitri was an influential figure during the Invasion of Yarzon-Watershed, having had a role in the events leading up to the war, first attempting to meet with Siegetev himself on behalf of Tomi-Rugan (inadvertently massively heightening tensions). However, once the Great Evacuation was caught and halted by Siegetev in 663 as it was nearing its completion, the Brujgal family belonged to the 1% of Yarzon-Watershed's population left behind (as a large portion of the other remnants were wiped out), and Bennitri was himself able to meet with Chief Engineer Altria, and convince her to design and create a barrier to contain the monsters of Liruzon, as opposed to Siegetev's original plan of wiping out Liruzon's monster population entirely and then going after Ezvelan. This barrier did ultimately end up being created (around Mt. Ebott, containing the monsters in the former site of Ebtaraz), but Bennitri chose to stay on the surface, wishing to leave Ebtaraz behind. Bennitri lived out his later years (722-749) isolated from civilization on the slopes of Mt. Ebott, and eventually died there in 749. </span>
 </p>
-
-<h1 id="e27">From <em>The Colonies of Myalvi</em></h1>
+</div>
+ <div id="e27" class="tab-content">
+<h1>From <em>The Colonies of Myalvi</em></h1>
 <h3>
   <em>
     <span>246 BF, Tur Myalvi</span>
@@ -1705,8 +1788,9 @@ Sarnelkh Seransai (904 SR-present)</p>
 <p>
   <span>The region stretches south from Fort Sevevda, starting with Fort Karzen on the Karzen Beach. We approach the homeland of the yellow folk who resist our colonization, starting with what appears to be their northernmost realm, along the Sejodon Peninsula to the coast to the east. Across the bay lies Panavis, their homeland and where the Karzen grant's southern boundary is at 34 degrees north, and which sits just beyond the Dalrad Mountains that define the eastern edge of our familiar realm. The Karzen region, just like Ruerden to the north, stretches to the eastern coast of the continent, though it is unlikely given recent circumstances that this will be seen through to its proper conclusion. </span>
 </p>
-
-<h1 id="e28">From an informal commentary on <em>The Colonies of Myalvi</em></h1>
+</div>
+ <div id="e28" class="tab-content">
+<h1>From an informal commentary on <em>The Colonies of Myalvi</em></h1>
 <h3>
   <em>
     <span>878 SR, Niki Myalvi</span>
@@ -1748,8 +1832,9 @@ Sarnelkh Seransai (904 SR-present)</p>
 </span>
   <span>Arsamitev: "Haha, 'the Krizhan people'. Korhision was an empire."</span>
 </p>
-
-<h1 id="e29">From an anonymous review of <em>Mew Mew Kissy Cutie 2</em></h1>
+</div>
+ <div id="e29" class="tab-content">
+<h1>From an anonymous review of <em>Mew Mew Kissy Cutie 2</em></h1>
 <h3 class="patchnotes"><em>913, Yarzon-Ebott</em> </h1>
   <p>
   <span>The change to the new Sbeva-based production team was a bad call. The original people from Hesan understood the world of Durzir (obviously) and what stories there were to be told within it. I've seen and read a lot of other Durzir content by a bunch of different authors, and they all seem to get it as well.</span>
@@ -1758,8 +1843,9 @@ Sarnelkh Seransai (904 SR-present)</p>
 <p>
   <span>But not the new Mew Mew team. It's like they took one look at Mew Mew 1 and decided "hey, let's make a sequel!" without understanding anything else about how Durzir worked. For example, they chose (or did they even choose!?) to set it not in Durzir but in this awkward mashup of Durzir and Yona where donno exist and ruin Mew Mew's unique characteristic. In fact, they ruined Mew Mew's entire character in general! Please, do some basic research. Review: Mew Mew Kissy Cutie 2 is neither Kissy nor Cutie. It's trash. 0 stars.</span>
 </p>
-
-<h1 id="e30">From a commentary on Myalvi culture by an unknown author</h1>
+</div>
+ <div id="e30" class="tab-content">
+<h1>From a commentary on Myalvi culture by an unknown author</h1>
 <h3 class="patchnotes"><em>284, Niderazon</em> </h1>
 
 <p>The way of Hierrau confounds me. Not only does it insist that marriage can only derive from irrational attraction and romance (implying that romance is a prerequisite for procreation, and thus restricting romance to opposing genders), and that BEST FRIEND relationships are exclusively among siblings, cousins, or parents to children (forbidding any strong relation outside the family unit), but it also attempts to impose those norms not just on its own followers but on US, the "vedil" who have nothing to do with their practices or culture.</p>
@@ -1768,8 +1854,9 @@ Sarnelkh Seransai (904 SR-present)</p>
 
 <p>And it is also confusing that romantic relationships, which realize similarly to BEST FRIEND relationships (differing by their origins and underlying emotions), are seen as an entirely opposing category - to confuse them is to commit a minor inaccuracy, but it is seen as almost offensive to those of Myalvi for no apparent reason, especially when describing members of a family.</p>
 
-
-<h1 id="e31">From a compilation of the entries of Dr. Gaster</h1>
+</div>
+ <div id="e31" class="tab-content">
+<h1>From a compilation of the entries of Dr. Gaster</h1>
 <h3 class="patchnotes"><em>908, Yarzon-Ebott</em> </h1>
 
 
@@ -1826,8 +1913,9 @@ Sarnelkh Seransai (904 SR-present)</p>
 <p>There was only ever one more entry...</p>
 <p>After that, it all stopped.</p>
 
-
-<h1 id="e32">From a flyer for the Gaster Followers</h1>
+</div>
+ <div id="e32" class="tab-content">
+<h1>From a flyer for the Gaster Followers</h1>
 <h3 class="patchnotes"><em>907, Yarzon-Ebott</em> </h1>
 
 
@@ -1868,15 +1956,17 @@ Sarnelkh Seransai (904 SR-present)</p>
 <p>
   <span>Call the GASTER FOLLOWERS today at YZ-4-6666-6666 to get answers to your biggest questions, such as "who created the CORE?", "Who was the smartest person to ever live?", and most importantly, "who's listening right now as you read this very flyer?"</span>
 </p>
-
-<h1 id="e33">From a statement by Karol-Kalvi</h1>
+</div>
+ <div id="e33" class="tab-content">
+<h1>From a statement by Karol-Kalvi</h1>
 <h3 class="patchnotes"><em>664, Rahazun</em> </h1>
 
 <p>Siegetev and the war resulting from his actions are detestable, and I would see to it that his legacy is erased from Rahazun's future, such that it may not be further corrupted by his influence. My reign will be focused on helping Rahazun recover from Siegetev's corruption, and on repairing our relationship with Yarzon-Ezvelan. However, we must take care to avoid inciting additional enmity with Tur-Myalvi beyond what we already have since Siegetev was cast from his position. We are not in a political state where we can defend against Myalvi at the moment, and we do not have many allies.</p>
 
 <p>P.S. We will review the situation with Mt. Ebott shortly. Altria appears either unable or unwilling to reverse the barrier creation; four of the seven people in the barrier creation group refused to continue working after the end of Siegetev's regime.</p>
-
-<h1 id="e34">From <em>On the nature of the recovered humans</em></h1>
+</div>
+ <div id="e34" class="tab-content">
+<h1 >From <em>On the nature of the recovered humans</em></h1>
 <h3 class="patchnotes"><em>919, Ri-Ebott</em> </h1>
 <p>From Dr. Alfizo's discoveries regarding DETERMINATION animating inanimate objects if there is a pre-existing identity attached to them (Ondeli, for instance), and Ana-hin's experiences regarding Khara "attaching" to their SOUL and DETERMINATION, it has been determined that a dead human can be brought back to life given their SOUL and original body. Mt. Ebott's 'True Lab' has been converted into a research facility to study this. The process involves extracting the DETERMINATION from the human's SOUL, and adding it to the human's body. This transforms the body into a being which resembles the human but has an incomplete mental state, lacking certain capacities or motives. This being, because it is technically neither a human nor a yaref, can then absorb the original SOUL, fully reinstating the human's identity. Note that the resurrected being has major differences from a normal human; while it can move and interact, it almost functions as if the body is being "puppeted" by the consciousness, and most autonomous biological functions are entirely absent. This is an extremely unusual type of being; an established term does not exist for it; we are simply calling these "resurrectives" for the time being.</p>
 
@@ -1887,8 +1977,9 @@ Sarnelkh Seransai (904 SR-present)</p>
 <p>... (Section omitted)</p>
 
 <p>P.S. The explanation for this is not, in fact, 'Gaster', despite what a small group of people insist. Neither Kobzo Gaster or Dr. Gaster are relevant here.</p>
-
-<h1 id="e35">From Arfia-hin and Dr. Alfizo's speech on the "Level of Violence" system</h1>
+</div>
+ <div id="e35" class="tab-content">
+<h1>From Arfia-hin and Dr. Alfizo's speech on the "Level of Violence" system</h1>
 <h3 class="patchnotes"><em>917, Monselian</em> </h1>
 <p>
   <strong>[Non-diegetic note: much of this entry has been transcluded from dialogue lines in UNDERTALE by Toby Fox, and exists within Undersided to provide context for those unfamiliar with UNDERTALE. As such, it is not under the license that the rest of the work follows. Please credit Toby Fox when using this text.]</strong>
@@ -1917,8 +2008,9 @@ Sarnelkh Seransai (904 SR-present)</p>
 <p>
   <span>Arfia-hin: "yeah. me and alfi came up with this cuz she was obsessing over humans and how differently people like siegetev acted compared to people like okhelai and magzi, and after hearing of that attack by that other human on that one snowdin kid I was wondering what it would take for something like that to happen for real."</span>
 </p>
-
-<h1 id="e36">From a speech given by the Storytellers of New Home</h1>
+</div>
+ <div id="e36" class="tab-content">
+<h1>From a speech given by the Storytellers of New Home</h1>
 <h3 class="patchnotes"><em>913, New Home</em> </h1>
 <p>
   <strong>[Non-diegetic note: much of this entry has been transcluded from dialogue lines in UNDERTALE by Toby Fox, and exists within Undersided to provide context for those unfamiliar with UNDERTALE. As such, it is not under the license that the rest of the work follows. Please credit Toby Fox when using this text.]</strong>
@@ -1973,8 +2065,9 @@ The king decided it was time to end our suffering. Every human who falls down he
 <p>
   <span>You're going to be free.</span>
 </p>
-
-<h1 id="e37">From <em>The Century</em>, annotated</h1>
+</div>
+ <div id="e37" class="tab-content">
+<h1>From <em>The Century</em>, annotated</h1>
 <h3 class="patchnotes"><em>762, Yarzon-Ebott</em> </h1>
 
 <p>
@@ -2036,9 +2129,10 @@ The king decided it was time to end our suffering. Every human who falls down he
 <p><br />
 <br />
 </p>
+</div>
+ <div id="e38" class="tab-content">
 
-
-<h1 id="e38">From <em>Welcome Back, Yarvant!</em></h1>
+<h1 >From <em>Welcome Back, Yarvant!</em></h1>
 <h3 class="patchnotes"><em>913, Jezen Company Website</em> </h1>
 
 <p>
@@ -2078,9 +2172,68 @@ The king decided it was time to end our suffering. Every human who falls down he
 <p>
   <span>One of the most notable characteristics of yarov is their ability to fluently do lots of simple things (such as making a fire) that humans have often relied on technology to do for them, depending on the kind of yaref and other factors, as well as making all sorts of other yahiric manifestations as part of their expressive capabilities (which is what one book means by 'bullet patterns', in case you see that term in the wild).</span>
 </p>
+</div>
+ <div id="e39" class="tab-content">
+<h1>From a short essay on Montera</h1>
+<h3 class="patchnotes"><em>901, Kan'fi</em> </h1>
 
+<p>
+  <span>The history of Montera was defined by periods of unrest, prosperity, and a good helping of sneaky politics.</span>
+</p>
 
+<p>
+  <span>Montera's story began as a province of Korhision. "Montera" as an independent nation was established by 330 BF and gradually became a maritime power in the Ezeva cultural region, trading across what would come to be known as the Gulf of Montera to the north. Montera was visited by Tur-Myalvi colonists, who noted the Ezeva berserker warriors from the region.</span>
+</p>
+<h4>Val-i-Roria and Montera's rise</h4>
+<p>
+  <span>However, early in its existence, by 77 SR, Montera would come under the rule of the king of Val-i-Roria, which additionally happened to be one of the few realms that would later adopt the Vainadiv, a set of Donnana practices that ended up horribly unsuited for Montera's environment and people. Many politicians from Montera were key players in the plot to topple Val-i-Roria, covertly attacking its king's legitimacy from several directions. Its true status as a local power did not begin until 202 SR with its autonomy and later full independence, and when it at that point even outclassed states like Halera, Valvar, and Dejat as the primary center of Korahai culture. </span>
+</p>
+<h4>Cultural creep</h4>
+<p>
+  <span>However, the Korahai culture as a whole was being beaten back by two external forces throughout the following centuries: the first was the rise of the empire of Lucorshi in the east, subjugating and spreading its Donnana culture to surrounding regions, and the second was the slow creep of Panavic culture up the length of Liruzon, accelerated by the nature of the recently free Rahazun's cultural influence as of 572. While at the point of Montera's location, Lucorshi's influence was but a healthy cultural mingling (unlike with Valvar and Dejat), by 633, Montera was reformed into a county within the Rahazuna realm after a political crisis in which a count allegiant to King Ojgr was placed on the throne of Montera. </span>
+</p>
+<h4>Siegetev</h4>
+<p>
+  <span>Siegetev, the king of Rahazun from 648 to 663, would make several organizational changes to Montera, utilizing its unique position of power to expand the Rahazuna influence throughout Korhision, and then carving Montera up to conform to Panavic organizational structure. Montera ultimately played a pivotal role in the war for Yarzon-Lundroz, the High Kingdom of yarov which Montera had allied itself with due to trading relations with the lesser kingdom of Yarzon-Ezvelan. As it was obvious that Siegetev would not cease with the brutality of the invasion, Count Dalnun worked behind the back of Siegetev to facilitate the evacuation of a large portion of the yarov of Lundroz to Ezvelan, sparing them from the terrible fate that Siegetev had ordained for them. This, as a result, established Yarzon-Ezvelan as the synthesis of the two realms, and thus the new High Kingdom (the only time the location of the High Kingdom has changed since the establishment of the concept in times ages past). </span>
+</p>
+<h4>Modern times</h4>
+<p>
+  <span>In the aftermath, the following kings would leave the issues of Montera to fester; it was only after the problems associated with Ana-Kalvi's rule that an emperor would be chosen, Salfo, who would actually address Montera. Salfo and the following rulers were of the type who respected Rahazun itself as originally Ezeva; while its Panavic politics remained, a lot more support for Korahai expression was established. In the meantime, Lucorshi slowly fizzled out, as decreasingly restrictive policies on constituent nations induced by cultural strife within its borders resulted in its loss of authority. The state of Lucorshi technically exists in the modern day, but simply as a social and economic association between various Vanki, Donnana, and Ezeva realms.</span>
+</p>
+
+<p>
+  <span>Recently, the ruler Sarnelkh - a Seransai - has offered to the newest Count Ahadiran of Montera to fully relinquish Rahazuna political influence over Montera.</span>
+</p>
+
+<p>
+  <span>The patron god of Montera is Ramazir, the scholarly deity of the starry sky and navigation.</span>
+</p>
+</div>
 <!--STOP WRITING AT THIS POINT-->
+
+<div id="e0" class="tab-content">
+    <h1 class="patchnotes"> Welcome to Undersided!</h1>
+  <p class="patchnotes">"Undersided" is a project by <a href="#vg">Vector Graphics</a> detailing the world of ʏᴏɴᴀ. The project is an expansion of the setting of <em>Undertale</em> by Toby Fox, and from the perspective of that community it can be seen as an AU. The official media for Undersided largely consists of excerpts from in-universe documents.</p>
+  <p> <strong>The site has recently received a major rework! Please click on the links to the left to read the story.</strong></p>
+    <p> <strong>Additionally, check the NEWS to see if there are new entries!</strong></p>
+    <p>(Note: entry numbers are out of order due to corresponding to AO3 chapters and the chronological order of addition to the website.)</p>
+  <h3 class="patchnotes"> Conventions</h3>
+  <p class="patchnotes">The documents here are translated from the original language they are written in (often modern Rahazuna or Nideri) into English. To do this faithfully, several conventions have had to be chosen.</p>
+  <div class="list">
+  <ul class="centerlist">
+    <li><p>The term "monster" is not used for the magic-based race that inhabits the world alongside humans. Instead, the term "yaref" [plural: yarov] from the original language is loaned. This is done to avoid ambiguity with other senses of "monster". Similarly with "magic" being replaced with "yahir".</p></li>
+    <li><p>Other potentially ambiguous terminology, such as "DETERMINATION", "SOUL", "SAVE", and others, is spelled in ALL CAPS.</p></li>
+    <li><p>Units, except units of time, are presented in familiar terms to Earth readers, such as meters and kilograms. Units of time smaller than a day are in the familiar 24:60:60 format (as that is what is used in-universe), but these are slightly longer than their Earth counterparts. A year of 301 Yona days is split into eight months alternating 37 and 38 days, and an extra day at the end of the year called <em>Arvendanula</em>, which serves as the winter holiday. However, the lifespans of the in-universe humans turn out to be approximately 80 of these years, which is about 70 of our own.</p></li>
+    <li><p>Place names are not, in general, translated, though there may be exceptions.</p></li>
+    <li><p>Many names provided by Toby Fox only work in English (due to puns, Western naming conventions, or other such things), and are posited to be localized versions of in-universe names, which are used here. For example, instead of "Asgore", "Ruaeli" is used; instead of "Frisk", "Ana-hin" is used; instead of "Sans", "Arfia" is used. Character designs are posited to be similarly localized (in regards to clothing customs, connotations, pop culture, etc), though places where Undertale explicitly deviates from our world are kept.</p></li>
+
+
+  </ul>
+</div>
+</div>
+
+
+</div>
 </div>
 </div>
 <script>
