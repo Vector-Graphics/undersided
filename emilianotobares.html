@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta name="description" content="Vector's expansion of the setting of Undertale by Toby Fox" />
+  <meta name="description" content="???" />
   <meta charset="utf-8">
-  <title>Undersided</title>
+  <title>???</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="">
-  <link rel="shortcut icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Serif">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Metrophobic">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
   <link rel="stylesheet" href="css/style.css">
@@ -17,14 +16,14 @@
     :root {
       --textcolor: rgb(255,255,255);
               --textcolorb: rgb(255,255, 255);        
-              --bgcolor: rgba(19, 0, 19,0);
-              --btncolorpressed: rgb(48, 5, 48);
-              --btncolor: rgb(100, 0, 100);
-              --btncolorhover: rgb(255, 2, 255);
+              --bgcolor: rgba(0, 0, 19,0);
+              --btncolorpressed: rgb(0, 5, 48);
+              --btncolor: rgb(10, 0, 100);
+              --btncolorhover: rgb(40, 2, 255);
               --scrollcolor: rgba(255,255,255,0.1);
-              --insetcolor:rgb(58, 12, 58);
-              --insetcolor2:rgb(41, 8, 41);
-              --insetcolor3:rgb(26, 5, 26);
+              --insetcolor:rgb(0, 12, 58);
+              --insetcolor2:rgb(0, 8, 41);
+              --insetcolor3:rgb(0, 5, 26);
               --insetcolor4:rgb(0, 0, 0);
               --typeg:rgb(255,255,255);
               --typef:#c0e8ff;
@@ -33,12 +32,12 @@
               --cyan: #51e9f4;
               --lightgreen: #7fed56;
               --typea: #89d4ff;
-              --innershadowcolor: #ff77ff79;
-              --innershadowcolorb: #ff77ff79;
+              --innershadowcolor: #4477ff79;
+              --innershadowcolorb: #4477ff79;
               --borderradiusdf: 50px;
               --whiteiconfilter: none;
-              --font: Noto Serif, serif;
-              --hfont: Noto Serif, serif;
+              --font: Metrophobic, sans-serif;
+              --hfont: Metrophobic, sans-serif;
               /**--textcolor: rgb(255,255,255);
               --textcolorb: rgb(255,255,255);    
               --bgcolor: rgb(16,16,16);
@@ -195,9 +194,6 @@
             width: 50%;
             margin: auto;
           }
-          li p {
-            text-align: left;
-          }
           .centerlist {
             display: inline-block;
             text-align: left;
@@ -224,16 +220,9 @@
           h3 {
               font-family: var(--font);
               font-weight:bold;
-              text-align: center;
-              font-size: 2.2em;
+              font-size: 2em;
               color: var(--textcolorb);
-          }
-                    h4 {
-              font-family: var(--font);
-              font-weight:bold;
               text-align: center;
-              font-size: 1.7em;
-              color: var(--textcolorb);
           }
           .navbar p {
             
@@ -263,14 +252,10 @@
               text-align: center;
           }
           html {
-              background-image: url("qet3.png");
-              background-attachment:fixed;
-              background-size:cover;
+              background: black;
               transition: 0.15s;
               
               transform: transale3d(0,0,0);
-              scrollbar-width:thin;
-              scrollbar-color:rgba(0, 0, 19,0),rgba(255, 255, 255,0.1);
               
           }
           p {
@@ -282,16 +267,11 @@
           h3{
             filter:drop-shadow(0 0 5px #ffffff7f);
           }
-                    h4{
-            filter:drop-shadow(0 0 5px #ffffff7f);
-          }
           img{
             filter:drop-shadow(0 0 5px #ffffff7f);
             padding:0%;
           }
           body {
-              width: 80%;
-              margin-left: 20%;
               overflow-y: scroll;
               overflow-x: scroll;
               overflow:overlay;
@@ -299,7 +279,7 @@
               font-size: 13px;
           }
           .main {
-              width: 92%;
+              width: 65%;
               margin: auto;
               
               left:25%;
@@ -442,8 +422,12 @@
               display:block;
           }
           .infocontainer{
-
-              background: rgba(0,0,0,0);
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
+              overflow-y:scroll; 
+              overflow-x:hidden;
+              height:1000px; 
+              background: var(--insetcolor);
               padding: 15px;
               width: 80%;
               margin: auto;
@@ -452,7 +436,8 @@
               transition: 0.15s;
           }
           .system{
-
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
               overflow-y:scroll; 
               overflow-x:hidden;
               height:80vh; 
@@ -465,7 +450,8 @@
                   }
           .system2{
               
-
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
               
               overflow:hidden;
               
@@ -501,7 +487,8 @@
               height:100%;
           }
           .system2 .system2{
-
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
               
               overflow-x:hidden;
               
@@ -517,7 +504,8 @@
               resize:none;
           }
           .system2 .system2 .system2{
-
+              scrollbar-width:thin;
+              scrollbar-color:var(--bgcolor),var(--scrollcolor);
               
               overflow-x:hidden;
               
@@ -680,7 +668,7 @@
               vertical-align: middle;
           }
           .navbar {
-            background-image: url("qet4.png");
+            background-image: url("qet2.png");
             background-attachment:fixed;
             background-size:cover;
             padding:0px;
@@ -705,10 +693,6 @@
               border-radius: var(--borderradiusdf);
               box-shadow: inset 0px 0px 16px  var(--innershadowcolor);
               transition: 0.15s;
-      }
-      .story {
-        width: 65%;
-        margin: auto;
       }
       .planetdisplay {
           width: 256px;
@@ -826,7 +810,6 @@
     border-radius: 50%;
   } 
   
-
   @media (max-width: 1728px) {
   
   body {
@@ -854,372 +837,13 @@
   }
   
   }
-.story > .tab-content:target ~ .tab-content:last-child, .story > .tab-content {
-    display: none;
-}
-.story > :last-child, .story > .tab-content:target {
-    display: block;
-}
           
       </style>
 </head>
 
 <body>
-    <div class="navbar">
-        <img class="titleimg" src="logo2.png">
-        <hr><h3 class="patchnotes"><a href="index.html" target="_blank" rel="noopener noreferrer"><em>Back to main library</em></a></h3>
-        <hr>
-
-                   <p class="patchnotes"><br><a href="#e0"> Preface</a></p>   
-                                      
-        <h3><a href="#h1">Culture</a></h3>
-<p class="patchnotes"><a href="#e1">1. From <em>The Premise</em></a></p>
-        <h3><a href="#h2">Zak's Travels</a></h3>
-<p class="patchnotes"><a href="#e2">2. From <em>Whispers of the Realm: Zak's Travels</em> (1)</a></p>
-
-
-<hr>
-
-<h3 class="patchnotes" id="vg">Vector's Socials</h3>
-<p class="patchnotes"><br><a href="https://www.youtube.com/@VectorJW9260">Vector's Youtube Channel</a></p> 
-<p class="patchnotes"><br><a href="https://discord.gg/YAeTuenxqA">Vector's Discord Server</a></p> 
-<hr>
-
-<br> <br> <br> <br>
-    </div> 
-
-<div class="main">
-    <div class="story">
-
-
-<div id="h1"class="tab-content">
-<h1> Culture Hub </h1>
-
-<p>The Vanki culture and its peculiarities.</p>
-
-              <div class="list">
-                <ul class="centerlist">
-                    <li><h4 style="text-align:left"><a href="#e1">The Premise</a></h4> <p>The baseline for the Vanki context.</p></li>
-                </ul>
-              </div>
-
-</div>
-
-<div id="h2"class="tab-content">
-<h1> Zak's Travels Hub </h1>
-
-<p>The ramblings of a young traveler.</p>
-
-              <div class="list">
-                <ul class="centerlist">
-                    <li><h4 style="text-align:left"><a href="#e2">Entry 1</a></h4> <p>The first page, and what might happen.</p></li>
-                </ul>
-              </div>
-
-</div>
-
-
- <div id="e1"class="tab-content">
-<h1>From <em>The Premise</em> </h1>
-<h3 class="patchnotes"><em>2234, Aminsui</em> </h3>
-
-<p><span>The reconstruction of the history of our people in the current world has proven exceedingly difficult, given no written records exist prior to 750 CW. Regardless, we have done our best to provide a coherent picture of the history.</span></p>
-
-<p><span>For clarity, while the cyclical model suggests that Aovezhido inherited a number of characteristics of the previous world, and was thus the original homeland of the Vanki (products of the Falbento Complex of the previous world), it is still worthwhile even for a follower of such a cosmology to study the patterns suggested to be the 'history' of the current world, so to speak.</span></p>
-
-<p><span>The ancestors of the modern Vanki people diverged from the same line that eventually became the Tazelo further south. Their homeland was likely the Inveri Plain or somewhere further south of that. Evolutionary biology suggests that these early ancestors likely resembled the Tazelo or various speculated appearances for the cousins of the Tazelo thought to be related to the north polar mystery. </span></p>
-
-<p><span>Aovezhido would've not been the very first large Vanki social structure, but it was most likely the first in the Vana region. The organizational structure of Aovezhido formed the model for many Vanki social structures in the present day, although modern versions are significantly more influenced by Ezeva and Panavic expectations on the west and those of the Sebiliz and Pavriz on the east.</span></p>
-
-<p><span>To put it simply, Vanki social structure consisted of a very large number of small units of around 100-300 people living in independent villages, and made extensive use of "Donzhai" for social functions.</span></p>
-
-<p><span>Donzhai are persistent spirits that initially manifest from the collective will of a large number of people. Their manifestation if unchecked is chaotic and unpredictable, but with enough collective coordination, it can be controlled and guided, allowing donzhai to be manifested for specific purposes. Once manifested, a donzhai is sustained by its own existence, and does not dissipate for any reason other than age or injury. As they are significantly abstracted from standard human behavior and tend to have strong motives relating to the nature of their manifestation, donzhai are often used to fill various social service roles, and are the key to organizing and centralizing large-scale societies. Each tribe's associated donzhai are assigned different roles: some acting as mediators within the group, some acting as diplomats or coordinators between groups, and some acting as delegates to a central organizational system which manages large-scale projects. Sometimes, excess or "sporadic" donzhai are not placed in social cohesion roles at all, but other service roles instead, often to avoid having to develop specialized devices for various actions that donzhai may perform natively.</span></p>
-
-<p><span>Aovezhido at its height in 72 CW was the most extensive and "purest" example of this form of society. At its center was Vadaomi[a], a massive organizational complex populated entirely by donzhai, which managed large parts of the society's infrastructure. </span></p>
-
-<p><span>The quantity of donzhai in any given Vanki social system tends to naturally increase over time, due to a combination of factors such as continual sporadic manifestation especially in the presence of other donzhai, induced manifestation as a form of "reproduction" by donzhai themselves, and complexifying societal needs, natural tendencies, and tribe fragmentation or identity shifts resulting in continued manifestation of donzhai by Vanki tribes. This meant that Vadaomi slowly overtook Aovezhido, with donzhai becoming more and more dominant in society from ~100 to 350 CW, until eventually the donzhai portion of the society became unreliant on the humans who it originally provided service to, and the Vanki population cleanly separated from the remaining Donzhai core, scattered, and established new organizations elsewhere, leaving behind Donzhaina-Vadaomi, the first donzhai realm.</span></p>
-
-<p><span>This is the established cycle of the Vanki society, and its after-effects have defined much of the cultural and political geographical landscape of the Vana region, although it has notably slowed over its course due to the introduction of new societal structures from outside realms, most notably expressed in systems like those found in Lucorshi.</span></p>
-
-<p><span>[a] internationally "Fadami"</span></p>
-      
-  
-
-</div>
-
- <div id="e2"class="tab-content">
-<h1>From <em>Whispers of the Realm: Zak's Travels</em> </h1>
-<h3 class="patchnotes"><em>2153, Nangozha</em> </h3>
-
-<p><span>I am Zak-e-Dalil. Me and the rest of the Daliriz have, for the now-time, settled in the Malakoda area in the city of Nangozha. Nangozha is a pretty nice place, all things considered. Largely Vanki as opposed to Donzhai, but of course as with all the mainly Vanki settlements there are still some Donzhai running around handling various situations. It's probably the biggest city in the Vana region. Malakoda is home to a local community of malakiz, the Galajer clan, who have harbored our family for the time being. </span></p>
-
-<p><span>While stopped in any given location, we always like to trade off some of the things we've acquired. Because we often pick up a lot of these things from different places, traveling Malakon clans like us tend to function as a rather indirect route for the flow of goods between cities.</span></p>
-
-<p><span>Stopping in Nangozha has also allowed us to meet up with some of the other clans who have also stopped by here, and to restock on supplies for the trek northwards to Vadao Baliu.</span></p>
-
-<p><span>We always like to find fun places to be and fun things to do on our travels. We often make our own stories to tell. Plenty of the people we've met in the cities seem to be much less open to hearing them, however.</span></p>
-
-<p><span>Regardless. While I do not know the full history of the Dalil clan, I may as well provide some information on some of my more direct family members. In particular, my father Alyz and my brother Kai. </span></p>
-
-<p><span>Kai is really good at finding out which way we're going. I've seen Kai tell people he could find his way from Delko to Echavi with his eyes shut. Whether that's actually true, time will tell. Kai is also our resident cartographer. Most of his maps are written in some kind of scribbly shorthand that he'd have to explain himself. I've seen people expect them to be a lot more embellished, and Alyz's were, often highlighting places where funny or major things happened with little pictures.</span></p>
-
-<p><span>Alyz's job is basically to make sure everyone's here and not fighting each other. Our family's rather small at 10-20 people, but it's still enough to warrant that kind of thing. Alyz often tells stories from his early life, like that one time he tried to climb across two trees like a squirrel and managed to get tangled up in the branches.</span></p>
-
-<p><span>As for myself, I have some of my own... more abstract ideas. Many of my kin also share them, but I've come to an important realization.</span></p>
-
-<p><span>We are not the ones destined to rule.</span></p>
-
-<p><span>While it is not our privilege, it is not our responsibility either.</span></p>
-
-<p><span>Thus why we exist among the other peoples of the world, yet dominating over none.</span></p>
-
-<p><span>Whatever created us left us to be while it vanished from the reaches of this world.</span></p>
-
-<p><span>Or perhaps we were picked up, given new life by something else entirely...</span></p>
-
-<p><span>That's not the important part. That's what Alyz and his ancestors have thought.</span></p>
-
-<p><span>I believe our creator has been here the whole time.</span></p>
-
-<p><span>Its blessed folk are somewhere else.</span></p>
-
-<p><span>I worry, perhaps, that it may begin to see us as not just worthless, but detrimental and deserving of destruction.</span></p>
-
-<p><span>It is not a strong fear of mine, and I do not let it overtake me, but it is a fear I have nonetheless.</span></p>
-
-<p> </p>
-
-<p><span>Kai has been acting strange lately..<a href="emilianotobares.html">.</a></span></p>
-  
-
-</div>
-
-
-
-
-<!--STOP WRITING AT THIS POINT-->
-
-<div id="e0" class="tab-content">
-    <h1 class="patchnotes"> Welcome to Undersided: Aberrant!</h1>
-  <p class="patchnotes">"Undersided" is a project by <a href="#vg">Vector Graphics</a> detailing the world of ʏᴏɴᴀ. The project is an expansion of the setting of <em>Undertale</em> by Toby Fox, and from the perspective of that community it can be seen as an AU. The official media for Undersided largely consists of excerpts from in-universe documents. <br> Undersided: Aberrant is a section of Undersided focusing on the Vana region and the origins of monsterkind.</p>
-  <p> <strong>The site has recently received a major rework! Please click on the links to the left to read the story, or click on the section headings to be taken to "hub" pages.</strong></p>
-    <p>(Note: entry numbers are out of order due to corresponding to AO3 chapters and the chronological order of addition to the website.)</p>
-
-  <h3 class="patchnotes"> Conventions</h3>
-  <p class="patchnotes">The documents here are translated from the original language they are written in (often modern Vanki languages) into English. To do this faithfully, several conventions have had to be chosen.</p>
-  <div class="list">
-  <ul class="centerlist">
-    <li><p>The term "monster" is not used for the magic-based race that inhabits the world alongside humans. Instead, the term "yaref" or "donzhai" from the original language is loaned. This is done to avoid ambiguity with other senses of "monster". Similarly with the term "magic" being in most cases avoided, or if necessary replaced with "yahir" (a term for a philosophical concept in Panavic and Vanki culture relating to the expression of magic).</p></li>
-    <li><p>Units, except units of time, are presented in familiar terms to Earth readers, such as meters and kilograms. Units of time smaller than a day are in the familiar 24:60:60 format (as that is what is used in-universe), but these are slightly longer than their Earth counterparts. A year of 301 Yona days is split into eight months alternating 37 and 38 days, and an extra day at the end of the year called <em>Arvendanula</em>, which serves as the winter holiday. However, the lifespans of the in-universe humans turn out to be approximately 80 of these years, which is about 70 of our own.</p></li>
-    <li><p>Place names are not, in general, translated, though there may be exceptions (most notably, place names reused from Undertale or other source materials, such as "Hotland").</p></li>
-    <li><p>Many names provided by Toby Fox only work in English (due to puns, Western naming conventions, or other such things), and are posited to be localized versions of in-universe names, which are used here. For example, instead of "Asgore", "Ruaeli" is used; instead of "Frisk", "Ana-hin" is used; instead of "Sans", "Arfia" is used. Character designs are posited to be similarly localized (in regards to clothing customs, connotations, pop culture, etc), though places where Undertale explicitly deviates from our world are kept.</p></li>
-
-
-  </ul>
-</div>
-<h1><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br></h1>
-
-
-<p><a href="ffxivevercold.html">Why do you continue?</a></p>
-</div>
-
-
-</div>
-</div>
+    <div class="main">
+<em><p>The concept of a 'no derivatives' license perplexes me, Tobares. Is not anything created - either a direct reproduction, or a distantly inspired work - by anyone whose mind has been influenced by experiencing something inherently derivative?</p></em>
 </div>
 <script>
 </script>
