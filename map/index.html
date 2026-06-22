@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7.3.5/turf.min.js"></script>
+  <!-- MapLibre GL JS -->
+  <link
+    href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css"
+    rel="stylesheet"
+  />
+  <script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #111;
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+
+        #measure-control-panel {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #ffffff;
+            padding: 14px;
+            border-radius: 8px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+            border: 1px solid #e2e8f0;
+            width: 240px;
+        }
+
+        .panel-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .panel-row:last-child {
+            margin-bottom: 0;
+            margin-top: 12px;
+            border-top: 1px solid #edf2f7;
+            padding-top: 12px;
+        }
+
+        .toggle-label {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        /* Switch Styling */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 22px;
+        }
+
+        .switch input { opacity: 0; width: 0; height: 0; }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #cbd5e0;
+            transition: .2s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px; width: 14px;
+            left: 4px; bottom: 4px;
+            background-color: white;
+            transition: .2s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider { background-color: #3182ce; }
+        input:checked + .slider:before { transform: translateX(18px); }
+
+        #distance-value {
+            font-weight: 700;
+            color: #1a202c;
+            word-break: break-all;
+        }
+
+        .btn-clear {
+            width: 100%;
+            background-color: #e53e3e;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.1s;
+        }
+
+        .btn-clear:hover { background-color: #c53030; }
+        .btn-clear:disabled {
+            background-color: #edf2f7;
+            color: #a0aec0;
+            cursor: not-allowed;
+        }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+<div id="measure-control-panel">
+    <div class="panel-row">
+        <span class="toggle-label">Measure Mode</span>
+        <label class="switch">
+            <input type="checkbox" id="mode-toggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+    
+    <div id="distance-value">Disabled</div>
+    
+    <div class="panel-row">
+        <button id="clear-btn" class="btn-clear" disabled>Clear Measurements</button>
+    </div>
+</div>
+  <script>
+
+const colors = {
+
+  continents: "#dcba98",
+  hills: "#ba9876",
+  mts: "#987654",
+    continents_coasts: "#654321",
+  oceans: "#6789ab",
+  oceans_shelves: "#abcdef"
+}
+let projection;
+ // Application State
+    let isMeasureMode = false;
+    let isDragging = false;
+    let draggedPointIndex = null;
+    let pointCoordinates = [];
+
+    const geojson = {
+        'type': 'FeatureCollection',
+        'features': []
+    };
+    const map = new maplibregl.Map({
+      container: "map",
+      style: {
+        version: 8,
+          glyphs: "./font/{fontstack}/{range}.pbf",
+        sources: {},
+        layers: [
+  {
+        // CRITICAL: This base layout anchors the 3D globe geometry
+        id: 'globe-anchor-base',
+        type: 'background',
+        paint: {
+          'background-color': colors.oceans // Space / deep void color
+        }
+      }
+
+        ],
+      },
+      center: [0, 0],
+      zoom: 2
+    });
+
+    map.addControl(new maplibregl.NavigationControl());
+
+  projection = [
+    "interpolate",
+    ["linear"],
+    ["zoom"],
+    4,
+    "vertical-perspective",
+    5,
+    "mercator"
+  ];
+
+map.on('style.load', () => {
+  map.setProjection({
+    type: projection
+  });
+});
+    map.on("load", () => {
+      // 👇 add your GeoJSON files here
+          // load things that aren't labels
+      const sources = [
+                {
+          id: "layer-2a",
+          url: "./data/continents.json",
+          type: "line",
+          layout: {
+
+                              "line-join": "round",
+                              
+                  "line-cap": "round"
+          },
+            paint: {
+                              "line-color": colors.oceans_shelves,
+    "line-width": 6
+
+  }
+        },
+        {
+          id: "layer-2",
+          url: "./data/continents.json",
+                    type: "fill",
+            paint: {
+    "fill-color":  colors.continents
+  },
+          layout: {
+          }
+        },
+
+         {
+          id: "layer-2b",
+          url: "./data/continents.json",
+          type: "line",
+          layout: {
+
+                              "line-join": "round",
+                              
+                  "line-cap": "round"
+          },
+            paint: {
+                              "line-color": colors.continents_coasts,
+    "line-width": 3
+
+  }},
+
+          {
+          id: "layer-3",
+          url: "./data/hills.json",
+                    type: "fill",
+            paint: {
+    "fill-color":  colors.hills
+  },
+          layout: {
+          }
+        },
+                  {
+          id: "layer-4",
+          url: "./data/mts.json",
+                    type: "fill",
+            paint: {
+    "fill-color":  colors.mts
+  },
+          layout: {
+          }
+        },
+                          {
+          id: "layer-5",
+          url: "./data/river.json",
+                    type: "fill",
+            paint: {
+    "fill-color":  colors.oceans
+  },
+          layout: {
+          }
+        },
+                                  {
+          id: "layer-6",
+          url: "./data/seas.json",
+                    type: "fill",
+            paint: {
+    "fill-color":  colors.oceans
+  },
+          layout: {
+          }
+        },
+      ];
+      sources.forEach((src) => {
+        map.addSource(src.id, {
+          type: "geojson",
+          data: src.url
+        });
+
+        map.addLayer({
+          id: src.id,
+          type: src.type, // change to "fill" or "circle" if needed
+          source: src.id,
+          paint: src.paint,
+          layout: src.layout
+        });
+
+      });
+      const sources2 = [
+                        {
+          id:"t0010",
+          url: "./data/supercontinents-labels.json",
+          size: 20,
+          color: "#000000A0",
+          halo: "#ffffff70",
+          hw: 1,
+          ssk: 9990,
+          minzoom: 0,
+          maxzoom: 1
+        },
+        {
+          id:"t0020",
+          url: "./data/continents-labels.json",
+          size: 20,
+          color: "#000000A0",
+          halo: "#ffffff70",
+          hw: 1.8,
+          ssk: 9980,
+          minzoom: 1,
+          maxzoom: 4
+        },
+                        {
+          id:"t0030",
+          url: "./data/large-regions-labels.json",
+          size: 19,
+          color: "#765432",
+          halo: "#fedcba90",
+          hw: 1.6,
+          ssk: 9970,
+          minzoom: 2,
+          maxzoom: 6
+        },
+                                {
+          id:"t0040",
+          url: "./data/small-regions-labels.json",
+          size: 16,
+          color: "#765432",
+          halo: "#fedcba90",
+          hw: 1.4,
+          minzoom: 3,
+          ssk: 9960,
+          maxzoom: 8
+        },
+                                        {
+          id:"t0041",
+          url: "./data/large-islands-labels.json",
+          size: 16,
+          color: "#543321",
+          halo: "#fedcba90",
+          hw: 1.4,
+          minzoom: 3,
+          ssk: 9960,
+          maxzoom: 8
+        },
+        {
+          id:"t0051",
+          url: "./data/small-islands-labels.json",
+          size: 13,
+          color: "#332211",
+          halo: "#fedcba90",
+          hw: 1.2,
+          minzoom: 4,
+          ssk: 9960,
+          maxzoom: 9
+        },
+                {
+          id:"t0022",
+          url: "./data/oceans-labels.json",
+          size: 17,
+          color: "#123456",
+          halo: "#abcdef90",
+          hw: 1.8,
+          minzoom: 1,
+          maxzoom: 4
+        },
+        {
+          id:"t0032",
+          url: "./data/seas-labels.json",
+          size: 15,
+          color: "#123456",
+          halo: "#abcdef90",
+          hw: 1.5,
+          minzoom: 2,
+          maxzoom: 7
+        },
+        {
+          id:"t0052",
+          url: "./data/small-seas-labels.json",
+          size: 13,
+          color: "#112233",
+          halo: "#abcdef90",
+          hw: 1.2,
+          minzoom: 4,
+          maxzoom: 9
+        },
+      ];
+
+            sources2.forEach((src) => {
+        map.addSource(src.id, {
+          type: "geojson",
+          data: src.url
+        });
+
+        map.addLayer({
+          id: src.id,
+          type: "symbol",
+          source: src.id,
+          minzoom: src.minzoom,
+          maxzoom: src.maxzoom,
+ layout: {
+    "text-field": ["get", "id"],
+    "text-size": src.size,
+    "text-font": ["Noto Sans Bold"],
+    "text-offset": [0, 0],
+    "text-anchor": "center",
+    "text-allow-overlap": false
+
+  },
+  paint: {
+    "text-color": src.color,
+    "text-halo-color": src.halo,
+    "text-halo-width": src.hw
+  }
+        });
+
+        
+      });
+     /* MEASURE DISTANCE */
+ map.addSource('measure-source', {
+            'type': 'geojson',
+            'data': geojson
+        });
+
+        map.addLayer({
+            'id': 'measure-line',
+            'type': 'line',
+            'source': 'measure-source',
+            'layout': { 'line-cap': 'round', 'line-join': 'round' },
+            'paint': { 'line-color': '#3182ce', 'line-width': 4 }
+        });
+
+        map.addLayer({
+            'id': 'measure-points',
+            'type': 'circle',
+            'source': 'measure-source',
+            'paint': {
+                'circle-color': '#3e3ee5',
+                'circle-radius': 7,
+                'circle-stroke-width': 2,
+                'circle-stroke-color': '#ffffff'
+            }
+        });
+
+        // Change cursor to pointer when hovering over measurement points
+        map.on('mouseenter', 'measure-points', () => {
+            if (isMeasureMode) map.getCanvas().style.cursor = 'pointer';
+        });
+        
+        map.on('mouseleave', 'measure-points', () => {
+            if (isMeasureMode) map.getCanvas().style.cursor = '';
+        });
+
+        // Drag initiation handler
+        map.on('mousedown', 'measure-points', (e) => {
+            if (!isMeasureMode) return;
+            
+            // Prevent map panning during drag operation
+            e.preventDefault();
+            
+            isDragging = true;
+            map.getCanvas().style.cursor = 'grabbing';
+
+            // Find which point index is closest to clicked location
+            const clickCoords = [e.lngLat.lng, e.lngLat.lat];
+            draggedPointIndex = getClosestPointIndex(clickCoords, pointCoordinates);
+
+            // Hook up dragging tracking listeners
+            map.on('mousemove', onDragMove);
+            map.on('mouseup', onDragEnd);
+        });
+        /* END MEASURE DISTANCE */
+    });
+
+
+    const baseZoom = 5;
+ function updateDistanceCalculation() {
+        const distanceEl = document.getElementById('distance-value');
+        const clearBtn = document.getElementById('clear-btn');
+
+        if (pointCoordinates.length > 0) {
+            clearBtn.disabled = false;
+        } else {
+            clearBtn.disabled = true;
+        }
+
+        if (!isMeasureMode) {
+            distanceEl.innerText = "Disabled";
+            return;
+        }
+
+        if (pointCoordinates.length === 0) {
+            distanceEl.innerText = "Click map to add points";
+            return;
+        }
+
+        if (pointCoordinates.length === 1) {
+            distanceEl.innerText = "Add another point...";
+            return;
+        }
+
+        const lineFeature = turf.lineString(pointCoordinates);
+        const totalDistanceKm = turf.length(lineFeature, { units: 'kilometers' }) * (5716216/6371009);
+        distanceEl.innerText = `Total: ${totalDistanceKm.toFixed(2)} km`;
+    }
+
+    // Refresh rendering source pipeline updates
+    function syncGeoJsonSource() {
+        // Compile point features out of point arrays dynamically to track dragging positions
+        const pointFeatures = pointCoordinates.map((coords) => ({
+            'type': 'Feature',
+            'geometry': { 'type': 'Point', 'coordinates': coords }
+        }));
+
+        const lineFeature = pointCoordinates.length > 1 ? [{
+            'type': 'Feature',
+            'geometry': { 'type': 'LineString', 'coordinates': pointCoordinates }
+        }] : [];
+
+        geojson.features = [...lineFeature, ...pointFeatures];
+        map.getSource('measure-source').setData(geojson);
+        updateDistanceCalculation();
+    }
+
+    // Helper utility to find index of the closest point matching drag targets
+    function getClosestPointIndex(clickCoords, coordsList) {
+        let minDistance = Infinity;
+        let index = 0;
+        
+        for (let i = 0; i < coordsList.length; i++) {
+            const dist = turf.distance(turf.point(clickCoords), turf.point(coordsList[i]));
+            if (dist < minDistance) {
+                minDistance = dist;
+                index = i;
+            }
+        }
+        return index;
+    }
+
+    // Drag Movement Event Tracking
+    function onDragMove(e) {
+        if (!isDragging || draggedPointIndex === null) return;
+        
+        // Mutate target coordinate in active tracker array
+        pointCoordinates[draggedPointIndex] = [e.lngLat.lng, e.lngLat.lat];
+        syncGeoJsonSource();
+    }
+
+    // Drag Complete Termination Handling
+    function onDragEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        draggedPointIndex = null;
+        map.getCanvas().style.cursor = '';
+        
+        // Unbind mouse movement drag updates
+        map.off('mousemove', onDragMove);
+        map.off('mouseup', onDragEnd);
+    }
+
+    // Map Click Handler for adding items
+    map.on('click', (e) => {
+        if (!isMeasureMode || isDragging) return;
+        
+        // Append point to execution arrays
+        pointCoordinates.push([e.lngLat.lng, e.lngLat.lat]);
+        syncGeoJsonSource();
+    });
+
+    // Toggle control setup
+    document.getElementById('mode-toggle').addEventListener('change', (e) => {
+        isMeasureMode = e.target.checked;
+        updateDistanceCalculation();
+    });
+
+    // Clear function pipeline action handler 
+    document.getElementById('clear-btn').addEventListener('click', () => {
+        pointCoordinates = [];
+        syncGeoJsonSource();
+    });
+  </script>
+</body>
+</html>
