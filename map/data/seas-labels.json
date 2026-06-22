@@ -1,0 +1,7 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[65.93799999999999,32.282],[65.18100000000001,32.282],[65.536,31.52000000000001],[65.93799999999999,32.282]]]},"properties":{"fill-opacity":"0","stroke":"#0098ff","stroke-width":"0.1px","id":"Cøjitary Bay"}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[73.16300000000001,56.44200000000001],[72.40700000000001,56.44200000000001],[72.761,55.68000000000001],[73.16300000000001,56.44200000000001]]]},"properties":{"fill-opacity":"0","stroke":"#0098ff","stroke-width":"0.1px","id":"Gulf of Montera"}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[117.46300000000002,44.596000000000004],[116.70600000000002,44.596000000000004],[117.06099999999998,43.834],[117.46300000000002,44.596000000000004]]]},"properties":{"fill-opacity":"0","stroke":"#0098ff","stroke-width":"0.1px","id":"Hêbar Bay"}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[111.81799999999998,23.617000000000004],[111.06099999999998,23.617000000000004],[111.41500000000002,22.855000000000004],[111.81799999999998,23.617000000000004]]]},"properties":{"fill-opacity":"0","stroke":"#0098ff","stroke-width":"0.1px","id":"Skeya Bay"}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[52.00999999999999,-20.11],[51.252999999999986,-20.11],[51.607,-20.871999999999986],[52.00999999999999,-20.11]]]},"properties":{"fill-opacity":"0","stroke":"#0098ff","stroke-width":"0.1px","id":"The First Crossing"}}
+]}

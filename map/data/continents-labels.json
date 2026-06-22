@@ -1,0 +1,5 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[97.35899999999998,13.498999999999995],[96.64800000000002,13.498999999999995],[96.981,13.174999999999997],[97.35899999999998,13.498999999999995]]]},"properties":{"fill-opacity":"0","stroke":"#00ff26","stroke-width":"0.21px","id":"Dirlam"}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[59.065,9.152000000000001],[58.35400000000001,9.152000000000001],[58.68700000000001,8.826999999999998],[59.065,9.152000000000001]]]},"properties":{"fill-opacity":"0","stroke":"#00ff26","stroke-width":"0.21px","id":"Zerahai"}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[90.269,53.45600000000002],[89.55799999999999,53.45600000000002],[89.89100000000002,53.132000000000005],[90.269,53.45600000000002]]]},"properties":{"fill-opacity":"0","stroke":"#00ff26","stroke-width":"0.21px","id":"Iltezon"}}
+]}
