@@ -7,10 +7,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7.3.5/turf.min.js"></script>
   <!-- MapLibre GL JS -->
   <link
-    href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css"
+    href="https://unpkg.com/maplibre-gl@5.21.0/dist/maplibre-gl.css"
     rel="stylesheet"
   />
-  <script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
+  <script src="https://unpkg.com/maplibre-gl@5.21.0/dist/maplibre-gl.js"></script>
 
   <style>
     html, body {
@@ -22,12 +22,66 @@
     #map {
       width: 100%;
       height: 100%;
+      position: absolute;
+      top: 0px;
+        inset: 0;
+      z-index: 0;
     }
 
+      #menu-showhide {
+        background: #fff;
+
+        z-index: 1;
+
+        border-radius: 3px;
+        width: 120px;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        font-family: "Open Sans", sans-serif;
+      }
+
+a.switch {
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+  margin: 12px;
+  background: #444;
+  border-radius: 999px;
+  position: relative;
+  text-decoration: none;
+  color: transparent; /* hide text or keep if you want */
+  transition: background 0.2s ease;
+}
+
+/* the knob */
+a.switch::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+/* "on" state */
+a.switch.on {
+  background-color: #3182ce;
+}
+
+a.switch.on::after {
+  transform: translateX(18px);
+}
+
+
+    
+
         #measure-control-panel {
-            position: absolute;
-            top: 15px;
-            left: 15px;
+z-index: 3;
+  position: absolute;
+  top: 12px;
+  left: 12px;
             background: #ffffff;
             padding: 14px;
             border-radius: 8px;
@@ -118,8 +172,8 @@
 </head>
 
 <body>
-  <div id="map"></div>
-<div id="measure-control-panel">
+    <div id="map"></div>
+  <div id="measure-control-panel">
     <div class="panel-row">
         <span class="toggle-label">Measure Mode</span>
         <label class="switch">
@@ -127,13 +181,15 @@
             <span class="slider"></span>
         </label>
     </div>
-    
+
     <div id="distance-value">Disabled</div>
     
     <div class="panel-row">
         <button id="clear-btn" class="btn-clear" disabled>Clear Measurements</button>
     </div>
 </div>
+
+
   <script>
 
 const colors = {
@@ -143,7 +199,10 @@ const colors = {
   mts: "#987654",
     continents_coasts: "#654321",
   oceans: "#6789ab",
-  oceans_shelves: "#abcdef"
+  oceans_shelves: "#abcdef",
+    woods: "#3955",
+      desert: "#A725",
+        frost: "#acc7"
 }
 let projection;
  // Application State
@@ -161,7 +220,10 @@ let projection;
       style: {
         version: 8,
           glyphs: "./font/{fontstack}/{range}.pbf",
-        sources: {},
+        sources: {    dummy: {
+      type: "vector",
+      tiles: ["about:blank"]
+    }},
         layers: [
   {
         // CRITICAL: This base layout anchors the 3D globe geometry
@@ -174,25 +236,22 @@ let projection;
 
         ],
       },
+      
+      renderWorldCopies: false,
       center: [0, 0],
-      zoom: 2
+      zoom: 3,
+      minZoom: 1
     });
 
     map.addControl(new maplibregl.NavigationControl());
 
   projection = [
-    "interpolate",
-    ["linear"],
-    ["zoom"],
-    4,
-    "vertical-perspective",
-    5,
-    "mercator"
+    "globe"
   ];
 
 map.on('style.load', () => {
   map.setProjection({
-    type: projection
+    type: 'globe'
   });
 });
     map.on("load", () => {
@@ -252,12 +311,42 @@ map.on('style.load', () => {
           layout: {
           }
         },
+        {
+          id: "layer-3a",
+          url: "./data/woods.json",
+                    type: "fill",
+            paint: {
+    "fill-color":  colors.woods
+  },
+          layout: {
+          }
+        },
+        {
+          id: "layer-3b",
+          url: "./data/deserts.json",
+                    type: "fill",
+            paint: {
+    "fill-color":  colors.desert
+  },
+          layout: {
+          }
+        },
                   {
           id: "layer-4",
           url: "./data/mts.json",
                     type: "fill",
             paint: {
     "fill-color":  colors.mts
+  },
+          layout: {
+          }
+        },
+                {
+          id: "layer-4b",
+          url: "./data/frost.json",
+                    type: "fill",
+            paint: {
+    "fill-color":  colors.frost
   },
           layout: {
           }
@@ -286,7 +375,9 @@ map.on('style.load', () => {
       sources.forEach((src) => {
         map.addSource(src.id, {
           type: "geojson",
-          data: src.url
+          data: src.url,
+                     'buffer': 16,          // Provides a safe margin to calculate clean line joins
+    tolerance: 0.375,    // Balances geometric simplification without losing shape
         });
 
         map.addLayer({
@@ -332,6 +423,61 @@ map.on('style.load', () => {
           minzoom: 2,
           maxzoom: 6
         },
+        {
+          id:"t0043",
+          url: "./data/ethnicities-major-labels.json",
+          size: 16,
+          color: "#704",
+          halo: "#ffffff90",
+          hw: 1.4,
+          ssk: 9970,
+          minzoom: 3,
+          maxzoom: 8
+        },
+                {
+          id:"t0045",
+          url: "./data/woods-major-labels.json",
+          size: 16,
+          color: "#074",
+          halo: "#ffffff90",
+          hw: 1.4,
+          ssk: 9970,
+          minzoom: 3,
+          maxzoom: 8
+        },
+                        {
+          id:"t0055",
+          url: "./data/woods-minor-labels.json",
+          size: 13,
+          color: "#052",
+          halo: "#ffffff90",
+          hw: 1.2,
+          ssk: 9970,
+          minzoom: 5,
+          maxzoom: 10
+        },
+        {
+          id:"t0046",
+          url: "./data/deserts-major-labels.json",
+          size: 16,
+          color: "#432",
+          halo: "#ffffff90",
+          hw: 1.4,
+          ssk: 9970,
+          minzoom: 3,
+          maxzoom: 8
+        },
+                        {
+          id:"t0056",
+          url: "./data/deserts-minor-labels.json",
+          size: 13,
+          color: "#321",
+          halo: "#ffffff90",
+          hw: 1.2,
+          ssk: 9970,
+          minzoom: 4,
+          maxzoom: 9
+        },
                                 {
           id:"t0040",
           url: "./data/small-regions-labels.json",
@@ -341,6 +487,39 @@ map.on('style.load', () => {
           hw: 1.4,
           minzoom: 3,
           ssk: 9960,
+          maxzoom: 8
+        },
+        {
+          id:"t0053",
+          url: "./data/ethnicities-minor-labels.json",
+          size: 13,
+          color: "#402",
+          halo: "#ffffff90",
+          hw: 1.2,
+          ssk: 9970,
+          minzoom: 4,
+          maxzoom: 9
+        },
+                {
+          id:"t0094",
+          url: "./data/topography-minor-labels.json",
+          size: 11,
+          color: "#fedcba",
+          halo: "#65432190",
+          hw: 1.2,
+          ssk: 9970,
+          minzoom: 6,
+          maxzoom: 11
+        },
+                        {
+          id:"t0095",
+          url: "./data/topography-major-labels.json",
+          size: 14,
+          color: "#fedcba",
+          halo: "#65432190",
+          hw: 1.4,
+          ssk: 9970,
+          minzoom: 3,
           maxzoom: 8
         },
                                         {
@@ -395,12 +574,34 @@ map.on('style.load', () => {
           minzoom: 4,
           maxzoom: 9
         },
+                {
+          id:"t0057",
+          url: "./data/river-labels.json",
+          size: 11,
+          color: "#112233",
+          halo: "#abcdef90",
+          hw: 1.2,
+          minzoom: 5,
+          maxzoom: 12
+        },
+                        {
+          id:"t0058",
+          url: "./data/lakes-labels.json",
+          size: 12,
+          color: "#112233",
+          halo: "#abcdef90",
+          hw: 1.2,
+          minzoom: 6,
+          maxzoom: 12
+        },
       ];
 
             sources2.forEach((src) => {
         map.addSource(src.id, {
           type: "geojson",
-          data: src.url
+          data: src.url,
+           'buffer': 64,          // Provides a safe margin to calculate clean line joins
+    tolerance: 0.375,    // Balances geometric simplification without losing shape
         });
 
         map.addLayer({
@@ -423,14 +624,135 @@ map.on('style.load', () => {
     "text-halo-color": src.halo,
     "text-halo-width": src.hw
   }
-        });
+        });});
 
-        
-      });
+       let citiesGeojson;
+
+       /* Cities */
+fetch("./data/cities.json")
+  .then(r => r.json())
+  .then(data => {
+    citiesGeojson = data;
+
+    const centroidFeatures = data.features.map(f => ({
+      type: "Feature",
+      geometry: turf.centroid(f).geometry,
+      properties: f.properties
+    }));
+
+    map.addSource("city-centroids", {
+      type: "geojson",
+      data: {
+        type: "FeatureCollection",
+        features: centroidFeatures,
+
+          
+      },
+
+    });
+        map.addLayer({
+      id: "z-city-labels",
+      type: "symbol",
+      source: "city-centroids",
+                      minzoom: 5,
+          maxzoom: 11,
+layout: {
+    "text-field": ["get", "id"],
+
+    "text-size": 14,
+    "text-font": ["Noto Sans Bold"],
+    "text-offset": [0, 0.5],
+    "text-anchor": "top",
+    "text-allow-overlap": true
+
+  },
+  paint: {
+    "text-color": "#ffffff",
+    "text-halo-color": "#000000",
+    "text-halo-width": 1.6
+  }
+    });
+    map.addLayer({
+      id: "z-city-circles",
+      type: "circle",
+      source: "city-centroids",
+                      minzoom: 5,
+          maxzoom: 11,
+      paint: {
+        "circle-radius": 4,
+        "circle-color": "#ffffff",
+        "circle-stroke-width": 2,
+      "circle-stroke-color": "#654321"
+
+      }
+    });
+  });
+  /* Cities */
+  /* Towns */ 
+  fetch("./data/towns.json")
+  .then(r => r.json())
+  .then(data => {
+    citiesGeojson = data;
+
+    const centroidFeatures = data.features.map(f => ({
+      type: "Feature",
+      geometry: turf.centroid(f).geometry,
+      properties: f.properties
+    }));
+
+    map.addSource("town-centroids", {
+      type: "geojson",
+      data: {
+        type: "FeatureCollection",
+        features: centroidFeatures,
+
+          
+      },
+
+    });
+        map.addLayer({
+      id: "zz-town-labels",
+      type: "symbol",
+      source: "town-centroids",
+                      minzoom: 5,
+          maxzoom: 15,
+layout: {
+    "text-field": ["get", "id"],
+
+    "text-size": 12,
+    "text-font": ["Noto Sans Bold"],
+    "text-offset": [0, 0.5],
+    "text-anchor": "top",
+    "text-allow-overlap": true
+
+  },
+  paint: {
+    "text-color": "#000000",
+    "text-halo-color": "#ffffff",
+    "text-halo-width": 1.4
+  }
+    });
+    map.addLayer({
+      id: "zz-town-circles",
+      type: "circle",
+      source: "town-centroids",
+                      minzoom:5,
+          maxzoom: 15,
+      paint: {
+        "circle-radius": 3,
+        "circle-color": "#654321",
+        "circle-stroke-width": 2,
+      "circle-stroke-color": "#ffffff"
+
+      }
+    });
+  });
+  /* Towns */
      /* MEASURE DISTANCE */
  map.addSource('measure-source', {
             'type': 'geojson',
             'data': geojson
+            
         });
 
         map.addLayer({
@@ -589,6 +911,91 @@ map.on('style.load', () => {
         pointCoordinates = [];
         syncGeoJsonSource();
     });
+
+    /* SHOWHIDE */
+
+function createLayerToggle(map, layers, labelText = "Show topography") {
+  let panelrow = document.createElement("div");
+  panelrow.className = "panel-row";
+
+  let switchtext = document.createElement("span");
+  switchtext.className = "toggle-label";
+  switchtext.textContent = labelText;
+
+  let wrapper = document.createElement("label");
+  wrapper.className = "switch";
+
+  let input = document.createElement("input");
+  input.type = "checkbox";
+
+  let slider = document.createElement("span");
+  slider.className = "slider";
+
+  wrapper.appendChild(input);
+  wrapper.appendChild(slider);
+
+  panelrow.appendChild(switchtext);
+  panelrow.appendChild(wrapper);
+
+  input.addEventListener("change", function () {
+    let visibility = this.checked ? "visible" : "none";
+
+    for (let layer of layers) {
+      map.setLayoutProperty(layer, "visibility", visibility);
+    }
+  });
+
+  return panelrow;
+}
+
+document.getElementById("measure-control-panel").appendChild(createLayerToggle(map,["layer-3","layer-4","t0094","t0095"],"Show topography"));
+document.getElementById("measure-control-panel").appendChild(createLayerToggle(map,["t0043","t0053"],"Show ethnicities"));
+document.getElementById("measure-control-panel").appendChild(createLayerToggle(map,["t0045","t0046","t0055","t0056", "layer-3a","layer-3b","layer-4b"],"Show biomes"));
+
+/* END SHOWHIDE */
+
+/* POPUPS */
+const descriptions = {
+ Dirlam: "The eastern equatorial continent of Rodin, home to the Savorami, Tazelo, Naledi, and Avangani peoples.",
+  Zerahai: "The western equatorial continent of Rodin, home to the Koganda, Greb, Mairoi, and Wila peoples.",
+  Iltezon: "The northern continent of Rodin, home to the Panavic, Vanki, Sebilon, Pavron and Ezeva peoples.",
+}
+const wikilinks = {
+  Dirlam: "Dirlam",
+  Zerahai: "Zerahai",
+  Iltezon: "Iltezon"
+}
+
+ map.on('click', 't0020', (e) => {
+  
+  const center = turf.centroid(e.features[0]);
+        const coordinates = e.features[0].geometry.coordinates.slice();
+        const featureId = e.features[0].properties.id;
+        let description = "I'm a goofy goober Yeah this errorr. message";
+        if(wikilinks[featureId]){
+          description = "<h2>" + featureId + "</h2>" + descriptions[featureId] + "<br> <a href=https://wiki.jupiter-boy.com/wiki/" + wikilinks[featureId] + ">Read on the wiki</a>" 
+        }else{
+          description = "<h2>" + featureId + "</h2>" + descriptions[featureId] + "<br> <a href=https://wiki.jupiter-boy.com/wiki/" + featureId + ">Read on the wiki</a>" 
+        }
+        
+
+        new maplibregl.Popup()
+            .setLngLat(center.geometry.coordinates)
+            .setHTML(description)
+            .addTo(map);
+    });
+
+    // Change the cursor to a pointer when the mouse is over the places layer.
+    map.on('mouseenter', 't0020', () => {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 't0020', () => {
+        map.getCanvas().style.cursor = '';
+    });
+
+/* END POPUPS */
   </script>
 </body>
 </html>
