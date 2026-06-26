@@ -1,0 +1,9 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[68.92935187501138,45.05794320843247]},"properties":{"id":"Karzen Beach"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[69.00987281776288,45.992517238606496]},"properties":{"id":"Rurden Beach"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.8924415150497,49.18694826500052]},"properties":{"id":"Totiazon"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.81894934573242,50.043547239094]},"properties":{"id":"Halera Valley"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[69.39584068764621,51.618511188256754]},"properties":{"id":"Montera Peninsula"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[71.52757287849592,53.161900393596085]},"properties":{"id":"Vance Peninsula"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[68.55858942841562,40.403758040422844]},"properties":{"id":"Hesan"}}
+]}

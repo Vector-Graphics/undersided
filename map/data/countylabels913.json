@@ -1,0 +1,9 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.0444078840434,48.145873492909075]},"properties":{"id":"Rahazun County"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.15870299813915,48.632960614117415]},"properties":{"id":"Bengam County"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.51491356954203,48.87300209541378]},"properties":{"id":"Azgar County"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.90261236825125,48.49490631791115]},"properties":{"id":"Ebott County"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[71.1368060588421,48.22815594823454]},"properties":{"id":"Ulrike County"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[69.58493317417827,42.01038239048082]},"properties":{"id":"Sbeva County"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[68.84823290847059,41.077046275103164]},"properties":{"id":"Rovana County"}}
+]}

@@ -1,0 +1,15 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.30729093104829,48.27996148134947]},"properties":{"id":"Darner Bridge"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.34078973358282,48.31507667610707]},"properties":{"id":"Foster Bridge"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.3439412745314,48.3177715452095]},"properties":{"id":"Kender Bridge"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.33166071901593,48.32852179261045]},"properties":{"id":"Dickory Docks"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.30227102438069,48.268052006606595]},"properties":{"id":"Knavesway"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.34854401545289,48.334619046356984]},"properties":{"id":"Mother's Gate"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.33957872726178,48.30675293463188]},"properties":{"id":"Father's Gate"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.36662724846089,48.32018073051333]},"properties":{"id":"Daughter's Gate"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.41430510105045,48.32308985039599]},"properties":{"id":"Ibanez Sentinel"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.33325915678537,48.38266250118124]},"properties":{"id":"Bengam Sentinel"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.29963759154364,48.2176917493222]},"properties":{"id":"Darner Sentinel"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.31897290989126,48.358663927565644]},"properties":{"id":"University of Monselian"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.35498561698627,48.313239821754735]},"properties":{"id":"C. C. Foster \\n Secondary School"}}
+]}
