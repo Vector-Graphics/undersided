@@ -202,7 +202,8 @@ const colors = {
   oceans_shelves: "#abcdef",
     woods: "#3955",
       desert: "#A725",
-        frost: "#acc7"
+        frost: "#acc7",
+        urban: "#9997"
 }
 let projection;
  // Application State
@@ -351,6 +352,16 @@ map.on('style.load', () => {
           layout: {
           }
         },
+                        {
+          id: "layer-4c",
+          url: "./data/urbanland913.json",
+                    type: "fill",
+            paint: {
+    "fill-color":  colors.urban
+  },
+          layout: {
+          }
+        },
                           {
           id: "layer-5",
           url: "./data/river.json",
@@ -389,7 +400,138 @@ map.on('style.load', () => {
         });
 
       });
-      const sources2 = [
+
+
+
+ const sources3 = [
+            {
+          id:"h0012",
+          url: "./data/minorhighway.json",
+          color: "#773300",
+          width: 3,
+          ssk: 9990,
+          minzoom: 7,
+          maxzoom: 24
+        },
+         {
+          id:"h0013",
+          url: "./data/minorhighway.json",
+          color: "#FFDD77",
+          width: 2,
+          ssk: 9990,
+          minzoom: 7,
+          maxzoom: 24
+        },
+                        {
+          id:"h0010",
+          url: "./data/majorhighway.json",
+          color: "#770000",
+          width: 4,
+          ssk: 9990,
+          minzoom: 5,
+          maxzoom: 24
+        },
+                                {
+          id:"h0011",
+          url: "./data/majorhighway.json",
+          color: "#FF7777",
+          width: 3,
+          ssk: 9990,
+          minzoom: 5,
+          maxzoom: 24
+        },
+
+                 {
+          id:"h0014",
+          url: "./data/countyborders913.json",
+          color: "#0000007F",
+          width: 1,
+          ssk: 9990,
+          minzoom: 5,
+          maxzoom: 24
+        },
+
+      ];
+
+            sources3.forEach((src) => {
+        map.addSource(src.id, {
+          type: "geojson",
+          data: src.url,
+           'buffer': 64,          // Provides a safe margin to calculate clean line joins
+    tolerance: 0.375,    // Balances geometric simplification without losing shape
+        });
+
+        map.addLayer({
+          id: src.id,
+          type: "line",
+          source: src.id,
+          minzoom: src.minzoom,
+          maxzoom: src.maxzoom,
+ layout: {
+  },
+  paint: {
+    "line-color": src.color,
+    "line-width": src.width
+
+  }
+        });});
+
+              const sources3b = [
+                 {
+          id:"h0013b",
+          url: "./data/minorhighway.json",
+          color: "#773300",
+                    halo: "#ffffff70",
+          hw: 1,
+          size: 14,
+          ssk: 9990,
+          minzoom: 7,
+          maxzoom: 24
+        },
+                        {
+          id:"h0010b",
+          url: "./data/majorhighway.json",
+          color: "#770000",
+          halo: "#ffffff70",
+          hw: 1,
+          width: 4,
+          size: 14,
+          ssk: 9990,
+          minzoom: 5,
+          maxzoom: 24
+        },
+      ];
+            sources3b.forEach((src) => {
+        map.addSource(src.id, {
+          type: "geojson",
+          data: src.url,
+           'buffer': 64,          // Provides a safe margin to calculate clean line joins
+    tolerance: 0.375,    // Balances geometric simplification without losing shape
+        });
+
+        map.addLayer({
+          id: src.id,
+          type: "symbol",
+          source: src.id,
+          minzoom: src.minzoom,
+          maxzoom: src.maxzoom,
+ layout: {
+    "text-field": ["get", "id"],
+    "text-size": src.size,
+    "text-font": ["Noto Sans Bold"],
+    "text-offset": [0, 0],
+    "text-anchor": "center",
+    "text-allow-overlap": false,
+    'symbol-placement': 'line',
+  },
+  paint: {
+    "text-color": src.color,
+    "text-halo-color": src.halo,
+    "text-halo-width": src.hw
+  }
+        });});
+
+              const sources2 = [
                         {
           id:"t0010",
           url: "./data/supercontinents-labels.json",
@@ -478,6 +620,17 @@ map.on('style.load', () => {
           minzoom: 4,
           maxzoom: 9
         },
+                                                {
+          id:"t0040a",
+          url: "./data/smaller-regions-labels.json",
+          size: 14,
+          color: "#765432",
+          halo: "#fedcba90",
+          hw: 1.4,
+          minzoom: 5,
+          ssk: 9960,
+          maxzoom: 12
+        },
                                 {
           id:"t0040",
           url: "./data/small-regions-labels.json",
@@ -487,8 +640,9 @@ map.on('style.load', () => {
           hw: 1.4,
           minzoom: 3,
           ssk: 9960,
-          maxzoom: 8
+          maxzoom: 10
         },
+
         {
           id:"t0053",
           url: "./data/ethnicities-minor-labels.json",
@@ -594,6 +748,17 @@ map.on('style.load', () => {
           minzoom: 6,
           maxzoom: 12
         },
+                                {
+          id:"t0059b",
+          url: "./data/countylabels913.json",
+          size: 14,
+          color: "#111111",
+          halo: "#eeeeee90",
+          hw: 1.1,
+          minzoom: 6,
+          maxzoom: 12
+        },
+
       ];
 
             sources2.forEach((src) => {
@@ -625,7 +790,6 @@ map.on('style.load', () => {
     "text-halo-width": src.hw
   }
         });});
-
        let citiesGeojson;
 
        /* Cities */
@@ -655,7 +819,7 @@ fetch("./data/cities.json")
       type: "symbol",
       source: "city-centroids",
                       minzoom: 5,
-          maxzoom: 11,
+          maxzoom: 15,
 layout: {
     "text-field": ["get", "id"],
 
@@ -715,7 +879,7 @@ layout: {
       type: "symbol",
       source: "town-centroids",
                       minzoom: 5,
-          maxzoom: 15,
+          maxzoom: 16,
 layout: {
     "text-field": ["get", "id"],
 
@@ -748,6 +912,66 @@ layout: {
     });
   });
   /* Towns */
+  /* Locales */ 
+  fetch("./data/humanlocations.json")
+  .then(r => r.json())
+  .then(data => {
+    citiesGeojson = data;
+
+    const centroidFeatures = data.features.map(f => ({
+      type: "Feature",
+      geometry: turf.centroid(f).geometry,
+      properties: f.properties
+    }));
+
+    map.addSource("locales", {
+      type: "geojson",
+      data: {
+        type: "FeatureCollection",
+        features: centroidFeatures,
+
+          
+      },
+
+    });
+        map.addLayer({
+      id: "zz-locale-labels",
+      type: "symbol",
+      source: "locales",
+                      minzoom: 11,
+          maxzoom: 17,
+layout: {
+    "text-field": ["get", "id"],
+
+    "text-size": 10,
+    "text-font": ["Noto Sans Bold"],
+    "text-offset": [0, 0.5],
+    "text-anchor": "top",
+    "text-allow-overlap": true
+
+  },
+  paint: {
+    "text-color": "#000000",
+    "text-halo-color": "#ffffff",
+    "text-halo-width": 1.2
+  }
+    });
+    map.addLayer({
+      id: "zz-locale-circles",
+      type: "circle",
+      source: "locales",
+                      minzoom:11,
+          maxzoom: 17,
+      paint: {
+        "circle-radius": 3,
+        "circle-color": "#654321",
+        "circle-stroke-width": 1,
+      "circle-stroke-color": "#ffffff"
+
+      }
+    });
+  });
+  /* Locales */
      /* MEASURE DISTANCE */
  map.addSource('measure-source', {
             'type': 'geojson',
