@@ -1,0 +1,11 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[75.32869048435087,41.98319370600287]},"properties":{"id":"Thariel Cleft"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[73.28484225568266,41.481654367280456]},"properties":{"id":"Ramder Cleft"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[72.67965481513062,41.97269147228297]},"properties":{"id":null}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[69.23769574647378,41.494766150368925]},"properties":{"id":"Sbeva Caves"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[70.85870895292587,48.64918218585395]},"properties":{"id":"Kalvi's Shame"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[81.76092661205483,47.83741374157023]},"properties":{"id":"Akariban Gate"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[89.06291313825818,46.53052038816441]},"properties":{"id":"Tardonzhai-Kiante"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[75.07546586288021,48.784206009829944]},"properties":{"id":"Sharila Gate"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[72.94072851623285,47.741408564602935]},"properties":{"id":"Monzei Gate"}}
+]}
