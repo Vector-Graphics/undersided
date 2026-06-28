@@ -203,7 +203,9 @@ const colors = {
     woods: "#3955",
       desert: "#A725",
         frost: "#acc7",
-        urban: "#9997"
+        urban: "#9997",
+        caves: "#0775",
+        caves2: "#077"
 }
 let projection;
  // Application State
@@ -258,6 +260,8 @@ map.on('style.load', () => {
     map.on("load", () => {
       // 👇 add your GeoJSON files here
           // load things that aren't labels
+
+
       const sources = [
                 {
           id: "layer-2a",
@@ -381,6 +385,32 @@ map.on('style.load', () => {
   },
           layout: {
           }
+        },
+                                          {
+          id: "layer-7",
+          url: "./data/major-cave-regions.json",
+                    type: "fill",
+            paint: {
+    "fill-color":  colors.caves
+  },
+          layout: {
+          }
+        },
+                                                  {
+          id: "layer-7b",
+          url: "./data/major-cave-regions.json",
+                    type: "line",
+            layout: {
+
+                              "line-join": "round",
+                              
+                  "line-cap": "round"
+          },
+            paint: {
+                              "line-color": colors.caves2,
+    "line-width": 3
+
+  }
         },
       ];
       sources.forEach((src) => {
@@ -790,8 +820,58 @@ map.on('style.load', () => {
     "text-halo-width": src.hw
   }
         });});
-       let citiesGeojson;
+        /* Caves */
+let cavesGeojson;
+                  fetch("./data/major-cave-regions.json")
+  .then(r => r.json())
+  .then(data => {
+    cavesGeojson = data;
 
+    const centroidFeatures = data.features.map(f => ({
+      type: "Feature",
+      geometry: turf.centroid(f).geometry,
+      properties: f.properties
+    }));
+
+    map.addSource("caves-centroids", {
+      type: "geojson",
+      data: {
+        type: "FeatureCollection",
+        features: centroidFeatures,
+
+          
+      },
+
+    });
+  map.addLayer({
+      id: "z-cave-labels",
+      type: "symbol",
+      source: "caves-centroids",
+                      minzoom: 3,
+          maxzoom: 12,
+layout: {
+    "text-field": ["get", "id"],
+
+    "text-size": 14,
+    "text-font": ["Noto Sans Bold"],
+    "text-offset": [0, 0],
+    "text-anchor": "center",
+    "text-allow-overlap": true
+
+  },
+  paint: {
+    "text-color": "#224444",
+    "text-halo-color": "#ffffff90",
+    "text-halo-width": 1.6
+  }
+    });
+
+  });
+ 
+
+
+       let citiesGeojson;
+       /* Caves */
        /* Cities */
 fetch("./data/cities.json")
   .then(r => r.json())
@@ -852,6 +932,66 @@ layout: {
     });
   });
   /* Cities */
+   /* Cave Entries */
+fetch("./data/cave-entrances.json")
+  .then(r => r.json())
+  .then(data => {
+    cavesEnterGeojson = data;
+
+    const centroidFeatures = data.features.map(f => ({
+      type: "Feature",
+      geometry: turf.centroid(f).geometry,
+      properties: f.properties
+    }));
+
+    map.addSource("caves-enter-centroids", {
+      type: "geojson",
+      data: {
+        type: "FeatureCollection",
+        features: centroidFeatures,
+
+          
+      },
+
+    });
+        map.addLayer({
+      id: "z-cave-enter-labels",
+      type: "symbol",
+      source: "caves-enter-centroids",
+                      minzoom: 5,
+          maxzoom: 11,
+layout: {
+    "text-field": ["get", "id"],
+
+    "text-size": 14,
+    "text-font": ["Noto Sans Bold"],
+    "text-offset": [0, 0.5],
+    "text-anchor": "top",
+    "text-allow-overlap": false
+
+  },
+  paint: {
+    "text-color": "#003333",
+    "text-halo-color": "#ffffff70",
+    "text-halo-width": 1.6
+  }
+    });
+    map.addLayer({
+      id: "z-cave-circles",
+      type: "circle",
+      source: "caves-enter-centroids",
+                      minzoom: 5,
+          maxzoom: 11,
+      paint: {
+        "circle-radius": 4,
+        "circle-color": "#003333",
+        "circle-stroke-width": 2,
+      "circle-stroke-color": "#ffffff"
+
+      }
+    });
+  });
+  /* Cave Entries */
   /* Towns */ 
   fetch("./data/towns.json")
   .then(r => r.json())
@@ -1175,6 +1315,9 @@ function createLayerToggle(map, layers, labelText = "Show topography") {
 document.getElementById("measure-control-panel").appendChild(createLayerToggle(map,["layer-3","layer-4","t0094","t0095"],"Show topography"));
 document.getElementById("measure-control-panel").appendChild(createLayerToggle(map,["t0043","t0053"],"Show ethnicities"));
 document.getElementById("measure-control-panel").appendChild(createLayerToggle(map,["t0045","t0046","t0055","t0056", "layer-3a","layer-3b","layer-4b"],"Show biomes"));
+document.getElementById("measure-control-panel").appendChild(createLayerToggle(map,["z-cave-labels","layer-7","layer-7b"],"Show Underground regions"));
+document.getElementById("measure-control-panel").appendChild(createLayerToggle(map,["z-cave-circles","z-cave-enter-labels"],"Show cave entrances"));
+
 
 /* END SHOWHIDE */
 
@@ -1183,41 +1326,93 @@ const descriptions = {
  Dirlam: "The eastern equatorial continent of Rodin, home to the Savorami, Tazelo, Naledi, and Avangani peoples.",
   Zerahai: "The western equatorial continent of Rodin, home to the Koganda, Greb, Mairoi, and Wila peoples.",
   Iltezon: "The northern continent of Rodin, home to the Panavic, Vanki, Sebilon, Pavron and Ezeva peoples.",
+    Liruzon: "The western peninsula of Iltezon, serving as the crossing point for a large number of the surrounding cultures.",
+    Vana: "The forest at the heart of Iltezon, home to the Vanki people and the original homeland of the Malakiz.",
+    Havon: "The eastern plains of Iltezon, home to the Triakon and Sebilon people.",
+    "Greater Ezvelan": "The island to the north of continental Iltezon, and Yona's largest island, home to the Ezov.",
+    "Ezvelan": "The Ezvelan Coast is the most populated region of Greater Ezvelan. It contains the Yaseo Mountains.",
+    "Vyrau Wastes": "This frigid, ice-capped region is almost entirely uninhabited, save for the occasional yaref community that has made its home here.",
+    "Arvenda Ocean": "This watery divide separates Ezvelan and the inhabited world from whatever mysteries may lie in the far north of Divi.",
+    "Divi": "The far northern continent, which contains the North Pole, a location whose mysteries grow ever stranger with each new expedition.",
+    "Yaseo Mountains": "Named after the god of the frigid heights in Ezeva mythology, these mountains contain within them the caves in which the Tadeleti tribe lives.",
+    "Yarov": "The Donzhai of the West have, after being driven out of Liruzon by the aspiring King Siegetev, found a new home on the shores of Ezvelan; it is only recently that they have begun to return.",
+    "Lazriv": "These are the yarov that have resided along the Lesikha since before the Great Evacuation of 662 brought millions of the yarov of Liruzon to their realm. The name 'Lazriv' means the same thing as 'Yarov'.",
+    "Fort Northernlight": "As to avoid overloading the Lazriv with huge waves of new settlement along the Lesikha, the yarov originating in Liruzon built a palace of ice nestled deep in the mountains from which their city grew.",
+        "Ester": "Ester is the grand city of the Ezov, having by far the highest Ezeva population out of any of the cities in Ezvelan or Korhision.",
+        "Ezov": "The Ezov are a furred folk, notable for their view of the world as a matter of distinctions, and their use of mind-altering substances in battles and community rituals.",
+        "Estrov": "These are the Ezov of Ester, defined against the Korakov, who live across the Gulf of Montera.",
+        "Korakov": "The Ezov of Korhision have had an on-and-off presence throughout the years, alternating between maintaining a stable cultural sphere and being assimilated or displaced by outside powers. As a result, they have acquired many Panavic cultural characteristics, such as a stronger system of social roles.",
+        "Monselian": "The Hinterlands of Korhision, initially an undersettled wilderness, became a bustling hub of trade and knowledge with the establishment of the University of Monselian. This region was originally the site of an attempted Wila colony that faced fierce, violent resistance from the native Korakov.",
+    "Desnelian": "The Midlands of Korhision, and its core as a region, Desnelian is home to the realm of Montera, a politically tricky trade hub that follows the deity Ramazir, the patron god of navigation, knowledge, the stars, and the metal silver.",
+"Sinvilian": "The Forelands of Korhision, and the closest region of Korhision to the Straits of Ezvelan. In later times, this land became saturated with Vanki customs, which resulted in a unique hybrid tradition called Vainadiv, and eventually the empire of Lucorshi.",
+"Lucorshi": "Lucorshi was an empire, now a loose sociopolitical region, associated with the Vainadiv tradition. In its heyday, it controlled much of Liruzon and western Vana.",
+"Rahaznov": "The Panavic people inhabiting Rahazun have picked up a lot of Ezeva cultural elements, such as the holiday Arvendanula and various terms loaned from Ezeva languages.",
+"Kalvi's Shame": "It is here where the remaining yarov of Liruzon were, at the conclusion of King Siegetev's invasion of Yarzon-Lundroz, sealed away underground. In the following years, the later rulers of Rahazun, under the Kalvi title, would try to hide the shameful legacy of Siegetev.",
+"Ri-Ebott": "After the freeing of Yarzon-Lundroz, this small lakeside town acted as a home for its population. It was the original home of Magzi and Ana-hin Brujgal.",
+"Ebott County": "After the invasion of Yarzon-Lundroz, the fledgling empire of Rahazun expanded its territories to include Ebott - the original core of Yarzon-Lundroz - and Ulrike, another upriver territory. Even as the county became inhabited by humans, it is still full of abandoned, ruined yaref cities.",
+"Bad Wolf Woods": "Before the 662 war, this area was once a bustling cultural center in Yarzon-Lundroz. However, since the banishment of the yarov, the area has grown quiet, and it is said that at night, the only sound that may be heard is the distant howling of wolves.",
+"Ulrike County": "The western reaches of what is now the Bad Wolf Woods were incorporated into Siegetev's domain alongside Ebott, and continue to be ruled ultimately by Rahazuna authorities to this day.",
+"Ilbanz River": "The second of the five great westward-flowing rivers of Liruzon, the Ilbanz river has two main sources in the Echavi Highlands. Its drainage basin defines a region, Lundroz - often simply called the 'Watershed' - that stretches to the east of Rahazun and contains the region of Lestn.",
+"Yahiraban Region (Banzhai Region)": "These deep, otherwise barren (perhaps even toxic) and uninhabitable caves are home to the Yahiraban, who are often described as 'half-yarov' for their yahiric capabilities and resilience to the harsh environments. The Yahiraban often have very small social structures and an extremely high weight placed on short-term thinking as opposed to long-term planning. They are generally quite physically weak and often have developmental issues.",
+    "Vaoyi-Kalivui (Val-i-Kalivri)": "The underground region of Lucorshi. While the native Kalivri people do not completely follow Vainadiv, they inherit a lot of Vanki cultural ideas. They as a result have a large degree of surface contact.",  
+    "Shinaraz": "These caves are the home of the Shinarazi tribes of razil. These groups tend to have a strong sense of hierarchy, prestige, and social standing based on previous actions, a concept which is completely foreign to Rahazun, and even to Myalvi.",
+    "Sharila-fi": "These sparse, maze-like, and difficult-to-navigate caverns are the home of the Sharila people, who are adept also at navigating tight spaces and living in extremely close quarters, and carve their cities to follow the natural course of the caves. They are also miners, with their mines often doubling as other structures due to the tight spaces involved.",
+    "Robanashikai": "The Robanagari, the inhabitants of these caves, regularly interacted with the Panavic nations of the region during Hesan's height, but since have isolated themselves from surface contact. It is from them, however, that the precursors of Ilgiric metaphysics originated, before the Thariel brought the ideas to Ezvelan in the 4th century.",
+    "Brevo": "The Brevo Seas are a series of flooded caverns inhabited by the Thariel. The Thariel are seafaring (do underground seas count as seafaring?) and build their cities into the sides of cave walls. One of their greatest cities is Pharelzolde, built into a chasm in the earth connecting the surface to the Underground."
 }
 const wikilinks = {
   Dirlam: "Dirlam",
   Zerahai: "Zerahai",
-  Iltezon: "Iltezon"
+  Iltezon: "Iltezon",
+  "Vaoyi-Kalivui (Val-i-Kalivri)": "Razil#Kalivri",
+  "Yahiraban Region (Banzhai Region)": "Yahiraban",
+  Robanashikai: "Robanagari",
+  "Shinaraz": "Shinarazi",
+
+
 }
 
- map.on('click', 't0020', (e) => {
-  
-  const center = turf.centroid(e.features[0]);
-        const coordinates = e.features[0].geometry.coordinates.slice();
-        const featureId = e.features[0].properties.id;
-        let description = "I'm a goofy goober Yeah this errorr. message";
-        if(wikilinks[featureId]){
-          description = "<h2>" + featureId + "</h2>" + descriptions[featureId] + "<br> <a href=https://wiki.jupiter-boy.com/wiki/" + wikilinks[featureId] + ">Read on the wiki</a>" 
-        }else{
-          description = "<h2>" + featureId + "</h2>" + descriptions[featureId] + "<br> <a href=https://wiki.jupiter-boy.com/wiki/" + featureId + ">Read on the wiki</a>" 
-        }
-        
+ map.on('click', (e) => {
+  const layers = [
+    "t0020", "z-city-labels", "zz-town-labels", "zz-locale-labels",
+    "z-cave-labels", "t0010", "t0030", "t0043", "t0045",
+    "t0055","t0056","t0046","t0040a","t0040","t0053",
+    "t0094","t0095","t0041","t0051","t0022","t0032",
+    "t0052","t0057","t0058","t0059b","z-cave-enter-labels"
+  ];
 
-        new maplibregl.Popup()
-            .setLngLat(center.geometry.coordinates)
-            .setHTML(description)
-            .addTo(map);
-    });
+  const features = map.queryRenderedFeatures(e.point, {
+    layers
+  });
 
-    // Change the cursor to a pointer when the mouse is over the places layer.
-    map.on('mouseenter', 't0020', () => {
-        map.getCanvas().style.cursor = 'pointer';
-    });
+  if (!features.length) return;
 
-    // Change it back to a pointer when it leaves.
-    map.on('mouseleave', 't0020', () => {
-        map.getCanvas().style.cursor = '';
-    });
+  const feature = features[0];
+
+  const center = turf.centroid(feature);
+  const featureId = feature.properties.id;
+
+  let description = "I'm a goofy goober Yeah this errorr. message";
+
+  if (wikilinks[featureId]) {
+    description =
+      "<h2>" + featureId + "</h2>" +
+      descriptions[featureId] +
+      "<br><a href=https://wiki.jupiter-boy.com/wiki/" +
+      wikilinks[featureId] + ">Read on the wiki</a>";
+  } else {
+    description =
+      "<h2>" + featureId + "</h2>" +
+      descriptions[featureId] +
+      "<br><a href=https://wiki.jupiter-boy.com/wiki/" +
+      featureId + ">Read on the wiki</a>";
+  }
+
+  new maplibregl.Popup()
+    .setLngLat(center.geometry.coordinates)
+    .setHTML(description)
+    .addTo(map);
+});
 
 /* END POPUPS */
   </script>
